@@ -1,0 +1,180 @@
+
+// Стили шапки
+.header{
+	user-select: none;
+	width: 100%;
+	box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+	.header__wrapper{
+		max-width: 1160px;
+		margin: 0 auto;
+		.header__menu{
+			margin: auto 0 auto 0;
+			width: 100%;
+			height: 35px;
+			.menu__burger{
+				position: absolute;
+				width: 35px;
+				height: 35px;
+			}
+			.menu__links{
+				background-color: #fff;
+				border-radius: 22px;
+				a{
+					display: flex;
+					color: rgba(31, 32, 65, 0.5);
+					line-height: 17px;
+					transition-duration:250ms;
+					&:hover{
+						color: rgba(31, 32, 65, 0.75);
+					}
+					.menu__expand{
+						font-family: 'Material Icons';
+						font-size: 24px;
+					}
+				}
+			}
+			.menu__reg-login{
+				display:flex;
+				.reg-login__log{
+					height: 34px;
+					border:2px solid transparent;
+					border-radius: 22px;
+					background: 
+						linear-gradient(#fff,#fff) padding-box,
+						linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%) border-box;
+					padding: 0 20px 0 19px;
+					line-height: 30px;
+					color: #bc9cff;
+					font-weight: bold;
+					font-size: 12px;
+					text-transform: uppercase;
+					&:hover{
+						background: 
+							linear-gradient(#fff,#fff) padding-box,
+							linear-gradient(180deg, rgba(188, 156, 255, 0.5) 0%, rgba(139, 164, 249, 0.5) 100%) border-box;
+					}
+				}
+				.reg-login__reg{
+					height: 34px;
+					border-radius: 22px;
+					padding: 0px 23px 0 21px;
+					line-height: 34px;
+					background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+					font-weight: bold;
+					font-size: 12px;
+					color: #fff;
+					text-transform: uppercase;
+					transition-duration:150ms;
+					&:hover{
+						opacity: 0.5;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width:901px){
+	.menu__burger{
+		display: none;
+	}
+	.menu__links{
+		margin:0 0 0 auto;
+		display: flex;
+	}
+	.menu__reg-login{
+		margin:0 0 0 20px;
+	}
+}
+@media (max-width:900px){
+	.menu__links{
+		position: absolute;
+		margin:70px 0 0 50%;
+		padding: 0 0 10px 0;
+		transform: translateX(-75%);
+		display:none;
+		z-index: 999;
+		&._active{
+			display:flex;
+		}
+	}
+	.menu__reg-login{
+		margin:0 0 0 auto;
+	}
+}
+
+@media (min-width:481px){
+	header{
+		height:70px;
+		.header__wrapper{
+			display:flex;
+			height:70px;
+			.header__logo{
+				margin: auto 0;
+			}
+			.header__menu{
+				display: flex;
+				.menu__burger{
+					margin:0 0 0 20px;
+				}
+				.menu__links{
+					.menu__link{
+						margin: 9px 0 0 20px;
+					}
+					.about-me{
+						width: 43px;
+					}
+				}
+				.menu__reg-login .reg-login__reg{
+						margin: 0 0 0 19px;
+				}
+			}
+		}
+	}
+}
+@media (max-width:480px){
+	header{
+		height:180px;
+		.header__wrapper{
+			display: block;
+			height:180px;
+			.header__logo{
+				position: absolute;
+				margin:0 0 0 50%;
+				transform: translateX(-50%);
+			}
+			.header__menu{
+				display:block;
+				.menu__burger{
+					margin:130px 0 0 50%;
+					transform: translateX(-50%);
+				}
+				.menu__links{
+					width: 100%;
+					height: 100%;
+					margin:170px 0 0 50%;
+					transform: translateX(-50%);
+					&._active{
+						display:block;
+					}
+					.menu__link{
+						width: 150px;
+						margin: 20px auto 20px auto;
+						font-size: 25px;
+					}
+				}
+				.menu__reg-login{
+					flex-wrap: wrap;
+					width: 195px;
+					height: 80px;
+					position: absolute;
+					margin:50px 0 0 50%;
+					transform: translateX(-50%);
+					.reg-login__log{
+						margin: 0 auto;
+					}
+				}
+			}
+		}
+	}
+}
