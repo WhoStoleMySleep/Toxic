@@ -1,0 +1,40 @@
+{
+  "name": "webpack",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch",
+    "start": "webpack serve --open",
+    "build": "webpack"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^6.5.1",
+    "eslint": "^8.6.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-webpack-plugin": "^3.1.1",
+    "html-webpack-plugin": "^5.5.0",
+    "jquery": "^3.6.0",
+    "sass": "^1.45.0",
+    "sass-loader": "^12.4.0",
+    "slick-carousel": "^1.8.1",
+    "style-loader": "^3.3.1",
+    "ts-loader": "^9.2.6",
+    "typescript": "^4.5.4",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.6.0"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "chart.js": "^3.7.0",
+    "jquery-ui": "^1.13.0",
+    "lodash": "^4.17.21",
+    "paginationjs": "^2.1.5",
+    "pug-loader": "^2.4.0"
+  }
+}
