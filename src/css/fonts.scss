@@ -1,0 +1,20 @@
+@font-face {
+	font-family: 'Material Icons';
+	src: local('☺'), url('../fonts/MaterialIcons/MaterialIcons-Regular.woff') format('woff'),
+   url('../fonts/MaterialIcons/MaterialIcons-Regular.ttf') format('truetype'), 
+   url('../fonts/MaterialIcons/MaterialIcons-Regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Montserrat';
+	src: local('☺'), url('../fonts/Montserrat/Montserrat-Regular.woff') format('woff'),
+   url('../fonts/Montserrat/Montserrat-Regular.ttf') format('truetype'), 
+   url('../fonts/Montserrat/Montserrat-Regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* $fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
+@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "~@fortawesome/fontawesome-free/scss/brands.scss"; */
