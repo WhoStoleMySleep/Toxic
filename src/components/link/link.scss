@@ -1,0 +1,10 @@
+a.link{
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #BC9CFF;
+	font-size: 12px;
+	transition-duration:150ms;
+	&:hover{
+		color: rgba(31, 32, 65, 0.5);
+	}
+}
