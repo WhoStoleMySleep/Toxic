@@ -1,0 +1,34 @@
+.to-book
+	.to-book__title
+		p №
+		h1 888
+		h3 Люкс
+		span
+			P 9 990₽
+			p в сутки
+	form
+		include ../date-dropdown/date-dropdown.pug
+		.dropdown
+		.to-book__summing
+			.to-book__summ-days
+				span
+					p.to-book__price 9 990₽
+					p x
+					p.to-book__days 0 суток
+				p#daysSumm 0₽
+			.to-book__service-charge
+				span
+					p.to-book__service-charge-text Сбор за услуги: скидка 2 179₽
+					p.to-book__info i
+				p#serviceChargeSumm 0₽
+			.to-book__Additional-services
+				span
+					p.to-book__Additional-services-text Сбор за дополнительные услуги
+					p.to-book__info i
+				p#AdditionalServicesSumm 300₽
+			.to-book__total
+				span
+					h2.to-book__total-text Итого
+				h2#totalTotal 
+		include ../big-button/big-button.pug
+		+big-button('Забронировать')
