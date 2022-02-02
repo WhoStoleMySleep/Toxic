@@ -1,0 +1,9 @@
+mixin rich-checkbox-buttons(info = [])
+  .rich-checkbox-buttons
+    each data in info
+      label.rich-checkbox-button__heading
+        input.rich-checkbox-button(type="checkbox")
+        span= data.heading
+        p.rich-checkbox-button__additionally= data.additionally
+    else
+      p Нет информации
