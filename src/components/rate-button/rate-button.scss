@@ -1,0 +1,41 @@
+.rate-button {
+	overflow: hidden;
+	width: 120px
+}
+.rate-button:not(:checked) > input {
+	display: none;
+}
+.rate-button:not(:checked) > label {
+	float: right;
+	width: auto;
+	text-align: center;
+	padding: 0;
+	cursor: pointer;
+	font-size: 14px;
+	padding:0 5px 0 5px;
+	line-height: 20px;
+	background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  	-webkit-background-clip: text;
+  	-webkit-text-stroke: 4px transparent;
+	color: #FFF;
+}
+.rate-button:not(:checked) > label:before {
+	content: 'star';
+	font-family: 'Material Icons';
+}
+.rate-button > input:checked ~ label {
+	background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+	-webkit-background-clip: text;
+	-webkit-text-stroke: 4px;
+	color: transparent;
+}
+.rate-button:not(:checked) > label:hover,
+.rate-button:not(:checked) > label:hover ~ label {
+	background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+	-webkit-background-clip: text;
+	-webkit-text-stroke: 4px;
+	color: transparent;
+}
+.rate-area > label:active {
+	position: relative;
+}
