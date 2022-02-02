@@ -1,0 +1,212 @@
+td.ui-state-selected-range a {
+  background: none !important;
+  border: none !important;
+  color:rgba(31, 32, 65, 0.5) !important;
+}
+
+.ui-red-start {
+  background: linear-gradient(180deg, rgba(187, 153, 255, .25) 0%, rgba(136, 170, 255, .25) 100%);
+  border-radius: 50% 0 0 50%;
+}
+
+.ui-red-end {
+  background: linear-gradient(180deg, rgba(187, 153, 255, .25) 0%, rgba(136, 170, 255, .25) 100%);
+  border-radius: 0 50% 50% 0;
+}
+
+.ui-red-start .ui-state-default,
+.ui-red-end .ui-state-default {
+  border: none !important;
+  ;
+  font-weight: bold;
+  color: #fff !important;
+  ;
+}
+.ui-red-start {
+	a{
+		background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+		border-radius: 22px;
+	}
+	&._deactive{
+		background: #fff;
+		a{
+			background:#fff;
+			color: rgba(31, 32, 65, 0.5) !important;
+			font-weight: normal !important;
+		}
+	}
+}
+.ui-red-end {
+	a{
+		background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+		border-radius: 22px;
+	}
+	&._deactive{
+		background: #fff;
+		a{
+			background:#fff;
+			color: rgba(31, 32, 65, 0.5) !important;
+			font-weight: normal !important;
+		}
+	}
+}
+
+.ui-state-selected-range {
+  border: none !important;
+  font-weight: normal;
+  background: linear-gradient(180deg, rgba(187, 153, 255, .25) 0%, rgba(136, 170, 255, .25) 100%);
+  &._deactive{
+  	background: #fff;
+  }
+}
+
+
+.date-dropdown{
+	display: flex;
+	width: 320px;
+	height: 64px;
+	position: relative;
+	.date-dropdown__elem{
+		width: 150px;
+		height: 64px;
+		&:nth-child(1){
+			margin: 0 20px 0 0;
+		}
+		.date-dropdown__input{
+			width: 150px;
+			height: 44px;
+			border: 1px solid rgba(31, 32, 65, 0.25);
+			box-sizing: border-box;
+			border-radius: 4px;
+			padding:0 0 3px 13px;
+			margin: 5px 0 0 0;
+			font-size: 14px;
+			text-transform: uppercase;
+			position: absolute;
+			user-select: none;
+			cursor: pointer;
+			&::placeholder{
+				color: rgba(31, 32, 65, 0.75);
+			}
+		}
+		label{
+			font-family: 'Material Icons';
+			text-transform: none;
+			font-size: 24px;
+			width: 44px;
+			height: 44px;
+			text-align: center;
+			line-height: 44px;
+			position: absolute;
+			margin: 5px 0 0 106px;
+			color: rgba(31, 32, 65, 0.5);
+		}
+	}
+}
+.ui-datepicker{
+	width: 320px !important;
+	min-height: 369px;
+	background: #FFFFFF;
+	border: 1px solid rgba(31, 32, 65, 0.25);
+	box-sizing: border-box;
+	box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+	border-radius: 4px;
+	padding: 0;
+	cursor: default;
+	.ui-datepicker-header{
+		width: 277px;
+		height: 24px;
+		margin: 20px auto 30px auto;
+		padding: 0;
+		.ui-datepicker-title{
+			font-size: 19px;
+			line-height: 19px;
+			letter-spacing: 0.7px;
+			color: #1F2041;
+			font-weight: bold;
+			text-shadow: 1px 0 0 #1F2041;
+		}
+		.ui-datepicker-next,
+		.ui-datepicker-prev{
+			width: 20px;
+			height: 20px;
+			background-image: url(../img/arrow_back.svg);
+			background-size: 100% 100%;
+			background-position: auto auto;
+			background-repeat: no-repeat;
+			&:nth-child(2){
+				transform:rotate(180deg);
+			}
+		}
+	}
+	.ui-datepicker-calendar{
+		max-width: 279px;
+		margin: 0 auto;
+		thead tr{
+			width: 40px;
+			height: 38px;
+			font-size: 12px;
+			font-weight: bold;
+			color: #BC9CFF;
+		}
+		tbody tr td{
+			padding: 0;
+			a,
+			span{
+				width: 40px;
+				height: 40px;
+				border-radius: 22px;
+				font-size: 12px;
+				color: rgba(31, 32, 65, 0.5);
+				text-align: center !important;
+				line-height: 37px;
+				&.ui-state-highlight{
+					background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+					border-radius: 22px;
+					font-weight: bold;
+					color: #FFFFFF;
+				}
+			}
+		}
+	}
+}
+#datepicker{
+	width: 320px;
+	height: 0;
+	margin: 0 0 0 10px;
+	opacity: 0;
+	position: absolute;
+	z-index: 100;
+	overflow: hidden;
+	.ui-datepicker-buttonpane{
+		width: 285px;
+		height: 55px;
+		margin: 0 auto;
+		.ui-datepicker-current {
+			display: none;
+		}
+		.ui-datepicker-done{
+			margin: 20px 0 0 0;
+			padding: 0;
+			color: #BC9CFF;
+			text-transform: uppercase;
+			font-size: 12px;
+			font-weight: bold;
+		}
+		.ui-datepicker-clear{
+			margin: 20px 0 0 0;
+			padding: 0;
+			position: absolute;
+			color: #BC9CFF;
+			text-transform: uppercase;
+			font-size: 12px;
+			font-weight: bold;
+		}
+	}
+	transition-duration:250ms;
+	&.active{
+		height: auto;
+		margin:0;
+		opacity: 1;
+	}
+}
