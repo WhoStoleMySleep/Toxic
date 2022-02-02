@@ -1,0 +1,44 @@
+@import '../text-field/text-field.scss';
+@import '../big-button/big-button.scss';
+@import '../transp-button/transp-button.scss';
+
+.log-in{
+	max-width: 380px;
+	height: 358px;
+	margin: 0 auto;
+	background: #FFFFFF;
+	border: 1px solid rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
+	.log-in__title{
+		width: 320px;
+		margin: 40px auto 20px auto;
+		letter-spacing: 0.8px;
+	}
+	form{
+		width: 320px;
+		margin: 0 auto;
+		.text-field{
+			margin: 0 0 10px 0;
+			letter-spacing: 0.3px;
+			&:nth-child(2){
+				margin: 0 0 20px 0;
+			}
+		}
+	}
+	.register__go-to-register{
+		width: 320px;
+		height: 44px;
+		display: flex;
+		justify-content: space-between;
+		margin: 30px auto 0 auto;
+		align-items: center;
+		p{
+			color: #000;
+		}
+		.transp-button{
+			padding: 0 18px 0 18px;
+		}
+	}
+}
