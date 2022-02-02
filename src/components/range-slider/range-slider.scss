@@ -1,0 +1,31 @@
+.slider{
+	width: 266px;
+	height: 44px;
+	.slider__amount{
+		margin:0 0 23px auto;
+		background-color: transparent;
+		display: block;
+		height: 15px;
+		text-align: right;
+		color: rgba(31, 32, 65, 0.5);
+		line-height: 15px;
+	}
+	#range-slider{
+		width: 266px;
+		height: 6px;
+		border: 1px solid rgba(31, 32, 65, 0.25);
+		box-sizing: border-box;
+		border-radius: 3px;
+		.ui-slider-range{
+			background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+		}
+		.ui-slider-handle{
+			width: 12px;
+			height: 12px;
+			background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+			outline: 2px solid #FFFFFF;
+			border:0;
+			border-radius: 10px;
+		}
+	}
+}
