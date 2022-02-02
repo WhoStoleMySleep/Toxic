@@ -1,0 +1,16 @@
+mixin comments(commentsData = [])
+  each comments in commentsData
+    .comments
+      .comment
+        .comment__left-row
+          img.comment__face(src='../img/' + comments.faceImg)
+          include ../like-button/like-button.pug
+          +like-button(comments.likes)
+        .comment__right-row
+          .comment__right-row-headed
+            .comment__name= comments.name
+            .comment__ago= comments.daysAgo
+          .comment__right-row-bottom
+            p= comments.comment
+  else
+    p Информация отсутствует
