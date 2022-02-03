@@ -1,0 +1,19 @@
+// Файл глобалиных стилей //
+@import "global.scss";
+// Стили компонентов
+@import "../components/header/header.scss";
+@import "../components/footer/footer.scss";
+@import "../components/register/register.scss";
+//-------------------------------------------------------------------------------------------------------------//
+
+main{
+	height: 684px;
+	padding:19px 0;
+	background-image: url('../img/reg-sign-bg.svg');
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+	background-position: center;
+	.register{
+		margin: auto;
+	}
+}
