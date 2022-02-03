@@ -1,0 +1,84 @@
+doctype html
+html(lang="ru")
+   head
+      meta(charset="UTF-8")
+      meta(http-equiv="X-UA-Compatible", content="IE=edge")
+      meta(name="viewport", content="width=device-width, initial-scale=1.0")
+      title Toxic
+   body#room-details
+      include ./components/header/header.pug
+      main
+         .room-details__images
+            .room-details__image-basic
+            span
+               img(src='./img/bgCardsTwo.svg')
+               img(src='./img/bgCardsThree.svg')
+         .room-details__row
+            .room-details__col
+               .room-details__row-row
+                  .room-details__col-col
+                     h2 Сведения о номере
+                     include ./components/text-list/text-list.pug
+                     - 
+                        const textList = [
+                           {
+                              ico: 'insert_emoticon',
+                              headed: 'Комфорт',
+                              additionally: 'Шумопоглощающие стены'
+                           },
+                           {
+                              ico: 'location_city',
+                              headed: 'Удобство',
+                              additionally: 'Окно в каждой из спален'
+                           },
+                           {
+                              ico: 'whatshot',
+                              headed: 'Уют',
+                              additionally: 'Номер оснащён камином'
+                           }
+                        ]
+                     +text-list(textList)
+                  .room-details__col-col
+                     h2 Впечатления о номере
+                     h1.room-details__col-col-room-impressions 260
+                        p гостей
+                     .canvas
+                        canvas(height='120' width='311')#graph
+               .room-details__reviev
+                  h2 Отзывы посетителей номера
+                  include ./components/comments/comments.pug
+                  - 
+                     const users = [
+                        {
+                           faceImg: 'face.webp',
+                           likes: '11',
+                           name: 'Мурад Сарафанов',
+                           daysAgo: '5 дней назад',
+                           comment: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
+                        },
+                        {
+                           faceImg: 'face2.webp',
+                           likes: '2',
+                           name: 'Патрисия Стёклышкова',
+                           daysAgo: 'Неделю назад',
+                           comment: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент.'
+                        }
+                     ]
+                  +comments(users)
+               .room-details__row-row
+                  .room-details__col-col
+                     h2 Правила
+                     include ./components/bullet-list/bullet-list.pug
+                     - 
+                        const bulletList = [
+                           'Нельзя с питомцами',
+                           'Без вечеринок и мероприятий',
+                           'Время прибытия — после 13:00, а выезд до 12:00'
+                        ]
+                     +bullet-list(bulletList)
+                  .room-details__col-col
+                     h2 Отмена
+                     p Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+            .room-details__col
+               include ./components/to-book/to-book.pug
+      include ./components/footer/footer.pug
