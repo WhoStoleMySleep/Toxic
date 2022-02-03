@@ -1,0 +1,46 @@
+
+// Файл глобалиных стилей //
+@import "global.scss";
+// Стили компонентов
+@import "../components/number-pick/number-pick.scss";
+//-------------------------------------------------------------------------------------------------------------//
+main{
+	width: 100%;
+	height: 830px;
+	padding: 70px 0 0 140px;
+	background-image: url('../img/bg1.webp');
+	background-size: 1534px 1022px;
+	background-repeat: no-repeat;
+	background-position: center -131px;
+	position: relative;
+	.main-subtitle{
+		width: 297px;
+		height: 48px;
+		text-align: right;
+		line-height: 24px;
+	}
+}
+
+@media screen and (max-width: 668px) {
+	main{
+		padding: 70px 0 0;
+		.number-pick{
+			margin: 0 auto;
+		}
+	}
+}
+
+@media screen and (min-width: 533px) {
+	main{
+		.main-subtitle{
+			margin: 317px 135px 21px auto;
+		}
+	}
+}
+@media screen and (max-width: 532px) {
+	main{
+		.main-subtitle{
+			margin: 317px auto 21px auto;
+		}
+	}
+}
