@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const ESLintPlugin = require('eslint-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
 	mode: 'development',
@@ -21,7 +21,7 @@ module.exports = {
 			"window.jQuery":'jquery',
 			'window.$': 'jquery',
 		}),
-		// new ESLintPlugin()
+		new ESLintPlugin()
 	],
 	output: {
 		filename: '[name].[contenthash].js',
@@ -63,14 +63,14 @@ module.exports = {
 				test: /\.css$/i,
 				use: ["style-loader", "css-loader"],
 			},
-			// {
-	  //       	test: /\.tsx?$/,
-	  //       	use: 'ts-loader',
-	  //       	exclude: /node_modules/,
-	  //       	options: {
-		 //        transpileOnly: true,
-		 //      },
-	  //     },
+			{
+      	test: /\.tsx?$/,
+      	use: 'ts-loader',
+      	exclude: /node_modules/,
+      	options: {
+        	transpileOnly: true,
+      	},
+	    },
 			{
 				test: /\.(png|svg|jpg|jpeg|gif)$/i,
 				type: 'asset/resource',
@@ -81,7 +81,7 @@ module.exports = {
 			},
 		],
 	},
-	// resolve: {
- //   	extensions: ['.tsx', '.ts', '.js'],
- //  	},
+	resolve: {
+   	extensions: ['.ts'],
+  },
 };
