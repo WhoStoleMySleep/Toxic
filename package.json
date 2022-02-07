@@ -3,6 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "private": true,
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": "config/git/commitizen.js"
+    }
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack --watch",
@@ -13,12 +21,20 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.10.2",
+    "@typescript-eslint/parser": "^5.10.2",
     "css-loader": "^6.5.1",
-    "eslint": "^8.6.0",
+    "cz-customizable": "^6.3.0",
+    "eslint": "^8.8.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.3.0",
     "eslint-loader": "^4.0.2",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-prettier": "^4.0.0",
     "eslint-webpack-plugin": "^3.1.1",
     "html-webpack-plugin": "^5.5.0",
     "jquery": "^3.6.0",
+    "prettier": "2.5.1",
     "sass": "^1.45.0",
     "sass-loader": "^12.4.0",
     "slick-carousel": "^1.8.1",
