@@ -1,0 +1,28 @@
+header.header 
+  .header__wrapper 
+    nav.header__menu
+      a(href="./index.html").header__menu-logo
+        img(src="../img/Logo.webp", alt="logo")
+
+      img(src="./img/burger.svg", alt="menu").header__menu-burger.js-header__menu-burger
+      
+      ul.header__menu-links.js-header__menu-links
+        li
+          a.header__about-me.header__menu-link(href="#") О нас
+        li
+          .header__menu-dropdown.header__menu-link 
+            a(href="#") Услуги
+              p.header__expand expand_more
+        li
+          a.job-opening.header__menu-link(href="#") Вакансии
+        li
+          a.news.header__menu-link(href="#") Новости 
+        li
+          .agreement.menu__dropdown.header__menu-link 
+            a(href="#") Соглашения
+              p.header__expand expand_more
+      
+      .header__reg-login 
+        a(href='./sign-in.html').header__reg-login-log Войти 
+        a(href='./registration.html').header__reg-login-reg Зарегистрироваться
+        
