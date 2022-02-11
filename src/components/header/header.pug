@@ -1,27 +1,69 @@
-
 header.header 
-   .header__wrapper 
-      a(href="./index.html").header__logo
-         img(src="../img/Logo.webp", alt="logo")
+  .header__wrapper 
+    nav.header__menu
+      a(href="./index.html").header__menu-logo
+        img(src="../img/logo.png", alt="logo").header__menu-logo-img
 
-      nav.header__menu.menu
-         img(src="./img/burger.svg", alt="menu").menu__burger#burger
-         
-         .menu__links#links 
-            a.about-me.menu__link(href="#") О нас
+      img(src="./img/burger.png", alt="menu").header__menu-burger.js-header__menu-burger
+      
+      ul.header__menu-links.js-header__menu-links
+        - 
+          let linksData = [
+            {
+              href: '/mock-address/about-me',
+              class: 'about-me',
+              string: 'О нас',
+              expandable: false,
+            },
+            {
+              href: '/mock-address/',
+              class: 'services',
+              string: 'Услуги',
+              expandable: true,
+              elemString: [
+                'пираты',
+                'карибы',
+                'ссылки',
+              ],
+            },
+            {
+              href: '/mock-address/job-opening',
+              class: 'job-opening',
+              string: 'Вакансии',
+              expandable: false,
+            },
+            {
+              href: '/mock-address/news',
+              class: 'news',
+              string: 'Новости',
+              expandable: false,
+            },
+            {
+              href: '/mock-address/',
+              class: 'agreements',
+              string: 'Соглашения',
+              expandable: true,
+              elemString: [
+                'пираты',
+                'карибы',
+                'ссылки',
+              ],
+            },
+          ];
 
-            .menu__dropdown.menu__link 
-               a(href="#") Услуги
-                  p.menu__expand expand_more
-            
-            a.job-opening.menu__link(href="#") Вакансии
-            a.news.menu__link(href="#") Новости 
-            
-            .agreement.menu__dropdown.menu__link 
-               a(href="#") Соглашения
-                  p.menu__expand expand_more
-         
-         .menu__reg-login 
-            a(href='./sign-in.html').reg-login__log Войти 
-            a(href='./registration.html').reg-login__reg Зарегистрироваться
-            
+        each link in linksData
+          if(link.expandable)
+            li.header__menu-link
+              details.header__menu-dropdown.js-header__menu-dropdown
+                summary(class="header__menu-"+ link.class)= link.string
+                ul.header__menu-expandable.js-header__menu-expandable
+                  each string in link.elemString
+                    li.header__menu-expandable-elem
+                      a(href="/mock-address/").header__menu-expandable-link= string
+          else
+            li.header__menu-link
+              a(href="" + link.href, class="header__menu-"+ link.class)= link.string
+      
+        li.header__reg-login 
+          a(href='./sign-in.html').header__reg-login-log Войти 
+          a(href='./registration.html').header__reg-login-reg Зарегистрироваться     

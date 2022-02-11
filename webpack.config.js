@@ -1,7 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ESLintPlugin = require('eslint-webpack-plugin');
+// const ESLintPlugin = require('eslint-webpack-plugin');
+// const SassLintPlugin = require('sass-lint-webpack')
 
 module.exports = {
 	mode: 'development',
@@ -21,7 +22,8 @@ module.exports = {
 			"window.jQuery":'jquery',
 			'window.$': 'jquery',
 		}),
-		new ESLintPlugin()
+		// new ESLintPlugin(),
+		// new SassLintPlugin(),
 	],
 	output: {
 		filename: '[name].[contenthash].js',
@@ -64,12 +66,9 @@ module.exports = {
 				use: ["style-loader", "css-loader"],
 			},
 			{
-      	test: /\.tsx?$/,
+      	test: /\.ts?$/,
       	use: 'ts-loader',
       	exclude: /node_modules/,
-      	options: {
-        	transpileOnly: true,
-      	},
 	    },
 			{
 				test: /\.(png|svg|jpg|jpeg|gif)$/i,
@@ -82,6 +81,6 @@ module.exports = {
 		],
 	},
 	resolve: {
-   	extensions: ['.ts'],
+		extensions: ['.tsx','.ts','.js'],
   },
 };
