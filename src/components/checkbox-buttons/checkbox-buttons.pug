@@ -1,0 +1,8 @@
+mixin checkbox-buttons(names = [])
+	.checkbox-buttons
+		each name in names
+			label
+				input.checkbox-button(type="checkbox")
+				span= name
+		else
+			p Нет информации

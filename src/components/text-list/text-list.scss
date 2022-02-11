@@ -1,0 +1,35 @@
+.text-list{
+	width: 280px;
+	user-select: none;
+	cursor: default;
+	.text-list__elem{
+		width: 280px;
+		display: flex;
+		.text-list__ico{
+			width: 48px;
+			height: 48px;
+			background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+			-webkit-background-clip: text;
+  			-webkit-text-fill-color: transparent;
+			font-size: 48px;
+			font-family: 'Material Icons';
+			margin: 0 10px 0 0;
+		}
+		.text-list__text{
+			font-size: 14px;
+			color: rgba(31, 32, 65, 0.75);
+			line-height: 24px;
+			.text-list__headed{
+				font-weight: bold;
+				text-shadow: 1px 0 0 rgba(31, 32, 65, 0.75);
+				letter-spacing: 0.3px;
+			}
+		}
+	}
+	.text-list__line{
+		width: 280px;
+		height: 1px;
+		background: rgba(31, 32, 65, 0.1);
+		margin: 20px 0;
+	}
+}

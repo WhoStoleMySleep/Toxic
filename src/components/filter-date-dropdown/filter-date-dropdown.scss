@@ -1,0 +1,26 @@
+.filter-date{
+   width: 266px;
+   display: block;
+   .filter-date-dropdown{
+      width: 266px;
+      height: 44px;
+      border: 1px solid rgba(31, 32, 65, 0.25);
+      box-sizing: border-box;
+      border-radius: 4px;
+      text-transform: uppercase;
+      font-size: 14px;
+      padding: 0 0 0 14px;
+      position: absolute;
+      z-index: -1;
+   }
+   p{
+      font-family: 'Material Icons';
+      text-transform: none;
+      font-size: 24px;
+      width: 44px;
+      height: 44px;
+      text-align: center;
+      line-height: 44px;
+      margin-left: auto;
+   }
+}

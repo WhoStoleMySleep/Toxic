@@ -1,0 +1,16 @@
+mixin text-list(textListData = [])
+	.text-list
+		each textList in textListData
+			.text-list__elem
+				p.text-list__ico= textList.ico
+				.text-list__text
+					p.text-list__headed= textList.headed
+					p.text-list__additionally= textList.additionally
+
+			- let arrLegh = textListData.length
+
+			if textList != textListData[arrLegh - 1]
+				.text-list__line
+
+		else
+			p Информация отсутствует

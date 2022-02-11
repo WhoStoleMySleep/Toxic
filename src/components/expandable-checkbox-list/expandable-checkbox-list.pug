@@ -1,0 +1,12 @@
+mixin expandable-checkbox-list(name = 'expandable checkbox list', list = [])
+	.expandable-checkbox-list
+		div.expandable-checkbox-list__target#target
+			p= name
+			span expand_more
+		ul#expandable-checkbox-list
+			each item in list
+				li
+					label
+						input.checkbox-buttons(type="checkbox")
+						span= item
+						

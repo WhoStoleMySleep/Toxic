@@ -1,0 +1,73 @@
+doctype html
+html(lang="ru")
+   head
+      meta(charset="UTF-8")
+      meta(http-equiv="X-UA-Compatible", content="IE=edge")
+      meta(name="viewport", content="width=device-width, initial-scale=1.0")
+      title Toxic
+   body#search-room 
+      include ./components/header/header.pug
+      main
+         aside
+            h3 Даты пребывания в отеле
+            include ./components/filter-date-dropdown/filter-date-dropdown.pug
+            .dropdown1
+            h3.search-main__count-range Диапазон цены
+            include ./components/range-slider/range-slider.pug
+            p.aside__count-on-day Стоимость за сутки прибывания в номере
+            h3 Правила дома
+            include ./components/checkbox-buttons/checkbox-buttons.pug
+            - 
+               let names = [
+                  'Можно курить',
+                  'Можно c питомцами',
+                  'Можно пригласить гостей (до 10 человек)'
+               ]
+            +checkbox-buttons(names)
+            br
+            h3 Доступность
+            include ./components/rich-checkbox-buttons/rich-checkbox-buttons.pug
+            - 
+               let inform = [
+                  {
+                     heading: 'Широкий коридор',
+                     additionally: 'Ширина коридоров в номере не менее 91 см.',
+                  },
+                  {
+                     heading: 'Помощник для инвалидов',
+                     additionally: 'На 1 этаже вас встретит специалист  и проводит до номера.',
+                  },
+                  {
+                     heading: 'Помощник для инвалидов',
+                     additionally: 'На 1 этаже вас встретит специалист  и проводит до номера.',
+                  }
+               ]
+            +rich-checkbox-buttons(inform)
+            .dropdown2
+            include ./components/expandable-checkbox-list/expandable-checkbox-list.pug
+            - 
+               let list = [
+                  'Завтрак',
+                  'Письменный стол',
+                  'Стул для кормления',
+                  'Кроватка',
+                  'Телевизор',
+                  'Шампунь',
+                  'Телевизор',
+                  //- 'Шампунь',
+               ]
+            +expandable-checkbox-list('Чек бокс лист', list)
+         button(type='button').aside__open-menu arrow_forward_ios
+         .main__numbers
+            h1.main__numbers-title Номера, которые мы для вас подобрали
+            ul.main__numbers-cards
+               - let colCards = 0;
+               - let trash = 0
+               async 
+                  while colCards < 12
+                     li
+                        include ./components/card/card.pug
+                     - colCards += 1
+            .pagination
+      include ./components/footer/footer.pug
+
