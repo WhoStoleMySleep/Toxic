@@ -2,27 +2,68 @@ header.header
   .header__wrapper 
     nav.header__menu
       a(href="./index.html").header__menu-logo
-        img(src="../img/Logo.webp", alt="logo")
+        img(src="../img/logo.png", alt="logo").header__menu-logo-img
 
-      img(src="./img/burger.svg", alt="menu").header__menu-burger.js-header__menu-burger
+      img(src="./img/burger.png", alt="menu").header__menu-burger.js-header__menu-burger
       
       ul.header__menu-links.js-header__menu-links
-        li
-          a.header__about-me.header__menu-link(href="#") О нас
-        li
-          .header__menu-dropdown.header__menu-link 
-            a(href="#") Услуги
-              p.header__expand expand_more
-        li
-          a.job-opening.header__menu-link(href="#") Вакансии
-        li
-          a.news.header__menu-link(href="#") Новости 
-        li
-          .agreement.menu__dropdown.header__menu-link 
-            a(href="#") Соглашения
-              p.header__expand expand_more
+        - 
+          let linksData = [
+            {
+              href: '/mock-address/about-me',
+              class: 'about-me',
+              string: 'О нас',
+              expandable: false,
+            },
+            {
+              href: '/mock-address/',
+              class: 'services',
+              string: 'Услуги',
+              expandable: true,
+              elemString: [
+                'пираты',
+                'карибы',
+                'ссылки',
+              ],
+            },
+            {
+              href: '/mock-address/job-opening',
+              class: 'job-opening',
+              string: 'Вакансии',
+              expandable: false,
+            },
+            {
+              href: '/mock-address/news',
+              class: 'news',
+              string: 'Новости',
+              expandable: false,
+            },
+            {
+              href: '/mock-address/',
+              class: 'agreements',
+              string: 'Соглашения',
+              expandable: true,
+              elemString: [
+                'пираты',
+                'карибы',
+                'ссылки',
+              ],
+            },
+          ];
+
+        each link in linksData
+          if(link.expandable)
+            li.header__menu-link
+              details.header__menu-dropdown.js-header__menu-dropdown
+                summary(class="header__menu-"+ link.class)= link.string
+                ul.header__menu-expandable.js-header__menu-expandable
+                  each string in link.elemString
+                    li.header__menu-expandable-elem
+                      a(href="/mock-address/").header__menu-expandable-link= string
+          else
+            li.header__menu-link
+              a(href="" + link.href, class="header__menu-"+ link.class)= link.string
       
-      .header__reg-login 
-        a(href='./sign-in.html').header__reg-login-log Войти 
-        a(href='./registration.html').header__reg-login-reg Зарегистрироваться
-        
+        li.header__reg-login 
+          a(href='./sign-in.html').header__reg-login-log Войти 
+          a(href='./registration.html').header__reg-login-reg Зарегистрироваться     

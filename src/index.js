@@ -1,16 +1,15 @@
-
 import * as _ from 'lodash';
 import $ from 'jquery';
 
 // import 'slick-carousel';
 
-import('./components/header/header.scss');
-import('./components/footer/footer.scss');
-import('./components/header/header.js');
+
+import('./components/header/header.ts');
+
 
 async function index() {
 	await import('./css/index.scss');
-	await import ('./js/index.js');
+	await import('./js/index.js');
 	await import('jquery-ui/themes/base/datepicker.css');
 }
 async function searchRoom() {
@@ -31,24 +30,23 @@ async function signIn() {
 	await import('./css/sign-in.scss');
 }
 
-
-if($('#index').length){
-	index()
+if ($('#index').length) {
+	index();
 }
-if($('#search-room').length){
-	searchRoom()
-}
-if($('#room-details').length){
-	roomDetails()
-}
-if($('#registration').length){
-	registration()
-}
-if($('#sign-in').length){
-	signIn()
-}
+// if($('#search-room').length){
+// searchRoom()
+// }
+// if($('#room-details').length){
+// 	roomDetails()
+// }
+// if($('#registration').length){
+// 	registration()
+// }
+// if($('#sign-in').length){
+// 	signIn()
+// }
 
 function component() {
-  return;
+	return;
 }
 document.body.appendChild(component());
