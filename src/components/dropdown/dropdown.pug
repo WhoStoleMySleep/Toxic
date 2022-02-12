@@ -1,0 +1,30 @@
+mixin dropdown(name, elems = [])
+  .dropdown
+    input(data-default="" + name, readonly).dropdown-selection
+    .dropdown-menu
+      each elem in elems
+        .dropdown-menu-option
+            div 
+              p.dropdown-item= elem
+
+//-
+  <div class="dropdown">
+    <p class="dropdown-selection" data-string=""></p>
+    <div class="dropdown-menu">
+      <div class="dropdown-menu-option">
+        <div>
+          <p class="dropdown-item">elem</p>
+        </div>
+      </div>
+      <div class="dropdown-menu-option">
+        <div>
+          <p class="dropdown-item">elem</p>
+        </div>
+      </div>
+      <div class="dropdown-menu-option">
+        <div>
+          <p class="dropdown-item">elem</p>
+        </div>
+      </div>
+    </div>
+  </div>

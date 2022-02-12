@@ -1,0 +1,13 @@
+.dropdown{
+  .dropdown-selection{
+    cursor: pointer;
+  }
+  .dropdown-menu{
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    &._active{
+      display: block;
+    }
+  }
+}
