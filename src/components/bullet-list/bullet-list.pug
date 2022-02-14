@@ -1,0 +1,6 @@
+mixin bullet-list(bulletsList = [])
+	ul.bullet-list
+		each bulletList in bulletsList
+			li.bullet-list__elem= bulletList
+		else
+			p Информация отсутствует

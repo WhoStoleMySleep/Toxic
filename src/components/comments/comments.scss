@@ -1,0 +1,38 @@
+@import '../like-button/like-button.scss';
+
+.comments{
+	max-width: 711px;
+	.comment{
+		display: flex;
+		.comment__left-row{
+			width: 48px;
+			margin: 0 10px 0 0;
+			.comment__face{
+				width: 48px;
+				height: 48px;
+				border: 2px solid #FFFFFF;
+				box-sizing: border-box;
+				filter: drop-shadow(0px 10px 20px rgba(31, 32, 65, 0.1));
+				margin: 0 0 12px 0;
+			}
+			.like-button{
+				margin: 0 auto;
+			}
+		}
+		.comment__right-row{
+			.comment__right-row-headed{
+				height: 48px;
+				margin: 0 0 10px 0;
+				line-height: 24px;
+				.comment__name{
+					font-weight: bold;
+					text-shadow: 0.3px 0 0 rgba(31, 32, 65, 0.75);
+					letter-spacing: 0.3px;
+				}
+			}
+			.comment__right-row-bottom{
+				line-height: 24px;
+			}
+		}
+	}
+}

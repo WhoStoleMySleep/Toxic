@@ -1,0 +1,183 @@
+// Файл глобалиных стилей //
+@import "global.scss";
+// Стили компонентов
+@import "../components/header/header.scss";
+@import "../components/footer/footer.scss";
+@import "../components/filter-date-dropdown/filter-date-dropdown.scss";
+@import "../components/dropdown/dropdown.scss";
+@import "../components/range-slider/range-slider.scss";
+@import "../components/checkbox-buttons/checkbox-buttons.scss";
+@import "../components/rich-checkbox-buttons/rich-checkbox-buttons.scss";
+@import "../components/expandable-checkbox-list/expandable-checkbox-list.scss";
+@import "../components/card/card.scss";
+//-------------------------------------------------------------------------------------------------------------//
+.header{
+	&._deactive{
+		display: none;
+	}
+}
+main{
+	max-width: 1170px;
+	width: 100%;
+	display: flex;
+	margin: 30px auto 0 auto;
+	aside{
+		height: 950px;
+		margin-right: 60-12px;
+		background-color: #fff;
+		z-index: 1;
+		.filter-date{
+			margin: 0 0 20px 0;
+		}
+		.dropdown1,
+		.dropdown2{
+			margin-bottom: 30px;
+			.dropdown__dropdown{
+				width: 266px;
+				.select__button{
+					display: none !important;
+				}
+				&._active{
+					height: 163px !important; 
+				}
+			}	
+		}
+		h3{
+			&:nth-child(1){
+				margin: 0 0 5px 0;
+				letter-spacing: .3px;
+			}
+			color: #1F2041;
+			&.search-main__count-range{
+				position: absolute;
+				letter-spacing: 0.3px;
+			}
+		}
+		.aside__count-on-day{
+			font-size: 12px;
+			color: rgba(31, 32, 65, 0.5);
+			margin: 15px 0 30px 0;
+		}
+		.checkbox-buttons{
+			margin-top: 16px;
+			margin-bottom: 30px;
+		}
+		.rich-checkbox-buttons{
+			margin-top: 16px;
+		}
+		&._active{
+			display: block;
+		}
+	}
+	.aside__open-menu{
+		width: 25px;
+		height: 100px;
+		background-color: #fff;
+		border-radius:0 20px 20px 0;
+		font-family: 'Material Icons';
+		position: fixed;
+		border:1px solid rgba(0, 0, 0, 0.15);
+		border-left: none;
+		top: 50%;
+		z-index: 1;
+		&._active{
+			right: 0;
+			transform:rotate(180deg);
+		}
+	}
+
+	.main__numbers{
+		max-width: 100%;
+		.main__numbers-title{
+			margin: 0 0 0 11px;
+			letter-spacing: .65px;
+		}
+		.main__numbers-cards async{
+			display: flex;
+			flex-wrap: wrap;
+			// justify-content: center;
+			margin: 21px 0 20px 0;
+			li{
+				margin: 0 0 20.5px 12px;
+			}
+		}
+		.pagination{
+			max-width: 360px;
+			display: block;
+			position: relative;
+			margin: 0 auto;
+			text-align: center;
+			.paginationjs{
+				display: inline-block;
+				.paginationjs-pages{
+					margin-bottom: 10px;
+					ul{
+						display: flex;
+						li{
+							width: 40px;
+							height: 40px;
+							text-align: center;
+							line-height: 40px;
+							border-radius: 22px;
+							font-size: 12px;
+							&.active{
+								background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+								color: #fff;
+								font-weight: bold;
+							}
+						}
+						.paginationjs-prev{
+							font-family: 'Material Icons';
+							transform:rotate(180deg);
+							font-size: 24px;
+							background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+							a{
+								color: #fff;
+							}	
+						}
+						.paginationjs-next{
+							font-family: 'Material Icons';
+							font-size: 24px;
+							background: linear-gradient(0deg, #6FCF97 0%, #66D2EA 100%);	
+							a{
+								color: #fff;
+							}
+						}
+					}
+					.paginationjs-nav{
+						display: flex;
+						width: 100%;
+					}
+				}
+			}
+		}	
+		&._deactive{
+			display: none;
+		}
+	}
+}
+
+@media screen and (min-width: 891px) {
+	.aside__open-menu{
+		display: none;
+	}
+	aside{
+		width: 266px;
+		margin-left: 5px;
+	}
+}
+@media screen and (max-width: 890px) {
+	main{
+		aside{
+			width: 100%;
+			display: none;
+			padding-left: 5px;
+			overflow: hidden;
+		}
+		.main__numbers{
+			.main__numbers-cards async{
+				justify-content: center;
+			}			
+		}
+	}
+}

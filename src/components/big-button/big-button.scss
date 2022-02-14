@@ -1,0 +1,34 @@
+.big-button{
+	width: 320px;
+	height: 44px;
+	line-height: 42px;
+	color: #fff;
+	border-radius: 22px;
+	background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+	text-transform: uppercase;
+	transition-duration:150ms;
+	position: relative;
+	display: block;
+	&:hover{
+		opacity: 0.5;
+	}
+	span{
+		display: flex;
+		.big-button__text{
+			margin: 0 auto;
+			font-size: 12px;
+			font-weight: bold;
+		}
+		.big-button__forward{
+			width: 44px;
+			height: 44px;
+			padding: 10px 0 0 0;
+			position: absolute;
+			right: 0;
+			text-transform: none;
+			font-family: 'Material Icons';
+			font-size: 24px;
+			line-height: 23px;
+		}
+	}
+}

@@ -1,0 +1,51 @@
+.rich-checkbox-buttons{
+   label{
+      display: block;
+      margin: 0 0 10px 0;
+      cursor: pointer;
+      user-select: none;
+      position: relative;
+      input[type='checkbox']{
+         position: absolute;
+         z-index: -1;
+         opacity: 0;
+         display: block;
+         width: 0;
+         height: 0;
+         &:checked + span:before{
+            background-image: url('../img/done.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            border: 1px solid #BC9CFF;
+            box-sizing: border-box;
+            border-radius: 4px;
+         }
+      }
+      span{
+         display: flex;
+         position: relative; 
+         &:before{
+            content: "";
+            width: 20px;
+            height: 20px;
+            margin:0 10px 0 0;
+            border: 1px solid rgba(31, 32, 65, 0.25);
+            border-radius: 4px;
+         }
+      }
+   }
+   .rich-checkbox-button__heading{
+      font-weight: bold;
+      letter-spacing: 0.3px;
+      text-shadow: 1px 0 0.3px rgba(31, 32, 65, 0.5);
+   }
+   .rich-checkbox-button__additionally{
+      margin: 3px 0 10px 30px;
+      color: rgba(31, 32, 65, 0.5);
+      display: block;
+      font-size: 12px;
+      line-height: 14px;
+      user-select: none;
+      max-width: 230px;
+   }
+}
