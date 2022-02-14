@@ -1,6 +1,6 @@
-mixin dropdown(name, elems = [])
+mixin dropdown(name, person, elems = [])
   .dropdown
-    input(data-default="" + name, readonly).dropdown-selection
+    input(data-default="" + name, data-person="" + person, readonly).dropdown-selection
     .dropdown-menu
       each elem in elems
         .dropdown-menu-option

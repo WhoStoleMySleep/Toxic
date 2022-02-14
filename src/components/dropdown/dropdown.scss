@@ -1,13 +1,18 @@
 .dropdown{
-  .dropdown-selection{
-    cursor: pointer;
-  }
+  .dropdown-selection{}
   .dropdown-menu{
     display: none;
     position: absolute;
-    z-index: 1000;
+    z-index: 99999;
     &._active{
       display: block;
+    }
+    .dropdown-menu-option{
+      .dropdown__calc-wrapper{
+        .dropdown__calc-inc{}
+        .dropdown__calc-num{}
+        .dropdown__calc-dec{}
+      }
     }
   }
 }

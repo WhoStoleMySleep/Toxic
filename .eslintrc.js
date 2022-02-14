@@ -15,6 +15,7 @@ module.exports = {
   },
   plugins: [
     '@typescript-eslint',
+    '@types/jquery',
   ],
   rules: {
     'prettier/prettier': 'error',
