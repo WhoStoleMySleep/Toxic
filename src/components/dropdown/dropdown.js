@@ -13,6 +13,8 @@
 				number: 'dropdown__calc-num',
 				minus: 'dropdown__calc-dec',
 			},
+			clearBtn: false,
+			submitBtn: false,
 		}, options)
 
 		this.each(function () {
@@ -69,7 +71,7 @@
       	$selection.attr('placeholder', selectionDefault)
 
       	$selection.on('click', function() {
-      		$menu.toggleClass('_active')
+      		$this.toggleClass('_active')
       	})
       }
 
@@ -84,9 +86,9 @@
 	      		class: settings.controlsCls.wrapper
 	      	}).appendTo($option)
 
-	      	calcPlus = $('<div>', {
-	      		class: settings.controlsCls.plus
-	      	}).html(settings.plusСontent)
+	      	calcDec = $('<div>', {
+	      		class: settings.controlsCls.minus
+	      	}).html(settings.minusСontent)
 	      		.appendTo(calcWrapper)
 
 	      	calcNum = $('<div>', {
@@ -94,9 +96,9 @@
 	      	}).html(settings.numsStart)
 	      		.appendTo(calcWrapper)
 
-	      	calcDec = $('<div>', {
-	      		class: settings.controlsCls.minus
-	      	}).html(settings.minusСontent)
+	      	calcPlus = $('<div>', {
+	      		class: settings.controlsCls.plus
+	      	}).html(settings.plusСontent)
 	      		.appendTo(calcWrapper)
 
 	      	if(containForBool.lessOneMoreTwoType) {
@@ -111,6 +113,17 @@
 							allItems.push({[value]: +settings.numsStart})
 						}
 	      	}
+
+	      	for(let i = 0; i < totalItems; i++){
+						if(!(allItems[i] > 0)) {
+							calcPlus[i].classList.add('_active')
+							calcDec[i].classList.remove('_active')
+						}
+		      	if(!(allItems[i] < settings.max)) {
+							calcDec[i].classList.add('_active')
+							calcPlus[i].classList.remove('_active')
+						}
+	      	}
       	}
 
       	function use() {
@@ -119,51 +132,94 @@
 						calcWrapper[i].addEventListener('click', function(e) {
 							let target = e.target
 
-							let classPlus = target.className == settings.controlsCls.plus
-							let classMinus = target.className == settings.controlsCls.minus
+							let classPlus = target.className.split(' ')[0] == settings.controlsCls.plus
+							let classMinus = target.className.split(' ')[0] == settings.controlsCls.minus
 							let max
 							let min
 							let maxPlus
 							let maxMinus
 
 							if(containForBool.lessOneMoreTwoType) {
-								max = allItems[i] < settings.max
 								min = allItems[i] > 0
-								maxPlus = max && classPlus
+								max = allItems[i] < settings.max
 								maxMinus = min && classMinus
+								maxPlus = max && classPlus
 
-								if(maxPlus) {
-									calcNum[i].innerHTML = allItems[i] += 1
-									totalSumm += 1
-									headerUpdate()
-								}
 								if(maxMinus) {
-									calcNum[i].innerHTML = allItems[i] -= 1
-									totalSumm -= 1
+									allItems[i] = +calcNum[i].innerHTML - 1
+
+									calcNum[i].innerHTML = allItems[i]
+
+									totalSumm = 0
+									for(let char of allItems) {
+										totalSumm += +char
+									}
+
 									headerUpdate()
+
+									calcPlus.addClass('_active')
+								}
+								if(maxPlus) {
+									allItems[i] = +calcNum[i].innerHTML + 1
+
+									calcNum[i].innerHTML = allItems[i]
+
+									totalSumm = 0
+									for(let char of allItems) {
+										totalSumm += +char
+									}
+
+									headerUpdate()
+
+									calcDec[i].classList.add('_active')
+									$this.find('.dropdown__btn-clear').removeClass('_disable')
+									$this.find('.dropdown__btn-submit').removeClass('_disable')
+								}
+
+								if(!(allItems[i] > 0)) {
+									calcDec[i].classList.remove('_active')
+									$this.find('.dropdown__btn-clear').addClass('_disable')
+									$this.find('.dropdown__btn-submit').addClass('_disable')
+								}
+								if(!(allItems[i] < settings.max)) {
+									calcPlus[i].classList.remove('_active')
 								}
 							}
 							if(containForBool.equalsTwoType) {
 								let key = Object.keys(allItems[i])
 
-								max = allItems[i][key] < settings.max
 								min = allItems[i][key] > 0
-								maxPlus = max && classPlus
+								max = allItems[i][key] < settings.max
 								maxMinus = min && classMinus
+								maxPlus = max && classPlus
 
-								if(maxPlus) {
-									calcNum[i].innerHTML = allItems[i][key] += 1
-									totalSumm += 1
-									headerUpdate()
-								}
 								if(maxMinus) {
 									calcNum[i].innerHTML = allItems[i][key] -= 1
 									totalSumm -= 1
 									headerUpdate()
+
+									calcPlus.addClass('_active')
+								}
+								if(maxPlus) {
+									calcNum[i].innerHTML = allItems[i][key] += 1
+									totalSumm += 1
+									headerUpdate()
+
+									calcDec[i].classList.add('_active')
+									$this.find('.dropdown__btn-clear').removeClass('_disable')
+									$this.find('.dropdown__btn-submit').removeClass('_disable')
+								}
+
+								if(!(allItems[i] > 0)) {
+									calcDec[i].classList.remove('_active')
+									$this.find('.dropdown__btn-clear').addClass('_disable')
+									$this.find('.dropdown__btn-submit').addClass('_disable')
+								}
+								if(!(allItems[i][key] < settings.max)) {
+									calcPlus[i].classList.remove('_active')
 								}
 							}
 						})
-
 					}
       	}
 
@@ -171,11 +227,120 @@
       	use()
       }
 
+      function buttons(){
+      	let btnWrapper
+      	let btnClear
+				let btnSubmit
+
+        function add() {
+        	btnWrapper = $('<div>', {
+						class: 'dropdown__btn-wrapper',
+					}).appendTo($menu)
+
+        	if(settings.clearBtn){
+						btnClear = $('<button>', {
+							type: 'button',
+							class: 'dropdown__btn-clear'
+						}).html('очистить')
+							.appendTo(btnWrapper)
+        	}
+        	if(settings.submitBtn) {
+						btnSubmit = $('<button>', {
+							type: 'button',
+							class: 'dropdown__btn-submit'
+						}).html('применить')
+							.appendTo(btnWrapper)
+        	}
+
+        	if(!settings.numsStart) {
+        		btnClear.addClass('_disable')
+        		btnSubmit.addClass('_disable')
+        	}
+        }
+
+        function use() {
+        	let total = ''
+
+        	if(settings.clearBtn) {
+	        	btnClear.on('click', function() {
+	        		total = totalSumm > 0
+
+	        		if(total) {
+		        		let length = allItems.length
+
+								$this.find('.' + settings.controlsCls.number).html('0')
+								$selection.val('')
+
+								for(let i = 0; i < length; i++) {
+									allItems[i] = 0
+								}
+
+								totalSumm = 0
+
+								$this.find('.' + settings.controlsCls.minus).removeClass('_active')
+								btnClear.addClass('_disable')
+								btnSubmit.addClass('_disable')
+
+								console.log('work')
+	        		}
+						})
+        	}
+        	if(settings.submitBtn) {
+	        	btnSubmit.on('click', function() {
+	        		total = totalSumm > 0
+
+	        		if(total) {
+								$this.toggleClass('_active')
+							}
+						})
+        	}
+        }
+
+        add()
+        use()
+      }
+
       // вызовы
       createDropdown()
       controllers()
+      buttons()
 		})
 
 		return this
 	};
 }(jQuery));
+
+
+
+
+
+
+
+
+/*
+	Dropdown:
+
+		header:
+			1)нажатие на шапку вызывает появление калькулятора,
+					(добавлекние/удаление класса)
+
+			2)редактирование при изменении общего колличества,
+					(2 гостя > 3 гостя)
+				либо показывать количество отдельных элементов,
+					(2 спальни, 2 душа)
+
+			3)вытавление того что должно быть по умолчанию через 'data-default',
+					(Сколько гостей)
+
+		calc:
+			1)добавление калькулятора
+				(+0-)
+				изменение значения при нажатии на кнопки и header(2)
+
+			2)возможность включения и отключения отдельных кнопок
+				(по умолчанию: true) 
+
+		Реализация:
+
+
+*/

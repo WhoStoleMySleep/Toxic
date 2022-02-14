@@ -3,16 +3,18 @@
   .dropdown-menu{
     display: none;
     position: absolute;
-    z-index: 99999;
-    &._active{
-      display: block;
-    }
+    z-index: 1;
     .dropdown-menu-option{
       .dropdown__calc-wrapper{
         .dropdown__calc-inc{}
         .dropdown__calc-num{}
         .dropdown__calc-dec{}
       }
+    }
+  }
+  &._active{
+    .dropdown-menu{
+      display: block;
     }
   }
 }
