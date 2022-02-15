@@ -3,7 +3,9 @@
 		p ваши пожелания	
 	form
 		include ../date-dropdown/date-dropdown.pug
-		.dropdown
+		include ../dropdown/dropdown.pug
+		+dropdown('Сколько гостей', 'гостей', ['Взрослые','Дети','Младенцы'])
+
 		a(href='./search-room.html').big-button 
 			span
 				p.big-button__text Подобрать номер
