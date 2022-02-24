@@ -2,10 +2,10 @@
 	.date-dropdown
 		.date-dropdown__elem
 			h3.date-dropdown__text Прибытие
-			input.date-dropdown__input#start-date(type="text", name="date-dropdown", placeholder="ДД.ММ.ГГГГ", autocomplete='off', readonly)
+			input.date-dropdown__input.date-dropdown__start-date(type="text", name="date-dropdown", placeholder="ДД.ММ.ГГГГ", autocomplete='off', readonly)
 			label(for='start-date') expand_more
 		.date-dropdown__elem
 			h3.date-dropdown__text Выезд
-			input.date-dropdown__input#end-date(type="text", name="date-dropdown", placeholder="ДД.ММ.ГГГГ", autocomplete='off', readonly)
+			input.date-dropdown__input.date-dropdown__end-date(type="text", name="date-dropdown", placeholder="ДД.ММ.ГГГГ", autocomplete='off', readonly)
 			label(for='end-date') expand_more
-	#datepicker
+	.date-dropdown__datepicker

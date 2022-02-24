@@ -170,7 +170,7 @@ td.ui-state-selected-range a {
 		}
 	}
 }
-#datepicker{
+.date-dropdown__datepicker{
 	width: 320px;
 	height: 0;
 	margin: 0 0 0 10px;
@@ -178,14 +178,15 @@ td.ui-state-selected-range a {
 	position: absolute;
 	z-index: 100;
 	overflow: hidden;
+	transition-duration:250ms;
 	.ui-datepicker-buttonpane{
 		width: 285px;
 		height: 55px;
-		margin: 0 auto;
+		margin: 0 auto !important;
 		.ui-datepicker-current {
 			display: none;
 		}
-		.ui-datepicker-done{
+		.ui-datepicker__btn-submit{
 			margin: 20px 0 0 0;
 			padding: 0;
 			color: #BC9CFF;
@@ -193,7 +194,7 @@ td.ui-state-selected-range a {
 			font-size: 12px;
 			font-weight: bold;
 		}
-		.ui-datepicker-clear{
+		.ui-datepicker__btn-clear{
 			margin: 20px 0 0 0;
 			padding: 0;
 			position: absolute;
@@ -203,8 +204,7 @@ td.ui-state-selected-range a {
 			font-weight: bold;
 		}
 	}
-	transition-duration:250ms;
-	&.active{
+	&._active{
 		height: auto;
 		margin:0;
 		opacity: 1;
