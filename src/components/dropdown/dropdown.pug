@@ -1,5 +1,6 @@
-mixin dropdown(name, person, elems = [])
+mixin dropdown(headtext, name, person, elems = [])
   .dropdown
+    h3.dropdown__header= headtext
     label.dropdown-selection-label
       input(data-default="" + name, data-person="" + person, readonly).dropdown-selection
     .dropdown-menu
@@ -7,25 +8,3 @@ mixin dropdown(name, person, elems = [])
         .dropdown-menu-option
             div 
               p.dropdown-item= elem
-
-//-
-  <div class="dropdown">
-    <p class="dropdown-selection" data-string=""></p>
-    <div class="dropdown-menu">
-      <div class="dropdown-menu-option">
-        <div>
-          <p class="dropdown-item">elem</p>
-        </div>
-      </div>
-      <div class="dropdown-menu-option">
-        <div>
-          <p class="dropdown-item">elem</p>
-        </div>
-      </div>
-      <div class="dropdown-menu-option">
-        <div>
-          <p class="dropdown-item">elem</p>
-        </div>
-      </div>
-    </div>
-  </div>
