@@ -4,33 +4,32 @@
 
 .number-pick{
 	max-width: 380px;
-	height: 374px;
 	background: #FFFFFF;
 	border: 1px solid rgba(0, 0, 0, 0.12);
 	box-sizing: border-box;
 	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
 	border-radius: 4px;
-	h1{
+	.number-pick__text{
 		width: 320px;
 		margin: 40px auto 22px auto;
 		letter-spacing: 0.48px;
 		line-height: 28.8px;
-		p{
+		span:last-child{
 			letter-spacing: 0.62px;
 		}
 	}
-	form{
+	.number-pick__form{
 		width: 320px;
-		margin: 0 auto 0 auto;
-		#datepicker{
-			margin: 5px 0 0 0;
-		}
+		margin: 0 auto 30px auto;
 		.dropdown{
 			width: 320px;
 			background: #FFFFFF;
 			margin: 21px 0 31px 0;
 			position: relative;
 			user-select: none;
+			.dropdown__header{
+		    margin-bottom: 5px;
+		  }
 			.dropdown-selection-label{
 				position: relative;
 				.dropdown-selection{
@@ -44,6 +43,7 @@
 			    color: #1F2041BF;
 			    font-weight: bold;
 			    &::placeholder{
+			    	letter-spacing: 0.3px;
 			    	color: #1F2041BF;
 			    }
 			  }
