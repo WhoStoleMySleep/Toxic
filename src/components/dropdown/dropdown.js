@@ -178,6 +178,8 @@
 
 								if(!(allItems[i] > 0)) {
 									calcDec[i].classList.remove('_active')
+								}
+								if(!(totalSumm > 0)) {
 									$this.find('.dropdown__btn-clear').addClass('_disable')
 									$this.find('.dropdown__btn-submit').addClass('_disable')
 								}
@@ -212,6 +214,8 @@
 
 								if(!(allItems[i] > 0)) {
 									calcDec[i].classList.remove('_active')
+								}
+								if(!(totalSumm > 0)) {
 									$this.find('.dropdown__btn-clear').addClass('_disable')
 									$this.find('.dropdown__btn-submit').addClass('_disable')
 								}
