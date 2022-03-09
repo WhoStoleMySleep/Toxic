@@ -14,6 +14,15 @@ main{
 	background-size: 100% auto;
 	background-position: center;
 	.register{
-		margin: auto;
+		margin: 0 calc(50% - 380px / 2 + 3px);
+	}
+}
+
+@media all and (max-width: 1310px) {
+	main{
+		background-size: auto 100%;
+		.register{
+			margin: 0 auto
+		}
 	}
 }
