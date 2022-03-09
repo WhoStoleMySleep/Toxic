@@ -7,63 +7,41 @@ header.header
       img(src="./img/burger.png", alt="menu").header__menu-burger.js-header__menu-burger
       
       ul.header__menu-links.js-header__menu-links
-        - 
-          let linksData = [
-            {
-              href: '/mock-address/about-me',
-              class: 'about-me',
-              string: 'О нас',
-              expandable: false,
-            },
-            {
-              href: '/mock-address/',
-              class: 'services',
-              string: 'Услуги',
-              expandable: true,
-              elemString: [
-                'пираты',
-                'карибы',
-                'ссылки',
-              ],
-            },
-            {
-              href: '/mock-address/job-opening',
-              class: 'job-opening',
-              string: 'Вакансии',
-              expandable: false,
-            },
-            {
-              href: '/mock-address/news',
-              class: 'news',
-              string: 'Новости',
-              expandable: false,
-            },
-            {
-              href: '/mock-address/',
-              class: 'agreements',
-              string: 'Соглашения',
-              expandable: true,
-              elemString: [
-                'пираты',
-                'карибы',
-                'ссылки',
-              ],
-            },
-          ];
+        li.header__menu-link
+          a(href="/mock-address/about-me", class="header__menu-about-me") О нас
 
-        each link in linksData
-          if(link.expandable)
-            li.header__menu-link
-              details.header__menu-dropdown.js-header__menu-dropdown
-                summary(class="header__menu-"+ link.class)= link.string
-                ul.header__menu-expandable.js-header__menu-expandable
-                  each string in link.elemString
-                    li.header__menu-expandable-elem
-                      a(href="/mock-address/").header__menu-expandable-link= string
-          else
-            li.header__menu-link
-              a(href="" + link.href, class="header__menu-"+ link.class)= link.string
-      
+        li.header__menu-link
+          details.header__menu-dropdown.js-header__menu-dropdown
+            summary(class="header__menu-services") Услуги
+            ul.header__menu-expandable.js-header__menu-expandable
+              li.header__menu-expandable-elem
+                a(href="/mock-address/").header__menu-expandable-link пираты
+
+              li.header__menu-expandable-elem
+                a(href="/mock-address/").header__menu-expandable-link карибы
+
+              li.header__menu-expandable-elem
+                a(href="/mock-address/").header__menu-expandable-link ссылки
+                
+        li.header__menu-link
+          a(href="/mock-address/job-opening", class="header__menu-job-opening") Вакансии
+          
+        li.header__menu-link
+          a(href="/mock-address/news", class="header__menu-news") Новости
+
+        li.header__menu-link
+          details.header__menu-dropdown.js-header__menu-dropdown
+            summary(class="header__menu-agreements") Соглашения
+            ul.header__menu-expandable.js-header__menu-expandable
+              li.header__menu-expandable-elem
+                a(href="/mock-address/").header__menu-expandable-link пираты
+                
+              li.header__menu-expandable-elem
+                a(href="/mock-address/").header__menu-expandable-link карибы
+                
+              li.header__menu-expandable-elem
+                a(href="/mock-address/").header__menu-expandable-link ссылки
+                
         li.header__reg-login 
           a(href='./sign-in.html').header__reg-login-log Войти 
           a(href='./registration.html').header__reg-login-reg Зарегистрироваться     
