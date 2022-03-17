@@ -1,5 +1,6 @@
 import compareElementTypes from '../../js/module/compareElementTypes';
 import 'jquery-ui/ui/widgets/datepicker';
+// import compareElementTypes from '../../js/module/compareElementTypes';
 
 (function globalDateDropdown() {
   const dateDropdown = document.querySelector('.date-dropdown');
@@ -17,7 +18,8 @@ import 'jquery-ui/ui/widgets/datepicker';
   }
 
   const onDateDropdownReady = () => {
-    const inputs = document.querySelector('.date-dropdown__elem > input');
+    type INPUT = HTMLInputElement | null
+    const inputs: INPUT = document.querySelector('.date-dropdown__elem > input');
 
     inputs!.addEventListener('click', () => {
       $('.date-dropdown__datepicker').datepicker({
@@ -106,30 +108,44 @@ import 'jquery-ui/ui/widgets/datepicker';
         const clearBtn = document.querySelector('.ui-datepicker__btn-clear');
         const submitBtn = document.querySelector('.ui-datepicker__btn-submit');
 
-        const addSubmitBtn = () => {
-          const onClickSubmitBtn = () => {
-            datePicker!.classList.toggle('_active');
-          };
+        const addButton = (textButton: string, className: string, eventFunction: () => void) => {
+          const buttonCreate = document.createElement('button');
 
-          const submitCreate = document.createElement('button');
-
-          submitCreate.className = `
-            ui-datepicker__btn-submit 
+          buttonCreate.className = `
+            ${className} 
             ui-state-default 
             ui-priority-secondary 
             ui-corner-all
           `;
-          submitCreate.innerHTML = 'Применить';
-          submitCreate.type = 'button';
-          submitCreate.addEventListener('click', onClickSubmitBtn);
+          buttonCreate.innerHTML = textButton;
+          buttonCreate.type = 'button';
+          buttonCreate.addEventListener('click', eventFunction);
 
-          buttonpane.append(submitCreate);
-        };
+          buttonpane.append(buttonCreate);
 
-        const addClearBtn = () => {
-          const onClickClearBtn = () => {
+          return className
+        }
+
+        const checkButton = (id: string) => {
+          setInterval(() => {
+            type HTML = HTMLElement | null;
+            const item: HTML = document.querySelector(`.${id}`)
+
+            if(item && inputs!.value) {
+              item!.style.opacity = '1'
+              item!.style.cursor = 'pointer'
+            }
+            if(item && !inputs!.value) {
+              item!.style.opacity = '0.35'
+              item!.style.cursor = 'default'
+            }
+          }, 100)
+        }
+
+        if (!clearBtn) {
+          checkButton(addButton('Очистить', 'ui-datepicker__btn-clear', () => {
             type Input = HTMLInputElement | null;
-
+        
             const startDate: Input = document.querySelector(
               'input.date-dropdown__start-date'
             );
@@ -139,41 +155,25 @@ import 'jquery-ui/ui/widgets/datepicker';
             const dateDropdownWrapper = document.querySelector(
               '.date-dropdown-wrapper'
             );
-
+        
             if (!compareElementTypes(null, dateDropdownWrapper)) {
               startDate!.value = '';
               endDate!.value = '';
-
+        
               datePicker!.remove();
-
+        
               const createDatePicker = document.createElement('div');
-
+        
               createDatePicker.className = 'date-dropdown__datepicker';
-
+        
               dateDropdownWrapper!.append(createDatePicker);
             }
-          };
-
-          const clearCreate = document.createElement('button');
-
-          clearCreate.className = `
-            ui-datepicker__btn-clear 
-            ui-state-default 
-            ui-priority-secondary 
-            ui-corner-all
-          `;
-          clearCreate.innerHTML = 'Очистить';
-          clearCreate.type = 'button';
-          clearCreate.addEventListener('click', onClickClearBtn);
-
-          buttonpane.append(clearCreate);
-        };
-
-        if (!clearBtn) {
-          addClearBtn();
+          }));
         }
         if (!submitBtn) {
-          addSubmitBtn();
+          checkButton(addButton('Применить', 'ui-datepicker__btn-submit', () => {
+            datePicker!.classList.toggle('_active');
+          }));
         }
       }
     };
