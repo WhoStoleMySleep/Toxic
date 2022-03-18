@@ -1,4 +1,4 @@
-.subscription-text-field-form{
+.subscription-text-field-container{
    border: 1px solid rgba(31, 32, 65, 0.25);
    box-sizing: border-box;
    border-radius: 4px;
@@ -6,27 +6,52 @@
    max-width: 267px;
    height: 44px;
    overflow:hidden;
-}
-.subscription-text-field{
-   width: 100%;
-   height: 100%;
-   padding:0 0 0 15px;
-   &::placeholder{
-      color: rgba(31, 32, 65, 0.25);
+   .subscription-text-field{
+      width: 100%;
+      height: 100%;
+      padding:0 0 0 15px;
+      &::-webkit-input-placeholder{
+         color: rgba(31, 32, 65, 0.25);
+      }
+      &::-moz-placeholder{
+         color: rgba(31, 32, 65, 0.25);
+      }
+      &:-ms-input-placeholder{
+         color: rgba(31, 32, 65, 0.25);
+      }
+      &::-ms-input-placeholder{
+         color: rgba(31, 32, 65, 0.25);
+      }
+      &::placeholder{
+         color: rgba(31, 32, 65, 0.25);
+      }
+      &:focus::-webkit-input-placeholder{
+         color: white;
+      }
+      &:focus::-moz-placeholder{
+         color: white;
+      }
+      &:focus:-ms-input-placeholder{
+         color: white;
+      }
+      &:focus::-ms-input-placeholder{
+         color: white;
+      }
+      &:focus::placeholder{
+         color: white;
+      }
    }
-   &:focus::placeholder{
-      color: white;
+   .subscription-text-field__submit{
+      font-family: 'Material Icons';
+      text-transform: none;
+      font-size: 24px;
+      width: 47px;
+      height: 44px;
+      text-align: center;
+      line-height: 44px;
+      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+      -webkit-background-clip: text;
+              background-clip: text;
+      color:transparent;
    }
-}
-.subscription-text-field__submit{
-   font-family: 'Material Icons';
-   text-transform: none;
-   font-size: 24px;
-   width: 47px;
-   height: 44px;
-   text-align: center;
-   line-height: 44px;
-   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-   -webkit-background-clip: text;
-   color:transparent;
 }
