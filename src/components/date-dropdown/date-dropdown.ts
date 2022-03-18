@@ -19,7 +19,7 @@ import 'jquery-ui/ui/widgets/datepicker';
 
   const onDateDropdownReady = () => {
     type INPUT = HTMLInputElement | null
-    const inputs: INPUT = document.querySelector('.date-dropdown__elem > input');
+    const inputs: INPUT = document.querySelector('.js-date-dropdown__input');
 
     inputs!.addEventListener('click', () => {
       $('.date-dropdown__datepicker').datepicker({
@@ -46,11 +46,11 @@ import 'jquery-ui/ui/widgets/datepicker';
         beforeShowDay: function beforeShowDay(date: Date) {
           const date1 = $.datepicker.parseDate(
             'dd.mm.yy',
-            <string>$('.date-dropdown__start-date').val()
+            <string>$('.js-date-dropdown__start-date').val()
           );
           const date2 = $.datepicker.parseDate(
             'dd.mm.yy',
-            <string>$('.date-dropdown__end-date').val()
+            <string>$('.js-date-dropdown__end-date').val()
           );
 
           if (date1 && date && date1.getTime() === date.getTime()) {
@@ -70,29 +70,29 @@ import 'jquery-ui/ui/widgets/datepicker';
         onSelect: function onSelect(dateText) {
           const date1 = $.datepicker.parseDate(
             'dd.mm.yy',
-            <string>$('.date-dropdown__start-date').val()
+            <string>$('.js-date-dropdown__start-date').val()
           );
           const date2 = $.datepicker.parseDate(
             'dd.mm.yy',
-            <string>$('.date-dropdown__end-date').val()
+            <string>$('.js-date-dropdown__end-date').val()
           );
 
           if (!date1 || date2) {
-            $('.date-dropdown__start-date').val(dateText);
-            $('.date-dropdown__end-date').val('');
+            $('.js-date-dropdown__start-date').val(dateText);
+            $('.js-date-dropdown__end-date').val('');
             $('.end-date-visible').text('');
             $(this).datepicker('option', dateText);
           } else {
             const [day, month, year] = dateText.split('.');
 
             if (new Date([month, day, year].join('.')) < date1) {
-              const sDate = <string>$('.date-dropdown__start-date').val();
+              const sDate = <string>$('.js-date-dropdown__start-date').val();
 
-              $('.date-dropdown__start-date').val(dateText);
+              $('.js-date-dropdown__start-date').val(dateText);
               $(this).datepicker('option', null);
-              $('.date-dropdown__end-date').val(sDate);
+              $('.js-date-dropdown__end-date').val(sDate);
             } else {
-              $('.date-dropdown__end-date').val(dateText);
+              $('.js-date-dropdown__end-date').val(dateText);
               $(this).datepicker('option', null);
             }
           }
@@ -150,7 +150,7 @@ import 'jquery-ui/ui/widgets/datepicker';
               'input.date-dropdown__start-date'
             );
             const endDate: Input = document.querySelector(
-              'input.date-dropdown__end-date'
+              'input.js-date-dropdown__end-date'
             );
             const dateDropdownWrapper = document.querySelector(
               '.date-dropdown-wrapper'
