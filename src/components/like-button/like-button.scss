@@ -17,19 +17,18 @@
       font-family: 'Material Icons';
       background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
       -webkit-background-clip: text;
+              background-clip: text;
       -webkit-text-fill-color: transparent;
    }
    .like-button__count{
       color: #BC9CFF;
       pointer-events: none;
    }
-   .like-button__liked{
-      // display:none;
-   }
    &._deactive{
-      filter:grayscale(100%);
+      -webkit-filter:grayscale(100%);
+              filter:grayscale(100%);
       .like-button__expend{
-         background:0;
+         background:none;
          color:transparent;
          -webkit-text-stroke: 1px rgba(31, 32, 65, 0.4);
          font-size: 9px;
