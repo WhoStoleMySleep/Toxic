@@ -9,26 +9,22 @@
 	transition-duration:150ms;
 	position: relative;
 	display: block;
+	font-size: 12px;
+	letter-spacing: 0.2px;
+	font-weight: bold;
 	&:hover{
 		opacity: 0.5;
 	}
-	span{
-		display: flex;
-		.big-button__text{
-			margin: 0 auto;
-			font-size: 12px;
-			font-weight: bold;
-		}
-		.big-button__forward{
-			width: 44px;
-			height: 44px;
-			padding: 10px 0 0 0;
-			position: absolute;
-			right: 0;
-			text-transform: none;
-			font-family: 'Material Icons';
-			font-size: 24px;
-			line-height: 23px;
-		}
+	&::before{
+		content: 'arrow_forward';
+		display: table-cell;
+		font-family: 'Material Icons' !important;
+		width: 44px;
+		height: 44px;
+		font-size: 24px;
+		position: absolute;
+		text-transform: lowercase;
+		margin-left: calc(320px - 44px);
+		font-weight: normal;
 	}
 }
