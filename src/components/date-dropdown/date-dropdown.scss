@@ -3,40 +3,63 @@
 	width: 320px;
 	height: 64px;
 	position: relative;
+	.date-dropdown__text{
+		margin-bottom: 5px;
+	}
 	.date-dropdown__elem{
 		width: 150px;
 		height: 64px;
 		&:nth-child(1){
 			margin: 0 20px 0 0;
 		}
-		.date-dropdown__input{
+		.js-date-dropdown__input{
 			width: 150px;
 			height: 44px;
 			border: 1px solid rgba(31, 32, 65, 0.25);
 			box-sizing: border-box;
 			border-radius: 4px;
 			padding:0 0 3px 13px;
-			margin: 5px 0 0 0;
 			font-size: 14px;
 			text-transform: uppercase;
 			position: absolute;
-			user-select: none;
+			-webkit-user-select: none;
+			   -moz-user-select: none;
+			    -ms-user-select: none;
+			        user-select: none;
 			cursor: pointer;
+			&::-webkit-input-placeholder{
+				color: rgba(31, 32, 65, 0.75);
+			}
+			&::-moz-placeholder{
+				color: rgba(31, 32, 65, 0.75);
+			}
+			&:-ms-input-placeholder{
+				color: rgba(31, 32, 65, 0.75);
+			}
+			&::-ms-input-placeholder{
+				color: rgba(31, 32, 65, 0.75);
+			}
 			&::placeholder{
 				color: rgba(31, 32, 65, 0.75);
 			}
 		}
 		label{
-			font-family: 'Material Icons';
-			text-transform: none;
-			font-size: 24px;
-			width: 44px;
+			width: 150px;
 			height: 44px;
-			text-align: center;
-			line-height: 44px;
-			position: absolute;
-			margin: 5px 0 0 106px;
-			color: rgba(31, 32, 65, 0.5);
+			position: relative;
+			&::after{
+				content: 'expand_more';
+				font-family: 'Material Icons';
+				text-transform: none;
+				font-size: 24px;
+				width: 44px;
+				height: 44px;
+				text-align: center;
+				line-height: 44px;
+				position: absolute;
+				margin-left: calc(150px - 44px);
+				color: rgba(31, 32, 65, 0.5);
+			}
 		}
 	}
 }
