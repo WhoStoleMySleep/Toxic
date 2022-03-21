@@ -1,5 +1,6 @@
 import '../components/comments/comments'
-import '../components/to-book/to-book'
+// import '../components/to-book/to-book'
+import 'slick-carousel/slick/slick.min.js'
 import {
   Chart,
   ArcElement,
@@ -16,6 +17,13 @@ Chart.register(
   Legend,
   Tooltip,
 );
+
+$(document).ready(function(){
+  $('.room-details__images-carousel').slick();
+
+	$('.room-details__images-carousel .slick-next').html('arrow_forward_ios')
+	$('.room-details__images-carousel .slick-prev').html('arrow_back_ios')
+});
 
 const ctx = document.querySelector("#graph").getContext("2d");
 
