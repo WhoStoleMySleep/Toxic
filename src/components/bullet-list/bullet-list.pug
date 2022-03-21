@@ -1,6 +1,6 @@
-mixin bullet-list(bulletsList = [])
+mixin bullet-list(strings = [])
 	ul.bullet-list
-		each bulletList in bulletsList
-			li.bullet-list__elem= bulletList
+		each name in strings
+			li.bullet-list__elem= name
 		else
-			p Информация отсутствует
+			li.bullet-list__elem Информация отсутствует
