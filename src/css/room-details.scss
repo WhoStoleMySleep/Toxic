@@ -10,6 +10,7 @@
 //-------------------------------------------------------------------------------------------------------------//
 // !~header
 main{
+	.room-details__images-carousel,
 	.room-details__images{
 		justify-content: center;
 		.room-details__image-basic{
@@ -22,6 +23,26 @@ main{
 			margin-bottom: 70px;
 		}
 	}
+	.room-details__images-carousel{
+		position: relative;	
+		.slick-arrow{
+			width: 50px;
+			height: 100%;
+			position: absolute;
+			z-index: 1;
+			top: 0;
+			font-family: 'Material Icons';
+			background-color: inherit;
+			background: linear-gradient(0,rgba(0, 0, 0, 0.5) 0%, 
+																			rgba(0, 0, 0, 0) 99.99%, 
+																			rgba(255, 255, 255, 0) 100%);
+			color: #fff;
+			font-size: 24px;
+			&.slick-next{
+				margin-left: calc(100% - 50px);
+			}
+		}
+	}
 	.room-details__row{
 		max-width: 1160px;
 		margin: 0 auto;
@@ -30,6 +51,8 @@ main{
 			display: inline-block;
 			text-align: left;
 			.room-details__row-row{
+				display: flex;
+				justify-content: center;
 				.room-details__col-col{
 					width: 291px;
 					h2{
@@ -114,30 +137,54 @@ main{
 			flex-direction: column;
 		}
 	}
+	.room-details__images-carousel{
+		display: none;
+	}
 }
-@media screen and (max-width:910px) {
+@media all and (max-width:910px) {
+	.room-details__images-carousel,
 	.room-details__images{
 		display: block;
 		.room-details__image-basic{
 			background-size: 100% 100%;
+			margin-bottom: 0 !important;
+			max-height: 484px;
+			height: 50vw !important;
+			min-height: 170px;
 		}
 		img{
 			width: 100%;
 		}
 		span img{
 			width: 100%;
+			&:last-child{
+				margin-bottom: 30px;
+			}
+		}
+	}
+	.room-details__images-carousel{
+		overflow: hidden;	
+		.slick-track{
+			display: flex;
+		}
+	}
+	.room-details__images{
+		display: none;
+	}
+	.room-details__row-row{
+		flex-wrap: wrap;
+		.room-details__col-col{
+			margin-bottom: 20px;
+			&:first-child{
+				margin: 0 70px 0 0 !important;
+			}
 		}
 	}
 } 
-
+// serious
 @media screen and (min-width:591px) {
 	.room-details__row-row{
 		display: flex;
-		.room-details__col-col{
-			&:first-child{
-				margin: 0 70px 0 0;
-			}
-		}
 		&:nth-child(3){
 			.room-details__col-col:nth-child(2){
 				width: 349px;
@@ -145,9 +192,9 @@ main{
 		}
 	}
 }
+
 @media screen and (max-width:590px) {
 	.room-details__row-row{
-		display: block;
 		.room-details__col-col{
 			&:first-child{
 				margin: 0;
