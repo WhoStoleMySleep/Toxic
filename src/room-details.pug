@@ -52,7 +52,9 @@ html(lang="ru")
               .canvas
                 canvas(height='120' width='311')#graph
           .room-details__reviev
-            h2 Отзывы посетителей номера
+            .room-details__reviev-headed
+              h2 Отзывы посетителей номера
+              p 2 отзыва
             include ./components/comments/comments.pug
             - 
               const users = [
