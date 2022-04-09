@@ -22,8 +22,20 @@ main{
 			background-position: center;
 			margin-bottom: 70px;
 		}
+		display: flex;
+		img{
+			max-width: 981px;
+		}
+		span{
+			display: flex;
+			flex-direction: column;
+		}
+		.room-details__image-basic{
+			background-size: auto 100%;
+		}
 	}
 	.room-details__images-carousel{
+		display: none;
 		position: relative;	
 		.slick-arrow{
 			width: 50px;
@@ -44,6 +56,7 @@ main{
 		}
 	}
 	.room-details__row{
+		display: flex;
 		max-width: 1160px;
 		margin: 0 auto;
 		text-align: center;
@@ -56,6 +69,9 @@ main{
 				max-width: 380px;
 				width: 100%;
 				margin-left: 70px;
+				.to-book{
+					margin: 0	auto;
+				}
 			}
 			.room-details__row-row{
 				display: flex;
@@ -92,16 +108,10 @@ main{
 						height: 120px;
 					}
 				}
-				&:nth-child(3){
-					// .room-details__col-col:nth-child(2){
-					// 	max-width: 349px;
-					// }
-				}
 			}
 			.room-details__reviev{
 				margin: 33px 0;
 				.room-details__reviev-headed{
-					// height: 23px;
 					display: flex;
 					h2{
 						letter-spacing: 0.57px;
@@ -118,20 +128,6 @@ main{
 	}
 }
 
-// START
-@media screen and (min-width: 1066px) {
-	.room-details__row{
-		display: flex;
-		.room-details__col{
-			&:nth-child(2){
-				width: 100%;
-				.to-book{
-					margin: 0	auto;
-				}
-			}
-		}
-	}
-}
 @media screen and (max-width: 1065px) {
 	.room-details__row{
 		display: block;
@@ -146,24 +142,6 @@ main{
 	}
 }
 
-@media screen and (min-width:911px) {
-	.room-details__images{
-		display: flex;
-		.room-details__image-basic{
-			background-size: auto 100%;
-		}
-		img{
-			max-width: 981px;
-		}
-		span{
-			display: flex;
-			flex-direction: column;
-		}
-	}
-	.room-details__images-carousel{
-		display: none;
-	}
-}
 @media all and (max-width:910px) {
 	.room-details__images-carousel,
 	.room-details__images{
@@ -198,35 +176,6 @@ main{
 		flex-wrap: wrap;
 		.room-details__col-col{
 			margin-bottom: 20px;
-			// &:first-child{
-			// 	margin: 0 70px 0 0 !important;
-			// }
-		}
-	}
-} 
-// serious
-@media screen and (min-width:591px) {
-	.room-details__row-row{
-		display: flex;
-		&:nth-child(3){
-			// .room-details__col-col:nth-child(2){
-			// 	width: 349px;
-			// }
-		}
-	}
-}
-
-@media screen and (max-width:590px) {
-	.room-details__row-row{
-		.room-details__col-col{
-			// &:first-child{
-			// 	margin: 0 !important;
-			// }
-		}
-		&:nth-child(3){
-			// .room-details__col-col:nth-child(2){
-			// 	width: 100%;
-			// }
 		}
 	}
 }
