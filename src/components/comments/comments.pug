@@ -1,6 +1,6 @@
 mixin comments(commentsData = [])
-  each comments in commentsData
-    .comments
+  .comments
+    each comments in commentsData
       .comment
         .comment__left-row
           img.comment__face(src='../img/' + comments.faceImg)
@@ -12,5 +12,5 @@ mixin comments(commentsData = [])
             .comment__ago= comments.daysAgo
           .comment__right-row-bottom
             p= comments.comment
-  else
-    p Информация отсутствует
+    else
+      p Информация отсутствует
