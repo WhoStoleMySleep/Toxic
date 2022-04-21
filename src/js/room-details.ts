@@ -41,12 +41,11 @@ const chartData = {
 			gradient3,
 			gradient4,
 		],
-		hoverOffset: 4,
-		cutout: '90%',
-	}]
+	}],
 }
 
 const chartOption = {
+	cutoutPercentage: 90,
 	legend: {
 		display: false,
 	},
