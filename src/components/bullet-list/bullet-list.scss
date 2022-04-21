@@ -6,6 +6,8 @@
 		line-height: 24px;
 		display: flex;
 		&::before{
+			width: 14px;
+			height: 10px;
 			content: '\2022';
 			font-weight: bold;
 			font-size: 55px;
