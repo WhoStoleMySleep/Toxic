@@ -107,6 +107,25 @@ main{
 						display: flex;
 						width: 123px;
 						height: 123px;
+						#legend {
+							margin-top: 32px;
+							margin-left: 28px;
+							li {
+								display: flex;
+								margin-bottom: 10px;
+								span{
+									display: inline-block;
+									width: 10px;
+									height: 10px;
+									border-radius: 10px;
+									margin-top: 2px;
+									margin-right: 5px;
+								}
+								&:last-child{
+									margin: 0;
+								}
+							}
+						}
 					}
 				}
 			}

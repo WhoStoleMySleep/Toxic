@@ -51,9 +51,23 @@ const chartOption = {
 	},
 }
 
-const chart = new Chart(ctx, {
-	type: 'doughnut',
-	data: chartData,
-	options: chartOption
-});
-$("#legend").html(chart.generateLegend());
+$(document).ready(() => {
+	const chart = new Chart(ctx, {
+		type: 'doughnut',
+		data: chartData,
+		options: chartOption
+	});
+	$("#legend").html(chart.generateLegend());
+
+	const legendElems = document.querySelectorAll("#legend li span");
+	const colorsArr = [
+		'#BC9CFF 0%, #8BA4F9 100%',
+		'#6FCF97 0%, #66D2EA 100%',
+		'#FFE39C 0%, #FFBA9C 100%',
+		'#919191 0%, #3D4975 100%',
+	]
+	
+	for(let i = 0; i < legendElems.length; i += 1) {
+		legendElems[i].style.background = `linear-gradient(180deg, ${ colorsArr[i] })`
+	}
+})
