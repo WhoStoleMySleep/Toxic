@@ -105,7 +105,7 @@ main{
 					}
 					.canvas{
 						display: flex;
-						width: 123px;
+						width: 130px;
 						height: 123px;
 						#legend {
 							margin-top: 32px;
@@ -113,6 +113,7 @@ main{
 							li {
 								display: flex;
 								margin-bottom: 10px;
+								transition-duration: 250ms;
 								span{
 									display: inline-block;
 									width: 10px;

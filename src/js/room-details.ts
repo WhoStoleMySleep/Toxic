@@ -44,10 +44,44 @@ const chartData = {
 	}],
 }
 
+const arr = [
+
+]
+
+let hovered = null;
 const chartOption = {
 	cutoutPercentage: 90,
+	layout: {
+		padding: {
+			left: 0,
+			right: 5,
+			top: 0,
+			bottom: 0
+		}
+	},
 	legend: {
 		display: false,
+	},
+	tooltips: {
+		enabled: false,
+	},
+	hover: {
+		mode: 'point',
+	},
+	onHover(e, data) {
+		if (data[0] !== hovered) {
+			hovered = data[0];
+			// document.querySelector('h2 span').textContent = hovered ? hovered._view.label : 'NONE';
+			const texts = document.querySelector('#legend').innerText.split('\n')
+			if(hovered) {
+				let index = texts.indexOf(hovered._view.label)
+				document.querySelector(`#legend > ul > li:nth-child(${index + 1})`).style.transform = 'scale(1.1)'
+			} else {
+				for(let i = 0; i < 4; i += 1){
+					document.querySelectorAll('#legend > ul > li')[i].style.transform = 'scale(1)'
+				}
+			}
+		}
 	},
 }
 
