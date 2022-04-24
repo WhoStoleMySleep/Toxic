@@ -48,17 +48,8 @@ const arr = [
 
 ]
 
-let hovered = null;
 const chartOption = {
 	cutoutPercentage: 90,
-	layout: {
-		padding: {
-			left: 0,
-			right: 5,
-			top: 0,
-			bottom: 0
-		}
-	},
 	legend: {
 		display: false,
 	},
@@ -68,19 +59,22 @@ const chartOption = {
 	hover: {
 		mode: 'point',
 	},
-	onHover(e, data) {
-		if (data[0] !== hovered) {
-			hovered = data[0];
-			// document.querySelector('h2 span').textContent = hovered ? hovered._view.label : 'NONE';
-			const texts = document.querySelector('#legend').innerText.split('\n')
-			if(hovered) {
-				let index = texts.indexOf(hovered._view.label)
-				document.querySelector(`#legend > ul > li:nth-child(${index + 1})`).style.transform = 'scale(1.1)'
-			} else {
-				for(let i = 0; i < 4; i += 1){
-					document.querySelectorAll('#legend > ul > li')[i].style.transform = 'scale(1)'
-				}
+	onHover(e: object, data: string[]) {
+		let hovered: null | string = null;
+		
+		if (!hovered) {
+			[hovered] = data;
+			
+			const legendElements: HTMLElement = document.querySelectorAll('#legend > ul > li')
+			const legend = document.querySelector('#legend') as HTMLElement;
+			const legendTextList = legend!.innerText.split('\n')
+			const hoveredIndex = legendTextList.indexOf(hovered?._view.label)
+
+			for(let index = 0; index < 4; index += 1){
+				legendElements[index].style.transform = 'scale(1)'
 			}
+
+			legendElements[hoveredIndex].style.transform = 'scale(1.1)'
 		}
 	},
 }
