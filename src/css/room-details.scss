@@ -105,8 +105,10 @@ main{
 					}
 					.canvas{
 						display: flex;
-						width: 130px;
-						height: 123px;
+						.canvas-container{
+							width: 123px;
+							height: 123px;
+						}
 						#legend {
 							margin-top: 32px;
 							margin-left: 28px;
