@@ -4,7 +4,7 @@ import 'slick-carousel/slick/slick.min.js'
 
 import Chart from 'chart.js';
 
-$(document).ready(function(){
+$(document).ready(()=> {
   $('.room-details__images-carousel').slick();
 
 	$('.room-details__images-carousel .slick-next').html('arrow_forward_ios')
@@ -43,10 +43,6 @@ const chartData = {
 		],
 	}],
 }
-
-const arr = [
-
-]
 
 const chartOption = {
 	cutoutPercentage: 90,

@@ -1,8 +1,6 @@
 import '../date-dropdown/date-dropdown'
 import '../dropdown/dropdown'
 
-$('.dropdown').dropdown()
-
 // first programm
 const dateSumming = () => {
 	const startDate = document.querySelector('#start-date').value
