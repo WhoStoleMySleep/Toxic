@@ -91,6 +91,9 @@
               content: '+';
             }
           }
+          &._deactive{
+            opacity: 0.38;
+          }
         }
         .counter{
           width: 30px;
