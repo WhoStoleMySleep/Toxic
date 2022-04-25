@@ -59,6 +59,10 @@
           border: 1px solid rgba(31, 32, 65, 0.25);
           border-radius: 22px;
           padding: 0;
+          transition: none;
+          &:hover{
+            background: none;
+          }
           i{
             width: 30px;
             height: 30px;
@@ -116,7 +120,6 @@
     .iqdropdown-selection {
       &::after{
         background: none;
-        transform: rotate(180deg);
         color: rgba(31, 32, 65, 0.75);
       }
     }
