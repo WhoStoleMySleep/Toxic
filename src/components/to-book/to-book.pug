@@ -8,7 +8,8 @@
 			p в сутки
 	form
 		include ../date-dropdown/date-dropdown.pug
-		.dropdown
+		include ../dropdown/dropdown.pug
+		+dropdown('Гости', ['Взрослые', 'Дети', 'Младенцы'])
 		.to-book__summing
 			.to-book__summ-days
 				span
