@@ -24,4 +24,27 @@ $(document).ready(() => {
 			}
 		}, 
 	})
+
+	const disabledAdd = () => {
+		const counter = document.querySelectorAll('.iqdropdown-item-controls > .counter')
+		const counterArr = []
+
+		for(let index of counter) {
+			const indexCountString = index.innerHTML.toString()
+			counterArr.push(indexCountString === '0')
+		}
+
+		for(let index = 0; index < counterArr.length; index += 1) {
+			const classDecrement = '.iqdropdown-item-controls > .button-decrement'
+			const hereDecrement = document.querySelectorAll(classDecrement)[index]
+
+			if(counterArr[index]) {
+				hereDecrement.classList.add('_deactive')
+			} else {
+				hereDecrement.classList.remove('_deactive')
+			}
+		}
+	}
+
+	setInterval(disabledAdd, 50);
 });
