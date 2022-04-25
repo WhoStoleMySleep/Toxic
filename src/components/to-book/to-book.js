@@ -3,13 +3,13 @@ import '../dropdown/dropdown'
 
 // first programm
 const dateSumming = () => {
-	const startDate = document.querySelector('#start-date').value
+	const startDate = document.querySelector('.js-date-dropdown__start-date').value
 	let startDateValue = '';
 	let dayStartDateValue = '';
 	let monthStartDateValue = '';
 	let yearStartDateValue = '';
 
-	const endDate = document.querySelector('#end-date').value
+	const endDate = document.querySelector('.js-date-dropdown__end-date').value
 	let endDateValue = '';
 	let dayEndDateValue = '';
 	let monthEndDateValue = '';
