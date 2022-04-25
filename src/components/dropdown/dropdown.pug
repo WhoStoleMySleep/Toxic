@@ -1,10 +1,10 @@
-mixin dropdown(headtext, name, person, elems = [])
-  .dropdown
-    h3.dropdown__header= headtext
-    label.dropdown-selection-label
-      input(data-default="" + name, data-person="" + person, readonly).dropdown-selection
-    .dropdown-menu
+mixin dropdown(headtext, elems = [])
+  h3.iqdropdown-header= headtext 
+  .iqdropdown.dropdown
+    p.iqdropdown-selection
+    .iqdropdown-menu
+      - let index = 1
       each elem in elems
-        .dropdown-menu-option
-            div 
-              p.dropdown-item= elem
+        .iqdropdown-menu-option(data-id='item' + index++)
+          div
+            p.iqdropdown-item= elem
