@@ -8,3 +8,6 @@ mixin dropdown(headtext, elems = [])
         .iqdropdown-menu-option(data-id='item' + index++)
           div
             p.iqdropdown-item= elem
+      .iqdropdown-button-container
+        button(type='button').iqdropdown-button-clear очистить
+        button(type='button').iqdropdown-button-submit применить
