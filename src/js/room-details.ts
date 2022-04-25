@@ -1,5 +1,5 @@
 import '../components/comments/comments'
-// import '../components/to-book/to-book'
+import '../components/to-book/to-book'
 import 'slick-carousel/slick/slick.min.js'
 
 import Chart from 'chart.js';
