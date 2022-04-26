@@ -120,12 +120,18 @@ main{
 						margin: 36px 0 0 8px;
 						text-align: center;
 						color: #BC9CFF;
+						display: flex;
+						flex-wrap: wrap;
 						text-shadow: 0.3px 0 0 #bc9cff;
 						z-index: -1;
+						h1{
+							margin: 0 auto;
+						}
 						p{
 							font-size: 12px;
 							line-height: 17px;
 							text-transform: uppercase;
+							margin: 0 auto;
 						}
 					}
 					.canvas{
