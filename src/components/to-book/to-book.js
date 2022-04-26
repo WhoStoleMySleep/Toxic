@@ -91,12 +91,26 @@ const summing = () => {
 		}
 	}
 
-	document.querySelector('#daysSumm').innerHTML = (toBookPriceValue * toBookDaysValue) + '₽'
+	
+	const addSpace = (variable) => {
+		let variableElements = variable.toString().split('')
 
-	totalTotalSumm = (toBookPriceValue * toBookDaysValue) - toBookServiceDiscountValue + 300
+		for(let index = variableElements.length; index >= 0; index -= 1) {
+			if(index % 3 == 0) {
+				variableElements.splice(-index, 0, ' ')
+			}
+		}
+		
+		return variableElements.join('')
+	}
+	
+	let daysSumm = (toBookPriceValue * toBookDaysValue)
+	document.querySelector('#daysSumm').innerHTML = addSpace(daysSumm) + '₽'
+
+	totalTotalSumm = daysSumm - toBookServiceDiscountValue + 300
 
 	if(totalTotalSumm > 0){
-		totalTotal.innerHTML = totalTotalSumm + '₽'
+		totalTotal.innerHTML = addSpace(totalTotalSumm) + '₽'
 	}
 }
 
