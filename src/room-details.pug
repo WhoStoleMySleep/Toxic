@@ -5,26 +5,19 @@ html(lang="ru")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     title Toxic
-  body#room-details
+  body.room-details
     include ./components/header/header.pug
-    main
-      .room-details__images
-        .room-details__image-basic
-        span
-          img(src='./img/bg-cards-two.jpg')
-          img(src='./img/bg-cards-three.jpg')
-      .room-details__images-carousel
-        .carousel-item
-          .room-details__image-basic
-        .carousel-item
-          img(src='./img/bg-cards-two.jpg')
-        .carousel-item
-          img(src='./img/bg-cards-three.jpg')
+    main.room-details__main
+      .room-details__container-images
+        .room-details__image.room-details__image_type_big
+        span.room-details__img-span-container
+          img.room-details__image.room-details__image_type_small_one(src='./img/bg-cards-two.jpg', alt='')
+          img.room-details__image.room-details__image_type_small_two(src='./img/bg-cards-three.jpg', alt='')
       .room-details__row
-        .room-details__col
-          .room-details__row-row
-            .room-details__col-col
-              h2 Сведения о номере
+        .room-details__col.room-details__col_col_one
+          .room-details__general-information
+            .room-details__information
+              h2.room-details__information-header Сведения о номере
               include ./components/text-list/text-list.pug
               - 
                 const textList = [
@@ -45,17 +38,17 @@ html(lang="ru")
                   }
                 ]
               +text-list(textList)
-            .room-details__col-col
-              h2 Впечатления от номера
-              .canvas
-                .room-details__col-col-room-impressions
-                  h1 260
-                  p голосов
-                .canvas-container
-                  canvas(height='123' width='123')#graph
-                div#legend
-          .room-details__reviev
-            .room-details__reviev-headed
+            .room-details__assessments
+              h2.room-details__assessment-header Впечатления от номера
+              .room-details__bagel
+                .room-details__votes
+                  h1.room-details__votes-header 260
+                  p.room-details__votes-context голосов
+                .room-details__bagel-container
+                  canvas.room-details__bagel-canvas(width='123' height='123')
+                .room-details__bagel-legend
+          .room-details__comment-block
+            .room-details__comment-block-headed
               h2 Отзывы посетителей номера
               p 2 отзыва
             include ./components/comments/comments.pug
@@ -77,9 +70,9 @@ html(lang="ru")
                 }
               ]
             +comments(users)
-          .room-details__row-row
-            .room-details__col-col
-              h2 Правила
+          .room-details__more-about
+            .room-details__rules
+              h2.room-details__rules-headed Правила
               include ./components/bullet-list/bullet-list.pug
               - 
                 const bulletList = [
@@ -88,9 +81,9 @@ html(lang="ru")
                   'Время прибытия — после 13:00, а выезд до 12:00'
                 ]
               +bullet-list(bulletList)
-            .room-details__col-col
-              h2 Отмена
-              p Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
-        .room-details__col
-          include ./components/to-book/to-book.pug
+            .room-details__cancellation
+              h2.room-details__cancellation-headed Отмена
+              p.room-details__cancellation-context Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+      .room-details__col.room-details__col_col_two
+        include ./components/to-book/to-book.pug
     include ./components/footer/footer.pug
