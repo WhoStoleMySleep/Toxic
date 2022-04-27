@@ -48,9 +48,9 @@ html(lang="ru")
                   canvas.room-details__bagel-canvas(width='123' height='123')
                 .room-details__bagel-legend
           .room-details__comment-block
-            .room-details__comment-block-headed
-              h2 Отзывы посетителей номера
-              p 2 отзыва
+            .room-details__comment-block-headed-container
+              h2.room-details__comment-block-headed Отзывы посетителей номера
+              p.room-details__comment-block-context 2 отзыва
             include ./components/comments/comments.pug
             - 
               const users = [
