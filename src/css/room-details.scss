@@ -193,10 +193,9 @@
 }
 
 @media all and (max-width:910px) {
-	.room-details__images-carousel,
-	.room-details__images{
+	.room-details__container-images{
 		display: block;
-		.room-details__image-basic{
+		.room-details__image_type_big{
 			background-size: 100% 100%;
 			margin-bottom: 0 !important;
 			max-height: 484px;
@@ -213,29 +212,31 @@
 			}
 		}
 	}
-	.room-details__images-carousel{
-		overflow: hidden;	
-		.slick-track{
-			display: flex;
-		}
-	}
-	.room-details__images{
+	.room-details__container-images{
 		display: none;
 	}
-	.room-details__row-row{
+	.room-details__general-information,
+	.room-details__more-about{
 		flex-wrap: wrap;
-		.room-details__col-col{
+		.room-details__information,
+		.room-details__assessments,
+		.room-details__rules,
+		.room-details__cancellation{
 			margin-bottom: 20px;
 		}
 	}
 }
 
 @media all and (max-width: 641px){
-	main{
+	.room-details__main{
 		.room-details__row{
 			.room-details__col{
-				.room-details__row-row{
-					.room-details__col-col{
+				.room-details__general-information,
+				.room-details__more-about{
+					.room-details__information,
+					.room-details__assessments,
+					.room-details__rules,
+					.room-details__cancellation{
 						margin-left: calc(50% - 291px / 2);
 						margin-right: 0;
 						h2{
@@ -244,8 +245,8 @@
 						}
 					}
 				}
-				.room-details__reviev{
-					.room-details__reviev-headed{
+				.room-details__comment-block{
+					.room-details__comment-block-headed{
 						display: block;
 						text-align: center;
 					}
