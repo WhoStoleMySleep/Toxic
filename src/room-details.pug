@@ -17,7 +17,7 @@ html(lang="ru")
         .room-details__col.room-details__col_col_one
           .room-details__general-information
             .room-details__information
-              h2.room-details__information-header Сведения о номере
+              h2.room-details__information-headed Сведения о номере
               include ./components/text-list/text-list.pug
               - 
                 const textList = [
@@ -39,10 +39,10 @@ html(lang="ru")
                 ]
               +text-list(textList)
             .room-details__assessments
-              h2.room-details__assessment-header Впечатления от номера
+              h2.room-details__assessment-headed Впечатления от номера
               .room-details__bagel
                 .room-details__votes
-                  h1.room-details__votes-header 260
+                  h1.room-details__votes-headed 260
                   p.room-details__votes-context голосов
                 .room-details__bagel-container
                   canvas.room-details__bagel-canvas(width='123' height='123')
