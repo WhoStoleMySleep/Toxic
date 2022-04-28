@@ -6,23 +6,25 @@
 @import "../components/register/register.scss";
 //-------------------------------------------------------------------------------------------------------------//
 
-main{
-	height: 684px;
-	padding:19px 0;
-	background-image: url('../img/reg-sign-bg.jpg');
-	background-repeat: no-repeat;
-	background-size: 100% auto;
-	background-position: center;
-	.register{
-		margin: 0 calc(50% - 380px / 2 + 3px);
-	}
+main {
+  background-image: url('../img/reg-sign-bg.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  height: 684px;
+  padding: 19px 0;
+
+  .register {
+    margin: 0 calc(50% - 380px / 2 + 3px);
+  }
 }
 
 @media all and (max-width: 1310px) {
-	main{
-		background-size: auto 100%;
-		.register{
-			margin: 0 auto
-		}
-	}
+  main {
+    background-size: auto 100%;
+
+    .register {
+      margin: 0 auto;
+    }
+  }
 }

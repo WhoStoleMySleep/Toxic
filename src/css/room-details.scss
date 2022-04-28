@@ -9,263 +9,305 @@
 @import "../components/to-book/to-book.scss";
 //-------------------------------------------------------------------------------------------------------------//
 // !~header
-.room-details__main{
-	.room-details__container-images{
-		display: flex;
-		justify-content: center;
-		.room-details__image{
-			&_type{
-				&_big{
-					width: 100%;	
-					height: 485px;
-					background-image: url('../img/bg-cards-one.jpg');
-					background-repeat: no-repeat;
-					background-size: auto 100%;
-					background-position: center;
-					margin-bottom: 70px;
-				}
-				&_big,
-				&_small{
-					max-width: 981px;
-				}
-			}
-		}
-		.room-details__img-span-container{
-			display: flex;
-			flex-direction: column;
-		}
-	}
-	.room-details__row{
-		display: flex;
-		flex-wrap: wrap;
-		max-width: 1164px;
-		margin: 0 auto;
-		text-align: center;
-		.room-details__col{
-			max-width: 711px;
-			width: 100%;
-			display: inline-block;
-			text-align: left;
-			&_col{
-				&_one{
-					margin-right: auto;
-				}
-				&_two{
-					max-width: 380px;
-					width: 100%;
-					padding-right: 2px;
-					.to-book{
-						margin: 0	auto;
-					}
-				}
-			}
-			.room-details__general-information,
-			.room-details__more-about{
-				display: flex;
-				max-width: 711px;
-				width: 100%;
-				justify-content: space-between;
-				.room-details__information,
-				.room-details__assessments,
-				.room-details__rules,
-				.room-details__cancellation{
-					width: 291px;
-					.room-details__information-headed,
-					.room-details__assessment-headed,
-					.room-details__rules-headed,
-					.room-details__cancellation-headed{
-						letter-spacing: 0.41px;
-						margin-bottom: 21px;
-					}
-				}
-				.room-details__assessments,
-				.room-details__cancellation{
-					width: 341px;
-					margin-right: 10px;
-				}
-			}
-			.room-details__general-information{
-				margin-left: 2px;
-				.room-details__assessments{
-					.room-details__bagel{
-						display: flex;
-						.room-details__votes{
-							width: 105px;
-							position: absolute;
-							margin: 36px 0 0 8px;
-							text-align: center;
-							color: #BC9CFF;
-							display: flex;
-							flex-wrap: wrap;
-							text-shadow: 0.3px 0 0 #bc9cff;
-							z-index: -1;
-							.room-details__votes-headed{
-								margin: 0 auto;
-							}
-							.room-details__votes-context{
-								font-size: 12px;
-								line-height: 17px;
-								text-transform: uppercase;
-								margin: 0 auto;
-							}
-						}
-						.room-details__bagel-container{
-							width: 123px;
-							height: 123px;
-						}
-						.room-details__bagel-legend {
-							margin-top: 32px;
-							margin-left: min(28px, 1.9vw);
-							li {
-								display: flex;
-								margin-bottom: 10px;
-								transition-duration: 250ms;
-								span{
-									display: inline-block;
-									width: 10px;
-									height: 10px;
-									border-radius: 10px;
-									margin-top: 2px;
-									margin-right: 5px;
-								}
-								&:last-child{
-									margin: 0;
-								}
-							}
-						}
-					}
-				}
-			}
-			.room-details__more-about{
-				.room-details__rules,
-				.room-details__cancellation{
-					.room-details__rules-headed,
-					.room-details__cancellation-headed{
-						margin-bottom: 19px;
-					}
-					.room-details__rules-headed{
-						margin-left: 20px;
-					}
-					.room-details__cancellation-headed{
-						padding-left: 3px;
-					}
-				}
-				.room-details__cancellation{
-					.room-details__cancellation-context{
-						line-height: 24px;
-						width: 100%;
-					}
-				}
-			}
-			.room-details__comment-block{
-				margin: 33px 0;
-				margin-left: 2px;
-				.room-details__comment-block-headed-container{
-					display: flex;
-					.room-details__comment-block-headed{
-						letter-spacing: 0.57px;
-					}
-					.room-details__comment-block-context{
-						margin: calc(((24px / 2) - (14px / 2)) + 2px) 1px 0 auto;
-					}
-				}
-				.comments{
-					margin-top: 21px;
-					.comment{
-						margin-top: 23px;
-						&:first-child{
-							margin-top: 0;
-						}
-					}
-				}
-			}
-		}
-	}
+.room-details__main {
+  .room-details__container-images {
+    display: flex;
+    justify-content: center;
+
+    .room-details__image {
+      &_type {
+        &_big {
+          background-image: url('../img/bg-cards-one.jpg');
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: auto 100%;
+          height: 485px;
+          margin-bottom: 70px;
+          width: 100%;
+        }
+
+        &_big,
+        &_small {
+          max-width: 981px;
+        }
+      }
+    }
+
+    .room-details__img-span-container {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .room-details__row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    max-width: 1164px;
+    text-align: center;
+
+    .room-details__col {
+      display: inline-block;
+      max-width: 711px;
+      text-align: left;
+      width: 100%;
+
+      &_col {
+        &_one {
+          margin-right: auto;
+        }
+
+        &_two {
+          max-width: 380px;
+          padding-right: 2px;
+          width: 100%;
+
+          .to-book {
+            margin: 0 auto;
+          }
+        }
+      }
+
+      .room-details__general-information,
+      .room-details__more-about {
+        display: flex;
+        justify-content: space-between;
+        max-width: 711px;
+        width: 100%;
+
+        .room-details__information,
+        .room-details__assessments,
+        .room-details__rules,
+        .room-details__cancellation {
+          width: 291px;
+
+          .room-details__information-headed,
+          .room-details__assessment-headed,
+          .room-details__rules-headed,
+          .room-details__cancellation-headed {
+            letter-spacing: 0.41px;
+            margin-bottom: 21px;
+          }
+        }
+
+        .room-details__assessments,
+        .room-details__cancellation {
+          margin-right: 10px;
+          width: 341px;
+        }
+      }
+
+      .room-details__general-information {
+        margin-left: 2px;
+
+        .room-details__assessments {
+          .room-details__bagel {
+            display: flex;
+
+            .room-details__votes {
+              color: #bc9cff;
+              display: flex;
+              flex-wrap: wrap;
+              margin: 36px 0 0 8px;
+              position: absolute;
+              text-align: center;
+              text-shadow: 0.3px 0 0 #bc9cff;
+              width: 105px;
+              z-index: -1;
+
+              .room-details__votes-headed {
+                margin: 0 auto;
+              }
+
+              .room-details__votes-context {
+                font-size: 12px;
+                line-height: 17px;
+                margin: 0 auto;
+                text-transform: uppercase;
+              }
+            }
+
+            .room-details__bagel-container {
+              height: 123px;
+              width: 123px;
+            }
+
+            .room-details__bagel-legend {
+              margin-left: min(28px, 1.9vw);
+              margin-top: 32px;
+
+              li {
+                display: flex;
+                margin-bottom: 10px;
+                transition-duration: 250ms;
+
+                span {
+                  border-radius: 10px;
+                  display: inline-block;
+                  height: 10px;
+                  margin-right: 5px;
+                  margin-top: 2px;
+                  width: 10px;
+                }
+
+                &:last-child {
+                  margin: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .room-details__more-about {
+        .room-details__rules,
+        .room-details__cancellation {
+          .room-details__rules-headed,
+          .room-details__cancellation-headed {
+            margin-bottom: 19px;
+          }
+
+          .room-details__rules-headed {
+            margin-left: 20px;
+          }
+
+          .room-details__cancellation-headed {
+            padding-left: 3px;
+          }
+        }
+
+        .room-details__cancellation {
+          .room-details__cancellation-context {
+            line-height: 24px;
+            width: 100%;
+          }
+        }
+      }
+
+      .room-details__comment-block {
+        margin: 33px 0;
+        margin-left: 2px;
+
+        .room-details__comment-block-headed-container {
+          display: flex;
+
+          .room-details__comment-block-headed {
+            letter-spacing: 0.57px;
+          }
+
+          .room-details__comment-block-context {
+            margin: calc(((24px / 2) - (14px / 2)) + 2px) 1px 0 auto;
+          }
+        }
+
+        .comments {
+          margin-top: 21px;
+
+          .comment {
+            margin-top: 23px;
+
+            &:first-child {
+              margin-top: 0;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
-.footer{
-	margin-top: 70px;
+.footer {
+  margin-top: 70px;
 }
 
 @media all and (max-width: 1090px) {
-	.room-details__row{
-		display: block;
-		.room-details__col{
-			margin: 0 auto;
-			&_col_two{
-				width: 100%;
-				padding-right: 0;
-				.to-book{
-					margin: 20px auto 0 auto;
-				}
-			}
-		}
-	}
+  .room-details__row {
+    display: block;
+
+    .room-details__col {
+      margin: 0 auto;
+
+      &_col_two {
+        padding-right: 0;
+        width: 100%;
+
+        .to-book {
+          margin: 20px auto 0 auto;
+        }
+      }
+    }
+  }
 }
 
-@media all and (max-width:910px) {
-	.room-details__container-images{
-		.room-details__image{
-			&_type{
-				&_big{
-					background-size: 100% 100%;
-					margin-bottom: 0 !important;
-					max-height: 484px;
-					height: 50vw !important;
-					min-height: 170px;
-				}
-				&_small{
-					&_one,
-					&_two{
-						width: 100%;
-					}
-					&_two{
-						margin-bottom: 30px;
-					}
-				}
-			}
-		}
-	}
-	.room-details__general-information,
-	.room-details__more-about{
-		flex-wrap: wrap;
-		.room-details__information,
-		.room-details__assessments,
-		.room-details__rules,
-		.room-details__cancellation{
-			margin-bottom: 20px;
-		}
-	}
+@media all and (max-width: 910px) {
+  .room-details__container-images {
+    .room-details__image {
+      &_type {
+        &_big {
+          background-size: 100% 100%;
+          height: 50vw !important;
+          margin-bottom: 0 !important;
+          max-height: 484px;
+          min-height: 170px;
+        }
+
+        &_small {
+          &_one,
+          &_two {
+            width: 100%;
+          }
+
+          &_two {
+            margin-bottom: 30px;
+          }
+        }
+      }
+    }
+  }
+
+  .room-details__general-information,
+  .room-details__more-about {
+    flex-wrap: wrap;
+
+    .room-details__information,
+    .room-details__assessments,
+    .room-details__rules,
+    .room-details__cancellation {
+      margin-bottom: 20px;
+    }
+  }
 }
 
-@media all and (max-width: 641px){
-	.room-details__main{
-		.room-details__row{
-			.room-details__col{
-				.room-details__general-information,
-				.room-details__more-about{
-					.room-details__information,
-					.room-details__assessments,
-					.room-details__rules,
-					.room-details__cancellation{
-						margin-left: calc(50% - 291px / 2);
-						margin-right: 0;
-						.room-details__information-headed,
-						.room-details__assessments-headed,
-						.room-details__rules-headed,
-						.room-details__cancellation{
-							margin-left: 20px;
-							margin-right: 0;
-						}
-					}
-				}
-				.room-details__comment-block{
-					.room-details__comment-block-headed-container{
-						display: block;
-						text-align: center;
-					}
-				}
-			}
-		}
-	}
+@media all and (max-width: 641px) {
+  .room-details__main {
+    .room-details__row {
+      .room-details__col {
+        .room-details__general-information,
+        .room-details__more-about {
+          .room-details__information,
+          .room-details__assessments,
+          .room-details__rules,
+          .room-details__cancellation {
+            margin-left: calc(50% - 291px / 2);
+            margin-right: 0;
+
+            .room-details__information-headed,
+            .room-details__assessments-headed,
+            .room-details__rules-headed,
+            .room-details__cancellation {
+              margin-left: 20px;
+              margin-right: 0;
+            }
+          }
+        }
+
+        .room-details__comment-block {
+          .room-details__comment-block-headed-container {
+            display: block;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
 }
