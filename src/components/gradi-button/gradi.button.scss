@@ -1,14 +1,15 @@
-.gradi-button{
-   height: 44px;
-   border-radius: 22px;
-   padding: 0px 20px 0 20px;
-   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-   font-weight: bold;
-   font-size: 12px;
-   color: #fff;
-   text-transform: uppercase;
-   transition-duration:150ms;
-   &:hover{
-      opacity: 0.5;
-   }
+.gradi-button {
+  background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+  border-radius: 22px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  height: 44px;
+  padding: 0px 20px 0 20px;
+  text-transform: uppercase;
+  transition-duration: 150ms;
+
+  &:hover {
+    opacity: 0.5;
+  }
 }

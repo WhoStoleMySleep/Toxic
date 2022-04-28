@@ -1,20 +1,21 @@
-.bullet-list{
-	.bullet-list__elem{
-		width: 260px;
-		min-height: 24px;
-		margin-top: 10px;
-		line-height: 24px;
-		display: flex;
-		&::before{
-			width: 14px;
-			height: 10px;
-			content: '\2022';
-			font-weight: bold;
-			font-size: 55px;
-			color: rgba(31, 32, 65, 0.25);
-			display: inline-block;
-			margin: 0 8px 0 0 ;
-			line-height: 15px;
-		}
-	}
+.bullet-list {
+  .bullet-list__elem {
+    display: flex;
+    line-height: 24px;
+    margin-top: 10px;
+    min-height: 24px;
+    width: 260px;
+
+    &::before {
+      color: rgba(31, 32, 65, 0.25);
+      content: '\2022';
+      display: inline-block;
+      font-size: 55px;
+      font-weight: bold;
+      height: 10px;
+      line-height: 15px;
+      margin: 0 8px 0 0;
+      width: 14px;
+    }
+  }
 }

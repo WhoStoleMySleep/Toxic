@@ -1,37 +1,41 @@
-.like-button{
-   width: 40px;
-   height: 20px;
-   display: flex;
-   background: #FFFFFF;
-   border: 1px solid #BC9CFF;
-   box-sizing: border-box;
-   border-radius: 10px;
-   font-size: 10px;
-   line-height: 17px;
-   transition-duration:100ms;
-   .like-button__expend{
-      pointer-events: none;
-      width: 20px;
-      height: 20px;
-      text-align: center;
-      font-family: 'Material Icons';
-      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-      -webkit-background-clip: text;
-              background-clip: text;
-      -webkit-text-fill-color: transparent;
-   }
-   .like-button__count{
-      color: #BC9CFF;
-      pointer-events: none;
-   }
-   &._deactive{
-      -webkit-filter:grayscale(100%);
-              filter:grayscale(100%);
-      .like-button__expend{
-         background:none;
-         color:transparent;
-         -webkit-text-stroke: 1px rgba(31, 32, 65, 0.4);
-         font-size: 9px;
-      }
-   }
+.like-button {
+  background: #ffffff;
+  border: 1px solid #bc9cff;
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: flex;
+  font-size: 10px;
+  height: 20px;
+  line-height: 17px;
+  transition-duration: 100ms;
+  width: 40px;
+
+  .like-button__expend {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+    background-clip: text;
+    font-family: 'Material Icons';
+    height: 20px;
+    pointer-events: none;
+    text-align: center;
+    width: 20px;
+  }
+
+  .like-button__count {
+    color: #bc9cff;
+    pointer-events: none;
+  }
+
+  &._deactive {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+
+    .like-button__expend {
+      -webkit-text-stroke: 1px rgba(31, 32, 65, 0.4);
+      background: none;
+      color: transparent;
+      font-size: 9px;
+    }
+  }
 }
