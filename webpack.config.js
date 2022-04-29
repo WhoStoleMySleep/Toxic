@@ -47,17 +47,7 @@ module.exports = {
 		rules: [
 			{
 				test: /\.pug$/,
-					use: [
-						{
-							loader: 'html-loader'
-						},
-						{
-							loader: 'pug-html-loader',
-							options: {
-								exports: false
-							}
-						}
-					],
+				use: ['pug-loader'],
 			},
 			{
 				test: /\.s[ac]ss$/i,
@@ -73,7 +63,7 @@ module.exports = {
 				exclude: /node_modules/,
 			},
 			{
-				test: /\.(jpg|png|gif|svg)$/i,
+				test: /\.(jpg|png|gif|svg)$/,
 				type: 'asset/resource',
 			},
 			{
