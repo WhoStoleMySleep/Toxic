@@ -1,8 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const ESLintPlugin = require('eslint-webpack-plugin');
-// const SassLintPlugin = require('sass-lint-webpack')
 
 module.exports = {
 	mode: 'development',
@@ -22,8 +20,6 @@ module.exports = {
 			"window.jQuery":'jquery',
 			'window.$': 'jquery',
 		}),
-		// new ESLintPlugin(),
-		// new SassLintPlugin(),
 	],
 	output: {
 		filename: '[name].[contenthash].js',
@@ -52,10 +48,16 @@ module.exports = {
 			{
 				test: /\.pug$/,
 					use: [
-					{
-						loader: "pug-loader",
-					},
-				],
+						{
+							loader: 'html-loader'
+						},
+						{
+							loader: 'pug-html-loader',
+							options: {
+								exports: false
+							}
+						}
+					],
 			},
 			{
 				test: /\.s[ac]ss$/i,
@@ -66,12 +68,12 @@ module.exports = {
 				use: ["style-loader", "css-loader"],
 			},
 			{
-      	test: /\.ts?$/,
-      	use: 'ts-loader',
-      	exclude: /node_modules/,
-	    },
+				test: /\.ts?$/,
+				use: 'ts-loader',
+				exclude: /node_modules/,
+			},
 			{
-				test: /\.(png|svg|jpg|jpeg|gif)$/i,
+				test: /\.(jpg|png|gif|svg)$/i,
 				type: 'asset/resource',
 			},
 			{
