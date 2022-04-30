@@ -31,7 +31,7 @@ async function roomDetails() {
 	await import('jquery-ui/themes/base/datepicker.css');
 	await import('./css/room-details.scss');
 }
-if($('#room-details').length){
+if($('.room-details').length){
 	roomDetails()
 }
 
