@@ -49,7 +49,7 @@ if($('#sign-in').length){
 	signIn()
 }
 
-// function component() {
-// 	return;
-// }
-// document.body.appendChild(component());
+function component() {
+	return;
+}
+document.body.appendChild(component());
