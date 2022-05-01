@@ -54,9 +54,9 @@
   }
 
   .subscription-text-field__submit {
-    -webkit-background-clip: text;
     background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
-    background-clip: text;
+    -webkit-background-clip: text;
+            background-clip: text;
     color: transparent;
     font-family: 'Material Icons';
     font-size: 24px;

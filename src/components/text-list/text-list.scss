@@ -1,9 +1,9 @@
 .text-list {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   cursor: default;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   width: 280px;
 
   .text-list__elem {
@@ -11,10 +11,10 @@
     width: 280px;
 
     .text-list__ico {
-      -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
-      background-clip: text;
+      -webkit-background-clip: text;
+              background-clip: text;
       font-family: 'Material Icons';
       font-size: 48px;
       height: 48px;
