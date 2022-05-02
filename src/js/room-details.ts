@@ -5,18 +5,38 @@ import Chart from 'chart.js';
 
 const ctx = $(".js-room-details__bagel-canvas").get(0).getContext("2d");
 
-const gradient1 = ctx.createLinearGradient(0, 0, 0, 180);
-gradient1.addColorStop(0.0, '#BC9CFF');
-gradient1.addColorStop(1.0, '#8BA4F9');
-const gradient2 = ctx.createLinearGradient(0, 0, 0, 180);
-gradient2.addColorStop(0.0, '#6FCF97');
-gradient2.addColorStop(1.0, '#66D2EA');
-const gradient3 = ctx.createLinearGradient(0, 0, 0, 180);
-gradient3.addColorStop(0.0, '#FFE39C');
-gradient3.addColorStop(1.0, '#FFBA9C');
-const gradient4 = ctx.createLinearGradient(0, 0, 0, 180);
-gradient4.addColorStop(0.0, '#919191');
-gradient4.addColorStop(1.0, '#3D4975');
+const ctx: CanvasRenderingContext2D = $(".js-room-details__bagel-canvas").get(0).getContext("2d");
+
+const createLinearGradient = (context: any, colorsArray: Array<string[]>) => {
+	const gradientArray = []
+
+	for(let index = 0; index < colorsArray.length; index += 1) {
+		if(colorsArray[index].length > 1) {
+			const gradient = context.createLinearGradient(0, 0, 0, 180);
+	
+			gradient.addColorStop(0.0, colorsArray[index][0])
+			gradient.addColorStop(1.0, colorsArray[index][1])
+			
+			gradientArray.push(gradient)
+
+		} else {
+			gradientArray.push(colorsArray[index][0])
+
+		}
+	}
+
+	return gradientArray
+}
+
+const backgroundColor: Array<string[]> =  [
+	['#BC9CFF', '#8BA4F9'],
+	['#6FCF97', '#66D2EA'],
+	['#FFE39C', '#FFBA9C'],
+	['#919191', '#3D4975'],
+]
+
+console.log(ctx);
+
 
 const chartData = {
 	labels: [
@@ -27,12 +47,7 @@ const chartData = {
 	],
 	datasets: [{
 		data: [250, 250, 500, 0],
-		backgroundColor: [
-			gradient1,
-			gradient2,
-			gradient3,
-			gradient4,
-		],
+		backgroundColor: createLinearGradient(ctx, backgroundColor),
 	}],
 }
 
