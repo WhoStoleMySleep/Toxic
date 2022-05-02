@@ -3,11 +3,10 @@ import '../components/to-book/to-book'
 
 import Chart from 'chart.js';
 
-const ctx = $(".js-room-details__bagel-canvas").get(0).getContext("2d");
+const bagelCanvas = $(".js-room-details__bagel-canvas") as unknown as HTMLCanvasElement[];
+const ctx: CanvasRenderingContext2D | null = bagelCanvas[0].getContext("2d");
 
-const ctx: CanvasRenderingContext2D = $(".js-room-details__bagel-canvas").get(0).getContext("2d");
-
-const createLinearGradient = (context: any, colorsArray: Array<string[]>) => {
+const createLinearGradient = (context: any, colorsArray: Array<string[]>): Array<object> => {
 	const gradientArray = []
 
 	for(let index = 0; index < colorsArray.length; index += 1) {
@@ -35,9 +34,6 @@ const backgroundColor: Array<string[]> =  [
 	['#919191', '#3D4975'],
 ]
 
-console.log(ctx);
-
-
 const chartData = {
 	labels: [
 		'Великолепно',
@@ -49,6 +45,25 @@ const chartData = {
 		data: [250, 250, 500, 0],
 		backgroundColor: createLinearGradient(ctx, backgroundColor),
 	}],
+}
+
+const onHoverChartLines = (data: string[]) => {
+	let hovered: null | string = null;
+		
+	if (!hovered) {
+		[hovered] = data;
+		
+		const legendElements = document.querySelectorAll('.js-room-details__bagel-legend > ul > li')
+		const legend = document.querySelector('.js-room-details__bagel-legend') as HTMLElement;
+		const legendTextList = legend!.innerText.split('\n')
+		const hoveredIndex = legendTextList.indexOf(hovered?._view.label)
+
+		for(let index = 0; index < 4; index += 1){
+			legendElements[index].style.transform = 'scale(1)'
+		}
+
+		legendElements[hoveredIndex].style.transform = 'scale(1.1)'
+	}
 }
 
 const chartOption = {
@@ -63,23 +78,26 @@ const chartOption = {
 		mode: 'point',
 	},
 	onHover(e: object, data: string[]) {
-		let hovered: null | string = null;
-		
-		if (!hovered) {
-			[hovered] = data;
-			
-			const legendElements = document.querySelectorAll('.js-room-details__bagel-legend > ul > li')
-			const legend = document.querySelector('.js-room-details__bagel-legend') as HTMLElement;
-			const legendTextList = legend!.innerText.split('\n')
-			const hoveredIndex = legendTextList.indexOf(hovered?._view.label)
-
-			for(let index = 0; index < 4; index += 1){
-				legendElements[index].style.transform = 'scale(1)'
-			}
-
-			legendElements[hoveredIndex].style.transform = 'scale(1.1)'
-		}
+		onHoverChartLines(data)
 	},
+}
+
+const addLegendsColors = () => {
+	const legendItems = document.querySelectorAll(".js-room-details__bagel-legend li span") as unknown as HTMLElement[];
+	
+	for(let i = 0; i < legendItems.length; i += 1) {
+		if(backgroundColor[i].length > 1) {
+			const linearGradientString = [
+				`linear-gradient(180deg, ${backgroundColor[i][0]} 0%, ${backgroundColor[i][1]} 100%)`
+			];
+
+			legendItems[i].style.background = linearGradientString[0]
+
+		} else {
+			legendItems[i].style.background = backgroundColor[i][0]
+
+		}
+	}
 }
 
 $(document).ready(() => {
@@ -90,15 +108,5 @@ $(document).ready(() => {
 	});
 	$(".js-room-details__bagel-legend").html(chart.generateLegend());
 
-	const legendElems = document.querySelectorAll(".js-room-details__bagel-legend li span");
-	const colorsArr = [
-		'#BC9CFF 0%, #8BA4F9 100%',
-		'#6FCF97 0%, #66D2EA 100%',
-		'#FFE39C 0%, #FFBA9C 100%',
-		'#919191 0%, #3D4975 100%',
-	]
-	
-	for(let i = 0; i < legendElems.length; i += 1) {
-		legendElems[i].style.background = `linear-gradient(180deg, ${ colorsArr[i] })`
-	}
+	addLegendsColors()
 })
