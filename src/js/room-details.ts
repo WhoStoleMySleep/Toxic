@@ -6,7 +6,6 @@ import Chart from 'chart.js';
 const bagelCanvas = $(".js-room-details__bagel-canvas") as unknown as HTMLCanvasElement[];
 const ctx: CanvasRenderingContext2D | null = bagelCanvas[0].getContext("2d");
 
-
 const backgroundColor: Array<string[]> =  [
 	['#BC9CFF', '#8BA4F9'],
 	['#6FCF97', '#66D2EA'],
@@ -20,29 +19,22 @@ class Bagel {
   private backgroundColorArray: string[][];
 
   constructor(context: CanvasRenderingContext2D, backgroundColorArray: string[][]) {
-    this.context = context
-    this.backgroundColorArray = backgroundColorArray
+    this.context = context;
+    this.backgroundColorArray = backgroundColorArray;
   }
 
-  private static createLinearGradient(context: any, colorsArray: string[][]) {
-    const gradientArray = []
-
-    for(let index = 0; index < colorsArray.length; index += 1) {
-      if(colorsArray[index].length > 1) {
-        const gradient = context.createLinearGradient(0, 0, 0, 180);
-    
-        gradient.addColorStop(0.0, colorsArray[index][0])
-        gradient.addColorStop(1.0, colorsArray[index][1])
-        
-        gradientArray.push(gradient)
-
-      } else {
-        gradientArray.push(colorsArray[index][0])
-
-      }
-    }
-
-    return gradientArray
+  createChart(enable: boolean = false) {
+		if (enable) {
+			const chart = new Chart(this.context, {
+				type: 'doughnut',
+				data: this.chartData(),
+				options: this.chartOption()
+			})
+	
+			$(".js-room-details__bagel-legend").html(chart.generateLegend());
+	
+			this.addLegendsColors()
+		}
   }
 
   private chartData() {
@@ -54,29 +46,12 @@ class Bagel {
     ]
     const datasets = [{
       data: [250, 250, 500, 0],
-      backgroundColor: Bagel.createLinearGradient(this.context, this.backgroundColorArray),
+      backgroundColor: this.createLinearGradient(this.context, this.backgroundColorArray),
     }]
 
     return {labels, datasets}
   }
 
-  private static onHoverChartLines(data: string[]) {
-    let hovered: null | string = null;
-      
-    if (!hovered) {
-      [hovered] = data;
-
-      const legendElements = document.querySelectorAll('.js-room-details__bagel-legend > ul > li') as unknown as HTMLElement[]
-      const legend = document.querySelector('.js-room-details__bagel-legend') as HTMLElement;
-      const legendTextList = legend!.innerText.split('\n')
-			/* eslint no-underscore-dangle: ["error", { "allow": ["_view"] }] */
-      const hoveredIndex = legendTextList.indexOf(hovered?._view.label)
-
-      for(let index = 0; index < 4; index += 1){
-        legendElements[index].style.transform = 'scale(1)'
-      }
-
-      legendElements[hoveredIndex].style.transform = 'scale(1.1)'
   private chartOption() {
     const cutoutPercentage = 90;
     const legend = {
@@ -117,18 +92,45 @@ class Bagel {
     }
   }
 
-  createChart(enable: boolean = false) {
-		if (enable) {
-			const chart = new Chart(this.context, {
-				type: 'doughnut',
-				data: this.chartData(),
-				options: Bagel.chartOption()
-			})
-	
-			$(".js-room-details__bagel-legend").html(chart.generateLegend());
-	
-			this.addLegendsColors()
-		}
+  private static createLinearGradient(context: any, colorsArray: string[][]) {
+    const gradientArray = []
+
+    for(let index = 0; index < colorsArray.length; index += 1) {
+      if(colorsArray[index].length > 1) {
+        const gradient = context.createLinearGradient(0, 0, 0, 180);
+    
+        gradient.addColorStop(0.0, colorsArray[index][0])
+        gradient.addColorStop(1.0, colorsArray[index][1])
+        
+        gradientArray.push(gradient)
+
+      } else {
+        gradientArray.push(colorsArray[index][0])
+
+      }
+    }
+
+    return gradientArray
+  }
+
+  private static onHoverChartLines(data: string[]) {
+    let hovered: null | string = null;
+      
+    if (!hovered) {
+      [hovered] = data;
+
+      const legendElements = document.querySelectorAll('.js-room-details__bagel-legend > ul > li') as unknown as HTMLElement[]
+      const legend = document.querySelector('.js-room-details__bagel-legend') as HTMLElement;
+      const legendTextList = legend!.innerText.split('\n')
+      /* eslint no-underscore-dangle: ["error", { "allow": ["_view"] }] */
+      const hoveredIndex = legendTextList.indexOf(hovered?._view.label)
+
+      for(let index = 0; index < 4; index += 1){
+        legendElements[index].style.transform = 'scale(1)'
+      }
+
+      legendElements[hoveredIndex].style.transform = 'scale(1.1)'
+    }
   }
 }
 
