@@ -28,7 +28,7 @@ class Bagel {
 			const chart = new Chart(this.context, {
 				type: 'doughnut',
 				data: this.chartData(),
-				options: this.chartOption()
+				options: Bagel.chartOption()
 			})
 	
 			$(".js-room-details__bagel-legend").html(chart.generateLegend());
@@ -46,13 +46,13 @@ class Bagel {
     ]
     const datasets = [{
       data: [250, 250, 500, 0],
-      backgroundColor: this.createLinearGradient(this.context, this.backgroundColorArray),
+      backgroundColor: Bagel.createLinearGradient(this.context, this.backgroundColorArray),
     }]
 
     return {labels, datasets}
   }
 
-  private chartOption() {
+  private static chartOption() {
     const cutoutPercentage = 90;
     const legend = {
       display: false,
@@ -64,7 +64,7 @@ class Bagel {
       mode: 'point',
     };
     const onHover = (_: object, data: string[]) => {
-      this.onHoverChartLines(data)
+      Bagel.onHoverChartLines(data)
     }
 
     return { cutoutPercentage, legend, tooltips, hover, onHover };
