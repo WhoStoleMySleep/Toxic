@@ -77,25 +77,22 @@ class Bagel {
       }
 
       legendElements[hoveredIndex].style.transform = 'scale(1.1)'
+  private chartOption() {
+    const cutoutPercentage = 90;
+    const legend = {
+      display: false,
+    };
+    const tooltips = {
+      enabled: false,
+    };
+    const hover = {
+      mode: 'point',
+    };
+    const onHover = (_: object, data: string[]) => {
+      this.onHoverChartLines(data)
     }
-  }
 
-  private static chartOption() {
-    return {
-      cutoutPercentage: 90,
-      legend: {
-        display: false,
-      },
-      tooltips: {
-        enabled: false,
-      },
-      hover: {
-        mode: 'point',
-      },
-      onHover(_: object, data: string[]) {
-        Bagel.onHoverChartLines(data)
-      },
-    }
+    return { cutoutPercentage, legend, tooltips, hover, onHover };
   }
 
   private addLegendsColors() {
