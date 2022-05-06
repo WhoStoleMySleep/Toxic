@@ -1,6 +1,8 @@
 import * as _ from 'lodash';
 import $ from 'jquery';
 
+import './favicons/favicons';
+
 // import 'slick-carousel';
 
 
