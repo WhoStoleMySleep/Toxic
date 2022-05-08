@@ -5,6 +5,7 @@ import './favicons/favicons';
 
 // import 'slick-carousel';
 
+import './js/scroll'
 
 import('./components/header/header.ts');
 
