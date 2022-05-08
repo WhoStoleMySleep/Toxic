@@ -1,4 +1,4 @@
-import compareElementTypes from '../../js/module/compareElementTypes';
+import compareElementTypes from '../../js/helper-modules/compareElementTypes';
 
 (function () {
 	const burgerButton = document.querySelector('.js-header__menu-burger');

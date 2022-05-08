@@ -1,4 +1,4 @@
-import compareElementTypes from '../../js/module/compareElementTypes';
+import compareElementTypes from '../../js/helper-modules/compareElementTypes';
 import 'jquery-ui/ui/widgets/datepicker';
 // import compareElementTypes from '../../js/module/compareElementTypes';
 
