@@ -1,47 +1,47 @@
-header.header 
-  .header__wrapper 
+header.header
+  .header__wrapper
     nav.header__menu
-      a(href="./index.html").header__menu-logo
-        img(src="./img/logo.png", alt="logo").header__menu-logo-img
-
-      img(src="./img/burger.png", alt="menu").header__menu-burger.js-header__menu-burger
+      a.header__logo(href='./index.html')
+        img.header__logo-img(src='./img/logo.png' alt='logo')
+        
+      img.header__burger(src='./img/burger.png' alt='menu')
       
-      ul.header__menu-links.js-header__menu-links
-        li.header__menu-link
-          a(href="/mock-address/about-me", class="header__menu-about-me") О нас
-
-        li.header__menu-link
-          details.header__menu-dropdown.js-header__menu-dropdown
-            summary(class="header__menu-services") Услуги
-            ul.header__menu-expandable.js-header__menu-expandable
-              li.header__menu-expandable-elem
-                a(href="/mock-address/").header__menu-expandable-link пираты
-
-              li.header__menu-expandable-elem
-                a(href="/mock-address/").header__menu-expandable-link карибы
-
-              li.header__menu-expandable-elem
-                a(href="/mock-address/").header__menu-expandable-link ссылки
-                
-        li.header__menu-link
-          a(href="/mock-address/job-opening", class="header__menu-job-opening") Вакансии
+      ul.header__link-list
+        li.header__link
+          a.header__about-me(href='/mock-address/about-me') О нас
           
-        li.header__menu-link
-          a(href="/mock-address/news", class="header__menu-news") Новости
-
-        li.header__menu-link
-          details.header__menu-dropdown.js-header__menu-dropdown
-            summary(class="header__menu-agreements") Соглашения
-            ul.header__menu-expandable.js-header__menu-expandable
-              li.header__menu-expandable-elem
-                a(href="/mock-address/").header__menu-expandable-link пираты
+        li.header__link
+          details.header__select-container
+            summary.header__select-headed Услуги
+            ul.header__expandable
+              li.header__expandable-elem
+                a.header__expandable-link(href='/mock-address/') ссылки
                 
-              li.header__menu-expandable-elem
-                a(href="/mock-address/").header__menu-expandable-link карибы
+              li.header__expandable-elem
+                a.header__expandable-link(href='/mock-address/') ссылки 
                 
-              li.header__menu-expandable-elem
-                a(href="/mock-address/").header__menu-expandable-link ссылки
+              li.header__expandable-elem
+                a.header__expandable-link(href='/mock-address/') ссылки
                 
-        li.header__reg-login 
-          a(href='./sign-in.html').header__reg-login-log Войти 
-          a(href='./registration.html').header__reg-login-reg Зарегистрироваться     
+        li.header__link
+          a.header__job-opening(href='/mock-address/job-opening') Вакансии
+          
+        li.header__link
+          a.header__news(href='/mock-address/news') Новости 
+          
+        li.header__link
+          details.header__select-container
+            summary.header__select-headed Соглашения
+            ul.header__expandable
+              li.header__expandable-elem
+                a.header__expandable-link(href='/mock-address/') ссылки
+                
+              li.header__expandable-elem
+                a.header__expandable-link(href='/mock-address/') ссылки
+                
+              li.header__expandable-elem
+                a.header__expandable-link(href='/mock-address/') ссылки
+                
+        li.header__reg-login
+          a.header__login(href='./sign-in.html') Войти
+          a.header__registration(href='./registration.html') Зарегистрироваться
