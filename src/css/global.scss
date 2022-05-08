@@ -5,12 +5,23 @@
 // --------------- Глобалтные стили ---------------- //
 
 body {
+  --scrollbar-color: #000;
   color: rgba(31, 32, 65, 0.75);
   font-family: Montserrat;
   overflow-x: hidden;
 
   &._blockSwipe {
     overflow: hidden;
+  }
+
+  &::-webkit-scrollbar {
+    height: 0;
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-color);
+    border-radius: 4px;
   }
 }
 
