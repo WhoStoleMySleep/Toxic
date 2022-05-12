@@ -155,6 +155,25 @@
   &__bagel-legend {
     margin-left: min(28px, 1.9vw);
     margin-top: 32px;
+
+    li {
+      display: flex;
+      margin-bottom: 10px;
+      transition-duration: 250ms;
+
+      span {
+        border-radius: 10px;
+        display: inline-block;
+        height: 10px;
+        margin-right: 5px;
+        margin-top: 2px;
+        width: 10px;
+      }
+
+      &:last-child {
+        margin: 0;
+      }
+    }
   }
 
   &__comment-block {
@@ -183,31 +202,6 @@
     width: 100%;
   }
 }
-// room-details style: end
-// room-details style: end
-
-// components style: start
-// components style: start
-.room-details__bagel-legend {
-  li {
-    display: flex;
-    margin-bottom: 10px;
-    transition-duration: 250ms;
-
-    span {
-      border-radius: 10px;
-      display: inline-block;
-      height: 10px;
-      margin-right: 5px;
-      margin-top: 2px;
-      width: 10px;
-    }
-
-    &:last-child {
-      margin: 0;
-    }
-  }
-}
 
 .to-book {
   margin: 0 auto;
@@ -229,11 +223,6 @@
   margin-top: 70px;
 }
 
-// components style: end
-// components style: end
-
-// media queries: start
-// media queries: start
 @media all and (max-width: 1090px) {
   .room-details {
     &__row {
@@ -291,7 +280,6 @@
     &__general-information,
     &__more-about {
       flex-wrap: wrap;
-  
     }
 
     &__information,
@@ -301,8 +289,6 @@
       margin-bottom: 20px;
     }
   }
-
-
 }
 
 @media all and (max-width: 641px) {
@@ -329,5 +315,4 @@
     }
   }
 }
-// media queries: end
-// media queries: end
+
