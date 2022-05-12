@@ -2,11 +2,16 @@
 @import "fonts.scss";
 // файл обнуляющих стилей
 @import "nullstyle.scss";
+// Файл с переменными
+@import "variables.scss";
+// Импорт компонентов
+@import "../components/header/header.scss";
+@import "../components/footer/footer.scss";
 // --------------- Глобалтные стили ---------------- //
 
 body {
   --scrollbar-color: #000;
-  color: rgba(31, 32, 65, 0.75);
+  color: $black-blue;
   font-family: Montserrat;
   overflow-x: hidden;
 
@@ -30,7 +35,7 @@ h2,
 h3 {
   color: #1f2041;
   font-weight: bold;
-  text-shadow: 0.3px 0 0 #000;
+  text-shadow: 0.3px 0 0 $black;
 }
 
 h1 {
@@ -48,5 +53,3 @@ h3 {
   line-height: 15px;
   text-transform: uppercase;
 }
-@import "../components/header/header.scss";
-@import "../components/footer/footer.scss";

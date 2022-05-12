@@ -1,230 +1,226 @@
 // Файл глобалиных стилей //
 @import "global.scss";
 // Стили компонентов
-@import "../components/header/header.scss";
-@import "../components/footer/footer.scss";
 @import "../components/text-list/text-list.scss";
 @import "../components/comments/comments.scss";
 @import "../components/bullet-list/bullet-list.scss";
 @import "../components/to-book/to-book.scss";
 //-------------------------------------------------------------------------------------------------------------//
-// !~header
-.room-details__main {
-  .room-details__container-images {
+// room-details style: start
+// room-details style: start
+.room-details {
+  &__container-images {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(2, 1fr);
     margin-bottom: 70px;
+  }
 
-    .room-details__image {
-      &_type {
-        &_big {
-          display: block;
-          grid-area: 1 / 1 / 3 / 3;
-          height: 485px;
+  &__image {
+    &_type {
+      &_big,
+      &_small {
+        max-width: 981px;
+      }
+
+      &_big {
+        display: block;
+        grid-area: 1 / 1 / 3 / 3;
+        height: 485px;
+        object-fit: cover;
+        width: 100%;
+      }
+
+      &_small {
+        &_one,
+        &_two {
+          max-height: 242.5px;
+          max-width: 460px;
           object-fit: cover;
-          width: 100%;
+          width: 460px;
         }
 
-        &_big,
-        &_small {
-          max-width: 981px;
+        &_one {
+          grid-area: 1 / 3 / 2 / 4;
         }
 
-        &_small {
-          &_one,
-          &_two {
-            max-height: 242.5px;
-            max-width: 460px;
-            object-fit: cover;
-            width: 460px;
-          }
-
-          &_one {
-            grid-area: 1 / 3 / 2 / 4;
-          }
-
-          &_two {
-            grid-area: 2 / 3 / 3 / 4;
-          }
+        &_two {
+          grid-area: 2 / 3 / 3 / 4;
         }
       }
     }
   }
 
-  .room-details__row {
+  &__row {
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
     max-width: 1164px;
     text-align: center;
+  }
 
-    .room-details__col {
-      display: inline-block;
-      max-width: 711px;
-      text-align: left;
-      width: 100%;
+  &__col {
+    display: inline-block;
+    max-width: 711px;
+    text-align: left;
+    width: 100%;
 
-      &_col {
-        &_one {
-          margin-right: auto;
-        }
-
-        &_two {
-          max-width: 380px;
-          padding-right: 2px;
-          width: 100%;
-
-          .to-book {
-            margin: 0 auto;
-          }
-        }
+    &_col {
+      &_one {
+        margin-right: auto;
       }
 
-      .room-details__general-information,
-      .room-details__more-about {
-        display: flex;
-        justify-content: space-between;
-        max-width: 711px;
+      &_two {
+        max-width: 380px;
+        padding-right: 2px;
         width: 100%;
-
-        .room-details__information,
-        .room-details__assessments,
-        .room-details__rules,
-        .room-details__cancellation {
-          width: 291px;
-
-          .room-details__information-headed,
-          .room-details__assessment-headed,
-          .room-details__rules-headed,
-          .room-details__cancellation-headed {
-            letter-spacing: 0.41px;
-            margin-bottom: 21px;
-          }
-        }
-
-        .room-details__assessments,
-        .room-details__cancellation {
-          margin-right: 10px;
-          width: 341px;
-        }
       }
+    }
+  }
 
-      .room-details__general-information {
-        margin-left: 2px;
+  &__general-information,
+  &__more-about {
+    display: flex;
+    justify-content: space-between;
+    max-width: 711px;
+    width: 100%;
+  }
 
-        .room-details__assessments {
-          .room-details__bagel {
-            display: flex;
+  &__general-information {
+    margin-left: 2px;
+  }
 
-            .room-details__votes {
-              color: #bc9cff;
-              display: flex;
-              flex-wrap: wrap;
-              margin: 36px 0 0 8px;
-              position: absolute;
-              text-align: center;
-              text-shadow: 0.3px 0 0 #bc9cff;
-              width: 105px;
-              z-index: -1;
+  &__information,
+  &__assessments,
+  &__rules,
+  &__cancellation {
+    width: 291px;
+  }
 
-              .room-details__votes-headed {
-                margin: 0 auto;
-              }
+  &__information-headed,
+  &__assessment-headed,
+  &__rules-headed,
+  &__cancellation-headed {
+    letter-spacing: 0.41px;
+    margin-bottom: 21px;
+  }
 
-              .room-details__votes-context {
-                font-size: 12px;
-                line-height: 17px;
-                margin: 0 auto;
-                text-transform: uppercase;
-              }
-            }
+  &__rules-headed,
+  &__cancellation-headed {
+    margin-bottom: 19px;
+  }
 
-            .room-details__bagel-container {
-              height: 123px;
-              width: 123px;
-            }
+  &__information-headed {
+    margin-left: 20px;
+  }
 
-            .room-details__bagel-legend {
-              margin-left: min(28px, 1.9vw);
-              margin-top: 32px;
+  &__assessments,
+  &__cancellation {
+    margin-right: 10px;
+    width: 341px;
+  }
 
-              li {
-                display: flex;
-                margin-bottom: 10px;
-                transition-duration: 250ms;
+  &__bagel {
+    display: flex;
+  }
 
-                span {
-                  border-radius: 10px;
-                  display: inline-block;
-                  height: 10px;
-                  margin-right: 5px;
-                  margin-top: 2px;
-                  width: 10px;
-                }
+  &__votes {
+    color: $aquamarine;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 36px 0 0 8px;
+    position: absolute;
+    text-align: center;
+    text-shadow: 0.3px 0 0 $aquamarine;
+    width: 105px;
+    z-index: -1;
+  }
 
-                &:last-child {
-                  margin: 0;
-                }
-              }
-            }
-          }
-        }
-      }
+  &__votes-headed {
+    margin: 0 auto;
+  }
 
-      .room-details__more-about {
-        .room-details__rules,
-        .room-details__cancellation {
-          .room-details__rules-headed,
-          .room-details__cancellation-headed {
-            margin-bottom: 19px;
-          }
+  &__votes-context {
+    font-size: 12px;
+    line-height: 17px;
+    margin: 0 auto;
+    text-transform: uppercase;
+  }
 
-          .room-details__rules-headed {
-            margin-left: 20px;
-          }
+  &__bagel-container {
+    height: 123px;
+    width: 123px;
+  }
 
-          .room-details__cancellation-headed {
-            padding-left: 3px;
-          }
-        }
+  &__bagel-legend {
+    margin-left: min(28px, 1.9vw);
+    margin-top: 32px;
+  }
 
-        .room-details__cancellation {
-          .room-details__cancellation-context {
-            line-height: 24px;
-            width: 100%;
-          }
-        }
-      }
+  &__comment-block {
+    margin: 33px 0;
+    margin-left: 2px;
+  }
 
-      .room-details__comment-block {
-        margin: 33px 0;
-        margin-left: 2px;
+  &__comment-block-headed-container {
+    display: flex;
+  }
 
-        .room-details__comment-block-headed-container {
-          display: flex;
+  &__comment-block-headed {
+    letter-spacing: 0.57px;
+  }
 
-          .room-details__comment-block-headed {
-            letter-spacing: 0.57px;
-          }
+  &__comment-block-context {
+    margin: calc(((24px / 2) - (14px / 2)) + 2px) 1px 0 auto;
+  }
 
-          .room-details__comment-block-context {
-            margin: calc(((24px / 2) - (14px / 2)) + 2px) 1px 0 auto;
-          }
-        }
+  &__cancellation-headed {
+    padding-left: 3px;
+  }
 
-        .comments {
-          margin-top: 21px;
+  &__cancellation-context {
+    line-height: 24px;
+    width: 100%;
+  }
+}
+// room-details style: end
+// room-details style: end
 
-          .comment {
-            margin-top: 23px;
+// components style: start
+// components style: start
+.room-details__bagel-legend {
+  li {
+    display: flex;
+    margin-bottom: 10px;
+    transition-duration: 250ms;
 
-            &:first-child {
-              margin-top: 0;
-            }
-          }
-        }
-      }
+    span {
+      border-radius: 10px;
+      display: inline-block;
+      height: 10px;
+      margin-right: 5px;
+      margin-top: 2px;
+      width: 10px;
+    }
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+}
+
+.to-book {
+  margin: 0 auto;
+}
+
+.comments {
+  margin-top: 21px;
+
+  .comment {
+    margin-top: 23px;
+
+    &:first-child {
+      margin-top: 0;
     }
   }
 }
@@ -233,100 +229,105 @@
   margin-top: 70px;
 }
 
-@media all and (max-width: 1090px) {
-  .room-details__row {
-    display: block;
+// components style: end
+// components style: end
 
-    .room-details__col {
+// media queries: start
+// media queries: start
+@media all and (max-width: 1090px) {
+  .room-details {
+    &__row {
+      display: block;
+    }
+
+    &__col {
       margin: 0 auto;
 
-      &_col_two {
-        padding-right: 0;
-        width: 100%;
-
-        .to-book {
-          margin: 20px auto 0 auto;
+      &_col {
+        &_two {
+          padding-right: 0;
+          width: 100%;
         }
       }
     }
+  }
+
+  .to-book {
+    margin: 20px auto 0 auto;
   }
 }
 
 @media all and (max-width: 910px) {
-  .room-details__main {
-    .room-details__container-images {
+  .room-details {
+    &__container-images {
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(2, 1fr);
+    }
 
-      .room-details__image {
-        &_type {
-          &_big {
-            grid-area: 1 / 1 / 3 / 3;
-            height: auto;
+    &__image {
+      &_type {
+        &_big {
+          grid-area: 1 / 1 / 3 / 3;
+          height: auto;
+        }
+
+        &_small {
+          &_one,
+          &_two {
+            width: 100%;
           }
 
-          &_small {
-            &_one,
-            &_two {
-              width: 100%;
-            }
+          &_one {
+            grid-area: 3 / 1 / 4 / 2;
+          }
 
-            &_one {
-              grid-area: 3 / 1 / 4 / 2;
-            }
-
-            &_two {
-              grid-area: 3 / 2 / 4 / 3;
-            }
+          &_two {
+            grid-area: 3 / 2 / 4 / 3;
           }
         }
       }
     }
-  }
 
-  .room-details__general-information,
-  .room-details__more-about {
-    flex-wrap: wrap;
+    &__general-information,
+    &__more-about {
+      flex-wrap: wrap;
+  
+    }
 
-    .room-details__information,
-    .room-details__assessments,
-    .room-details__rules,
-    .room-details__cancellation {
+    &__information,
+    &__assessments,
+    &__rules,
+    &__cancellation {
       margin-bottom: 20px;
     }
   }
+
+
 }
 
 @media all and (max-width: 641px) {
-  .room-details__main {
-    .room-details__row {
-      .room-details__col {
-        .room-details__general-information,
-        .room-details__more-about {
-          .room-details__information,
-          .room-details__assessments,
-          .room-details__rules,
-          .room-details__cancellation {
-            margin-left: calc(50% - 291px / 2);
-            margin-right: 0;
+  .room-details {
+    &__information,
+    &__assessments,
+    &__rules,
+    &__cancellation {
+      margin-left: calc(50% - 291px / 2);
+      margin-right: 0;
+    }
 
-            .room-details__information-headed,
-            .room-details__assessments-headed,
-            .room-details__rules-headed,
-            .room-details__cancellation {
-              margin-left: 20px;
-              margin-right: 0;
-            }
-          }
-        }
+    &__information-headed,
+    &__assessment-headed,
+    &__rules-headed,
+    &__cancellation-headed {
+      margin-left: 20px;
+      margin-right: 0;
+    }
 
-        .room-details__comment-block {
-          .room-details__comment-block-headed-container {
-            display: block;
-            text-align: center;
-          }
-        }
-      }
+    &__comment-block-headed-container {
+      display: block;
+      text-align: center;
     }
   }
 }
+// media queries: end
+// media queries: end
