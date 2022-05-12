@@ -10,18 +10,23 @@
   box-sizing: border-box;
   max-width: 380px;
 
-  .to-book__title {
+  &__headed {
     color: #1f2041;
     display: flex;
     height: 24px;
     letter-spacing: 0.58px;
     margin: 40px auto 25px auto;
     width: 320px;
+  }
 
-    p:nth-child(1) {
+  &__headed-room {
+    display: flex;
+    
+    div {
       font-weight: bold;
-      margin: auto 4px 0 0;
       text-shadow: 1px 0 0 #1f2041;
+      line-height: calc(29px * 2 - 14px * 2);
+      margin-right: 3.5px;
     }
 
     h1 {
@@ -31,116 +36,111 @@
 
     h3 {
       color: #bc9cff;
-      margin: 12px 0 0 8px;
+      margin: 10px 0 0 8px;
       transform: scale(1, 0.9);
     }
+  }
 
-    span {
-      display: flex;
-      margin: 11px 0 0 100px;
-      white-space: nowrap;
+  &__headed-cost {
+    display: flex;
+    margin: 11px 0 0 auto;
+    white-space: nowrap;
 
-      p {
-        &:nth-child(1) {
-        }
-
-        &:nth-child(2) {
-          font-size: 12px;
-          letter-spacing: -0.3px;
-          margin: auto 0 0;
-        }
-      }
+    div:nth-child(2) {
+      font-size: 12px;
+      letter-spacing: 0;
+      margin-left: 4px;
     }
   }
 
-  form {
+  &__form {
     margin: 0 auto 0 auto;
     width: 320px;
+  }
 
-    .iqdropdown-header {
-      margin-top: 20.5px;
+  &__summation-value {
+    margin: 0 0 20px 0;
+  }
+
+  &__summing-days {
+    display: flex;
+
+    div:nth-child(3) {
+      margin: 0 0 0 auto;
     }
 
-    .dropdown {
-      margin-bottom: 22px;
-    }
-
-    .to-book__summing {
-      margin: 0 0 20px 0;
-
-      .to-book__summ-days {
-        display: flex;
-
-        span {
-          display: flex;
-
-          p {
-            &:nth-child(2) {
-              margin: 0 4px;
-            }
-          }
-        }
-
-        p {
-          margin: 0 0 0 auto;
-        }
-      }
-
-      .to-book__service-charge,
-      .to-book__Additional-services {
-        display: flex;
-        margin: 17px 0 0 0;
-
-        &:nth-child(3) {
-          margin: 14px 0 0 0;
-        }
-
-        span {
-          display: flex;
-
-          p {
-            &:nth-child(2) {
-              margin: 0 4px;
-            }
-
-            &:nth-child(1) {
-              line-height: 18px;
-              margin: 2px 0 0;
-              width: 214px;
-            }
-          }
-        }
-
-        p {
-          margin: 3px 0 0 auto;
-        }
-
-        .to-book__info {
-          border: 1px solid rgba(31, 32, 65, 0.25);
-          border-radius: 100%;
-          box-sizing: border-box;
-          color: rgba(31, 32, 65, 0.25);
-          font-size: 12px;
-          height: 20px;
-          line-height: 18px;
-          text-align: center;
-          width: 20px;
-        }
-      }
-
-      .to-book__total {
-        color: #1f2041;
-        display: flex;
-        font-weight: bold;
-        justify-content: space-between;
-        letter-spacing: 0.4px;
-        margin: 30px 0 0 0;
-      }
-    }
-
-    .big-button {
-      letter-spacing: 0.2px;
-      margin: 0 0 30px 0;
+    div:nth-child(2) {
+      margin: 0 4px;
     }
   }
+
+  &__service-charge,
+  &__additional-services {
+    display: flex;
+    margin: 17px 0 0 0;
+
+    &:nth-child(3) {
+      margin: 14px 0 0 0;
+    }
+
+    div {
+      &:nth-child(2) {
+        margin: 0 4px;
+      }
+
+      &:nth-child(1) {
+        line-height: 18px;
+        margin: 2px 0 0;
+        width: 214px;
+      }
+
+      margin: 3px 0 0 auto;
+    }
+  }
+
+  &__service-charge-info,
+  &__additional-services-info {
+    border: 1px solid $black-blue-transparent;
+    border-radius: 100%;
+    box-sizing: border-box;
+    color: $black-blue-transparent;
+    font-size: 12px;
+    height: 20px;
+    line-height: 18px;
+    text-align: center;
+    width: 20px;
+  }
+
+  &__total {
+    color: #1f2041;
+    display: flex;
+    font-weight: bold;
+    justify-content: space-between;
+    letter-spacing: 0.4px;
+    margin: 30px 0 0 0;
+  }
+
+  &__total-line {
+    width: 100%;
+    height: 1px;
+    border: 1px dashed $black-blue-transparent;
+    margin-top: 18px;
+  }
+
+  &__total-summ{
+    white-space: nowrap;
+  }
+}
+
+.date-dropdown {
+  margin-bottom: 20.5px;
+}
+
+.dropdown {
+  margin-bottom: 22px;
+}
+
+.big-button {
+  letter-spacing: 0.2px;
+  margin: 0 0 30px 0;
 }

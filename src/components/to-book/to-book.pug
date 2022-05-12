@@ -1,35 +1,32 @@
 .to-book
-	.to-book__title
-		p №
-		h1 888
-		h3 Люкс
-		span
-			P 9 990₽
-			p в сутки
-	form
-		include ../date-dropdown/date-dropdown.pug
-		include ../dropdown/dropdown.pug
-		+dropdown('Гости', ['Взрослые', 'Дети', 'Младенцы'])
-		.to-book__summing
-			.to-book__summ-days
-				span
-					p.to-book__price 9 990₽
-					p x
-					p.to-book__days 0 суток
-				p#daysSumm 0₽
-			.to-book__service-charge
-				span
-					p.to-book__service-charge-text Сбор за услуги: скидка 2 179₽
-					p.to-book__info i
-				p#serviceChargeSumm 0₽
-			.to-book__Additional-services
-				span
-					p.to-book__Additional-services-text Сбор за дополнительные услуги
-					p.to-book__info i
-				p#AdditionalServicesSumm 300₽
-			.to-book__total
-				span
-					h2.to-book__total-text Итого
-				h2#totalTotal 
-		include ../big-button/big-button.pug
-		+big-button('Забронировать')
+  .to-book__headed 
+    .to-book__headed-room
+      div №
+      h1 888
+      h3 Люкс
+    .to-book__headed-cost
+      div 9 990₽
+      div в сутки
+  form.to-book__form
+    include ../date-dropdown/date-dropdown.pug
+    include ../dropdown/dropdown.pug
+    +dropdown('Гости', ['Взрослые', 'Дети', 'Младенцы'])
+    .to-book__summation-value
+      .to-book__summing-days
+        .to-book__price 9 990₽ x
+        .to-book__number-days 0 суток
+        .to-book__summing-days-summ 0₽
+      .to-book__service-charge
+        .to-book__service-charge-text Сбор за услуги: скидка 2 179₽
+        .to-book__service-charge-info i
+        .to-book__service-charge-summ 0₽
+      .to-book__additional-services
+        .to-book__additional-services-text Сбор за дополнительные услуги
+        .to-book__additional-services-info i
+        .to-book__additional-services-summ 300₽
+      .to-book__total
+        h2.to-book__total-text Итого
+        .to-book__total-line
+        h2.to-book__total-summ
+    include ../big-button/big-button.pug
+    +big-button('Забронировать')
