@@ -7,9 +7,7 @@ mixin text-list(textListData = [])
 					p.text-list__headed= textList.headed
 					p.text-list__additionally= textList.additionally
 
-			- let arrLegh = textListData.length
-
-			if textList != textListData[arrLegh - 1]
+			if textList != textListData[textListData.length - 1]
 				.text-list__line
 
 		else
