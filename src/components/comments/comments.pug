@@ -1,16 +1,16 @@
 mixin comments(commentsData = [])
   .comments
-    each comments in commentsData
-      .comment
-        .comment__left-row
-          img.comment__face(src='./img/' + comments.faceImg)
+    each commentData in commentsData
+      .comments__elem
+        .comments__col_col_left
+          img.comments__face(src='./img/' + commentData.faceImg)
           include ../like-button/like-button.pug
-          +like-button(comments.likes)
-        .comment__right-row
-          .comment__right-row-headed
-            .comment__name= comments.name
-            .comment__ago= comments.daysAgo
-          .comment__right-row-bottom
-            p= comments.comment
+          +like-button(commentData.likes)
+        .comments__col_col_right
+          .comments__headed
+            .comments__name= commentData.name
+            .comments__time-ago= commentData.daysAgo
+          .comments__additionally= commentData.comment
+          
     else
       p Информация отсутствует

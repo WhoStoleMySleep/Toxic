@@ -10,10 +10,10 @@
   transition-duration: 100ms;
   width: 40px;
 
-  .like-button__expend {
-    -webkit-background-clip: text;
+  &__expend {
     -webkit-text-fill-color: transparent;
     background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+    -webkit-background-clip: text;
     background-clip: text;
     font-family: 'Material Icons';
     height: 20px;
@@ -22,7 +22,7 @@
     width: 20px;
   }
 
-  .like-button__count {
+  &__count {
     color: #bc9cff;
     pointer-events: none;
   }
