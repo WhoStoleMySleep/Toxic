@@ -1,6 +1,6 @@
 .like-button {
-  background: #ffffff;
-  border: 1px solid #bc9cff;
+  background: $white;
+  border: 1px solid $aquamarine;
   border-radius: 10px;
   box-sizing: border-box;
   display: flex;
@@ -12,7 +12,7 @@
 
   &__expend {
     -webkit-text-fill-color: transparent;
-    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+    background: linear-gradient(180deg, $aquamarine 0%, $aquamarine 100%);
     -webkit-background-clip: text;
     background-clip: text;
     font-family: 'Material Icons';
@@ -23,7 +23,7 @@
   }
 
   &__count {
-    color: #bc9cff;
+    color: $aquamarine;
     pointer-events: none;
   }
 
