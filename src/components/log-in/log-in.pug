@@ -1,12 +1,12 @@
 .log-in
 	h1.log-in__title Войти
-	form
+	form.log-in__form
 		include ../text-field/text-field.pug
 		+text-field('email', 'Email')
 		+text-field('password', 'Пароль')
 		include ../big-button/big-button.pug
 		+big-button('Войти')
-	.register__go-to-register
-		p Нет аккаунта на Toxin?
+	.log-in__register
+		.log-in__register-headed Нет аккаунта на Toxin?
 		include ../transp-button/transp-button.pug
 		+transp-button('Создать')

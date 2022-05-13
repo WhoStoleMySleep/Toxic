@@ -1,77 +1,96 @@
 .date-dropdown {
-  display: flex;
-  height: 64px;
-  position: relative;
-  width: 320px;
-
-  .date-dropdown__text {
-    margin-bottom: 5px;
+  &__container {
+    display: flex;
+    height: 64px;
+    position: relative;
+    width: 320px;
   }
 
-  .date-dropdown__elem {
+  &__elem {
     height: 64px;
     width: 150px;
 
-    &:nth-child(1) {
+    &:first-child {
       margin: 0 20px 0 0;
     }
+  }
 
-    .js-date-dropdown__input {
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      border: 1px solid rgba(31, 32, 65, 0.25);
-      border-radius: 4px;
-      box-sizing: border-box;
+  &__text {
+    margin-bottom: 5px;
+  }
+  
+  &__input {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: rgba(31, 32, 65, 0.75);
+    cursor: pointer;
+    font-size: 14px;
+    height: 44px;
+    padding: 0 0 3px 13px;
+    position: absolute;
+    text-transform: uppercase;
+    user-select: none;
+    width: 150px;
+
+    &::-webkit-input-placeholder {
       color: rgba(31, 32, 65, 0.75);
-      cursor: pointer;
-      font-size: 14px;
-      height: 44px;
-      padding: 0 0 3px 13px;
-      position: absolute;
-      text-transform: uppercase;
-      user-select: none;
-      width: 150px;
-
-      &::-webkit-input-placeholder {
-        color: rgba(31, 32, 65, 0.75);
-      }
-
-      &::-moz-placeholder {
-        color: rgba(31, 32, 65, 0.75);
-      }
-
-      &:-ms-input-placeholder {
-        color: rgba(31, 32, 65, 0.75);
-      }
-
-      &::-ms-input-placeholder {
-        color: rgba(31, 32, 65, 0.75);
-      }
-
-      &::placeholder {
-        color: rgba(31, 32, 65, 0.75);
-      }
     }
 
-    label {
-      height: 44px;
-      position: relative;
-      width: 150px;
+    &::-moz-placeholder {
+      color: rgba(31, 32, 65, 0.75);
+    }
 
-      &::after {
-        color: rgba(31, 32, 65, 0.5);
-        content: 'expand_more';
-        font-family: 'Material Icons';
-        font-size: 24px;
-        height: 44px;
-        line-height: 44px;
-        margin-left: calc(150px - 44px);
-        position: absolute;
-        text-align: center;
-        text-transform: none;
-        width: 44px;
-      }
+    &:-ms-input-placeholder {
+      color: rgba(31, 32, 65, 0.75);
+    }
+
+    &::-ms-input-placeholder {
+      color: rgba(31, 32, 65, 0.75);
+    }
+
+    &::placeholder {
+      color: rgba(31, 32, 65, 0.75);
+    }
+
+  }
+  
+  &__input-label {
+    height: 44px;
+    position: relative;
+    width: 150px;
+
+    &::after {
+      color: rgba(31, 32, 65, 0.5);
+      content: 'expand_more';
+      font-family: 'Material Icons';
+      font-size: 24px;
+      height: 44px;
+      line-height: 44px;
+      margin-left: calc(150px - 44px);
+      position: absolute;
+      text-align: center;
+      text-transform: none;
+      width: 44px;
+    }
+  }
+
+  &__datepicker {
+    height: 0;
+    margin: 5px 0 0 0;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    transition-duration: 250ms;
+    width: 320px;
+    z-index: 100;
+
+    &._active {
+      height: auto;
+      opacity: 1;
     }
   }
 }
@@ -214,18 +233,6 @@
       }
     }
   }
-}
-
-.date-dropdown__datepicker {
-  height: 0;
-  margin: 5px 0 0 0;
-  opacity: 0;
-  overflow: hidden;
-  position: absolute;
-  transition-duration: 250ms;
-  width: 320px;
-  z-index: 100;
-
   .ui-datepicker-buttonpane {
     display: flex;
     height: 55px;
@@ -247,10 +254,5 @@
       padding: 0;
       text-transform: uppercase;
     }
-  }
-
-  &._active {
-    height: auto;
-    opacity: 1;
   }
 }

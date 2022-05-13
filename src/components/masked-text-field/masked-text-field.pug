@@ -1,1 +1,2 @@
-input.masked-text-field(type="text", name="masked-text-field", placeholder="ДД.ММ.ГГГГ")
+mixin masked-text-field(name = "masked-text-field", placeholder = "ДД.ММ.ГГГГ")
+  input.masked-text-field(type="text", name=`${name}`, placeholder=`${placeholder}`)

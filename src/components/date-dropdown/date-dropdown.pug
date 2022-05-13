@@ -1,11 +1,11 @@
-.date-dropdown-wrapper
-  .date-dropdown
+.date-dropdown.js-date-dropdown
+  .date-dropdown__container.js-date-dropdown__container
     .date-dropdown__elem
       h3.date-dropdown__text Прибытие
-      label(for='start-date')
-        input.js-date-dropdown__input.js-date-dropdown__start-date(type="text", name="date-dropdown", placeholder="ДД.ММ.ГГГГ", autocomplete='off', readonly)
+      label.date-dropdown__input-label
+        input.date-dropdown__input.js-date-dropdown__input.js-date-dropdown__start-date(type="text", name="date-dropdown", placeholder="ДД.ММ.ГГГГ", autocomplete='off', readonly)
     .date-dropdown__elem
       h3.date-dropdown__text Выезд
-      label(for='end-date')
-        input.js-date-dropdown__input.js-date-dropdown__end-date(type="text", name="date-dropdown", placeholder="ДД.ММ.ГГГГ", autocomplete='off', readonly)
-  .date-dropdown__datepicker
+      label.date-dropdown__input-label
+        input.date-dropdown__input.js-date-dropdown__input.js-date-dropdown__end-date(type="text", name="date-dropdown", placeholder="ДД.ММ.ГГГГ", autocomplete='off', readonly)
+  .date-dropdown__datepicker.js-date-dropdown__datepicker

@@ -3,17 +3,20 @@
 // Стили компонентов
 @import "../components/number-pick/number-pick.scss";
 //-------------------------------------------------------------------------------------------------------------//
-main {
-  background-image: url('../img/bg1.jpg');
-  background-position: center -131px;
-  background-repeat: no-repeat;
-  background-size: 1534px 1022px;
-  height: 830px;
-  padding: 70px 0 0 140px;
-  position: relative;
-  width: 100%;
+.index {
+  &__main {
+    background-image: url('../img/bg1.jpg');
+    background-position: center -131px;
+    background-repeat: no-repeat;
+    background-size: 1534px 1022px;
+    height: 830px;
+    padding: 70px 0 0 140px;
+    position: relative;
+    width: 100%;
+  
+  }
 
-  .main-subtitle {
+  &__subtitle {
     height: 48px;
     line-height: 24px;
     margin: 317px 135px 21px auto;
@@ -23,15 +26,17 @@ main {
 }
 
 @media all and (max-width: 668px) {
-  main {
-    padding: 70px 0 0;
-
-    .number-pick {
-      margin: 0 auto;
+  .index {
+    &__main {
+      padding: 70px 0 0;
     }
-
-    .main-subtitle {
+    
+    &__subtitle {
       margin: 317px auto 21px auto;
     }
+  }
+
+  .number-pick {
+    margin: 0 auto;
   }
 }

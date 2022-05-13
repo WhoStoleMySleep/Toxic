@@ -1,4 +1,6 @@
-input.radio-buttons#radioButtonsOne(type="radio",name="radio-buttons", value="male")
-label(for="radioButtonsOne") Мужчина
-input.radio-buttons#radioButtonsTwo(type="radio",name="radio-buttons", value="female")
-label(for="radioButtonsTwo") Женщина
+mixin radio-buttons(name = "radio-buttons", infoArr = [{value: "male", text: "Мужчина"},{value: "female", text: "Женщина"}])
+  .radio-buttons
+    each info in infoArr
+      label.radio-buttons__label
+        input.radio-buttons__input(type="radio" name="radio-buttons" value=`${info.value}`)
+        span.radio-buttons__text= info.text

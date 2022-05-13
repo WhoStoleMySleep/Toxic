@@ -15,7 +15,7 @@ async function index() {
 	await import('jquery-ui/themes/base/datepicker.css');
 	await import('./css/index.scss');
 }
-if ($('#index').length) {
+if ($('.index').length) {
 	index();
 }
 
@@ -41,14 +41,14 @@ if($('.room-details').length){
 async function registration() {
 	await import('./css/registration.scss');
 }
-if($('#registration').length){
+if($('.registration').length){
 	registration()
 }
 
 async function signIn() {
 	await import('./css/sign-in.scss');
 }
-if($('#sign-in').length){
+if($('.sign-in').length){
 	signIn()
 }
 

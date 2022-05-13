@@ -4,7 +4,7 @@
       div №
       h1 888
       h3 Люкс
-    .to-book__headed-cost
+    .to-book__headed-cost.js-to-book__headed-cost
       div 9 990₽
       div в сутки
   form.to-book__form
@@ -14,19 +14,19 @@
     .to-book__summation-value
       .to-book__summing-days
         .to-book__price 9 990₽ x
-        .to-book__number-days 0 суток
-        .to-book__summing-days-summ 0₽
+        .to-book__number-days.js-to-book__number-days 0 суток
+        .to-book__summing-days-summ.js-to-book__summing-days-summ 0₽
       .to-book__service-charge
-        .to-book__service-charge-text Сбор за услуги: скидка 2 179₽
+        .to-book__service-charge-text.js-to-book__service-charge-text Сбор за услуги: скидка 2 179₽
         .to-book__service-charge-info i
         .to-book__service-charge-summ 0₽
       .to-book__additional-services
         .to-book__additional-services-text Сбор за дополнительные услуги
         .to-book__additional-services-info i
-        .to-book__additional-services-summ 300₽
+        .to-book__additional-services-summ.js-to-book__additional-services-summ 300₽
       .to-book__total
         h2.to-book__total-text Итого
         .to-book__total-line
-        h2.to-book__total-summ
+        h2.to-book__total-summ.js-to-book__total-summ 0₽
     include ../big-button/big-button.pug
     +big-button('Забронировать')

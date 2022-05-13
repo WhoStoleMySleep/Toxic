@@ -1,2 +1,5 @@
-input.toggle#toggle(type="checkbox")
-label(for="toggle") Получать спецпредложения
+mixin toggle(text = 'Получать спецпредложения')
+  .toggle
+    label.toggle__label
+      input.toggle__input(type="checkbox")
+      span.toggle__text= text

@@ -14,9 +14,9 @@ html(lang="ru")
     meta(name='msapplication-TileColor' content='#00a300')
     meta(name='theme-color' content='#ffffff')
     title Toxic
-  body#index 
+  body.index 
     include ./components/header/header.pug
-    main
+    main.index__main
       include ./components/number-pick/number-pick.pug
-      p.main-subtitle Лучшие номера для вашей работы, отдыха и просто вдохновения
+      p.index__subtitle Лучшие номера для вашей работы, отдыха и просто вдохновения
     include ./components/footer/footer.pug

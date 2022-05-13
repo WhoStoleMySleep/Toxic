@@ -10,7 +10,7 @@
   box-sizing: border-box;
   max-width: 380px;
 
-  .number-pick__text {
+  &__text {
     letter-spacing: 0.48px;
     line-height: 28.8px;
     margin: 40px auto 22px auto;
@@ -21,21 +21,23 @@
     }
   }
 
-  .number-pick__form {
+  &__form {
     margin: 0 auto 30px auto;
     width: 320px;
+  }
+}
 
-    .iqdropdown-header {
-      margin-top: 20.5px;
-    }
+.iqdropdown-header {
+  margin-top: 20.5px;
+}
 
-    .dropdown {
-      margin-bottom: 31px;
-    }
+.dropdown {
+  margin-bottom: 31px;
+}
 
-    .big-button .big-button__text {
-      margin: 0 97px 2px auto;
-    }
+.big-button {
+  &__text {
+    margin: 0 97px 2px auto;
   }
 }
 
