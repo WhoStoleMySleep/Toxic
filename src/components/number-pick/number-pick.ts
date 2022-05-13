@@ -1,2 +1,2 @@
-import '../date-dropdown/date-dropdown'
+import '../date-dropdown/date-dropdown';
 import '../dropdown/dropdown';
