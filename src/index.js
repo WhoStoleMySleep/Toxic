@@ -5,48 +5,48 @@ import './favicons/favicons';
 
 // import 'slick-carousel';
 
-import './js/scroll'
+import './ts/scroll'
 
 import('./components/header/header.ts');
 
 
 async function index() {
-	await import('./js/index.ts');
+	await import('./ts/index.ts');
 	await import('jquery-ui/themes/base/datepicker.css');
-	await import('./css/index.scss');
+	await import('./scss/index.scss');
 }
 if ($('.index').length) {
 	index();
 }
 
 async function searchRoom() {
-	await import('./js/search-room.js');
+	await import('./ts/search-room.ts');
 	await import('./components/range-slider/range-slider.scss');
 	await import('jquery-ui/themes/base/slider.css');
-	await import('./css/search-room.scss');
+	await import('./scss/search-room.scss');
 }
-if($('#search-room').length){
+if($('.search-room').length){
 	searchRoom()
 }
 
 async function roomDetails() {
-	await import('./js/room-details.ts');
+	await import('./ts/room-details.ts');
 	await import('jquery-ui/themes/base/datepicker.css');
-	await import('./css/room-details.scss');
+	await import('./scss/room-details.scss');
 }
 if($('.room-details').length){
 	roomDetails()
 }
 
 async function registration() {
-	await import('./css/registration.scss');
+	await import('./scss/registration.scss');
 }
 if($('.registration').length){
 	registration()
 }
 
 async function signIn() {
-	await import('./css/sign-in.scss');
+	await import('./scss/sign-in.scss');
 }
 if($('.sign-in').length){
 	signIn()
