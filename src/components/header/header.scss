@@ -4,234 +4,233 @@
   user-select: none;
   width: 100%;
 
-  .header__wrapper {
+  &__wrapper {
     display: flex;
     height: 70px;
     margin: 0 auto;
     max-width: calc(1440px - 140px*2 + 30px);
+  }
 
-    .header__menu {
-      display: flex;
-      height: 40px;
-      margin: auto 0;
-      width: 100%;
+  &__menu {
+    display: flex;
+    height: 40px;
+    margin: auto 0;
+    width: 100%;
+  }
 
-      .header__logo {
-        height: 40px;
-        margin: auto 0;
-        margin-left: 15px;
-        width: 105px;
-      }
+  &__logo {
+    height: 40px;
+    margin: auto 0;
+    margin-left: 15px;
+    width: 105px;
+  }
 
-      .header__burger {
-        display: none;
-        height: 35px;
-        margin: 2.5px 0 0 calc(100% - 17.5px - 40px);
-        position: absolute;
-        width: 35px;
-      }
+  &__burger {
+    display: none;
+    height: 35px;
+    margin: 2.5px 0 0 calc(100% - 17.5px - 40px);
+    position: absolute;
+    width: 35px;
+  }
 
-      .header__link-list {
-        background-color: #fff;
-        border-radius: 0 0 22px 22px;
-        display: flex;
-        margin: 2.5px 0 0 auto;
+  &__link-list {
+    background-color: #fff;
+    border-radius: 0 0 22px 22px;
+    display: flex;
+    margin: 2.5px 0 0 auto;
+  }
 
-        .header__link {
-          margin-top: 9px;
+  &__link {
+    margin-top: 9px;
 
-          &:nth-child(5) {
-            width: 126px;
-          }
+    &:nth-child(5) {
+      width: 126px;
+    }
+  }
 
-          .header__select-container {
-            position: relative;
+  &__about-me,
+  &__job-opening,
+  &__news,
+  &__select-headed {
+    color: rgba(31, 32, 65, 0.5);
+    cursor: pointer;
+    display: flex;
+    line-height: 17px;
+    padding: 0 10.25px;
+    transition-duration: 250ms;
 
-            .header__select-headed {
-              list-style: none;
+    &:hover {
+      color: rgba(31, 32, 65, 0.75);
+    }
+  }
 
-              &::after {
-                color: rgba(31, 32, 65, 0.5);
-                content: 'expand_more';
-                font-family: 'Material Icons';
-                font-size: 24px;
-                height: 21px;
-                line-height: 20px;
-                width: 24px;
-              }
-            }
+  &__select-container {
+    position: relative;
+  }
 
-            .header__expandable {
-              background-color: #fff;
-              box-shadow: 0px 23.9px 38.3px rgba(0, 0, 0, 0.12), 0px 191px 306px rgba(0, 0, 0, 0.24);
-              position: absolute;
-              width: 100%;
-              z-index: 100;
+  &__select-headed {
+    list-style: none;
 
-              .header__expandable-elem {
-                text-align: center;
+    &::after {
+      color: rgba(31, 32, 65, 0.5);
+      content: 'expand_more';
+      font-family: 'Material Icons';
+      font-size: 24px;
+      height: 21px;
+      line-height: 20px;
+      width: 24px;
+    }
+  }
 
-                .header__expandable-link {
-                  display: block;
-                  margin: 0 auto;
-                  padding: 2.5px 10px;
-                }
-              }
-            }
-          }
+  &__expandable {
+    background-color: #fff;
+    box-shadow: 0px 23.9px 38.3px rgba(0, 0, 0, 0.12), 0px 191px 306px rgba(0, 0, 0, 0.24);
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+  }
 
-          .header__about-me,
-          .header__job-opening,
-          .header__news,
-          .header__select-headed {
-            color: rgba(31, 32, 65, 0.5);
-            cursor: pointer;
-            display: flex;
-            line-height: 17px;
-            padding: 0 10.25px;
-            transition-duration: 250ms;
+  &__expandable-elem {
+    text-align: center;
+  }
 
-            &:hover {
-              color: rgba(31, 32, 65, 0.75);
-            }
-          }
-        }
+  &__expandable-link {
+    display: block;
+    margin: 0 auto;
+    padding: 2.5px 10px;
+  }
 
-        .header__reg-login {
-          display: flex;
-          margin-left: 20px;
+  &__reg-login {
+    display: flex;
+    margin-left: 20px;
+  }
 
-          .header__login,
-          .header__registration {
-            border-radius: 22px;
-            font-size: 12px;
-            font-weight: bold;
-            height: 34px;
-            text-transform: uppercase;
-          }
+  &__login,
+  &__registration {
+    border-radius: 22px;
+    font-size: 12px;
+    font-weight: bold;
+    height: 34px;
+    text-transform: uppercase;
+  }
 
-          .header__login {
-            background: linear-gradient(#fff, #fff) padding-box, linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%) border-box;
-            border: 2px solid transparent;
-            color: #bc9cff;
-            line-height: 30px;
-            padding: 0 20px 0 19px;
-            text-transform: uppercase;
+  &__login {
+    background: linear-gradient(#fff, #fff) padding-box, linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%) border-box;
+    border: 2px solid transparent;
+    color: #bc9cff;
+    line-height: 30px;
+    padding: 0 20px 0 19px;
+    text-transform: uppercase;
 
-            &:hover {
-              background: linear-gradient(#fff, #fff) padding-box, linear-gradient(180deg, rgba(188, 156, 255, 0.5) 0%, rgba(139, 164, 249, 0.5) 100%) border-box;
-            }
-          }
+    &:hover {
+      background: linear-gradient(#fff, #fff) padding-box, linear-gradient(180deg, rgba(188, 156, 255, 0.5) 0%, rgba(139, 164, 249, 0.5) 100%) border-box;
+    }
+  }
 
-          .header__registration {
-            background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
-            color: #fff;
-            letter-spacing: 0.2px;
-            line-height: 34px;
-            margin-left: 18.5px;
-            margin-right: 15px;
-            padding: 0px 20px;
-            transition-duration: 150ms;
+  &__registration {
+    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+    color: #fff;
+    letter-spacing: 0.2px;
+    line-height: 34px;
+    margin-left: 18.5px;
+    margin-right: 15px;
+    padding: 0px 20px;
+    transition-duration: 150ms;
 
-            &:hover {
-              opacity: 0.5;
-            }
-          }
-        }
-      }
+    &:hover {
+      opacity: 0.5;
     }
   }
 }
 
 @media all and (max-width: 900px) {
   .header {
-    .header__wrapper {
+    &__wrapper {
       padding-top: 10px;
+    }
 
-      .header__menu {
-        display: block;
+    &__menu {
+      display: block;
+    }
 
-        .header__logo {
-          margin: auto 20px;
-          position: absolute;
-        }
+    &__logo {
+      margin: auto 20px;
+      position: absolute;
+    }
 
-        .header__burger {
-          display: block;
-          margin: 2.5px 0 0 calc(100% - 40px - 15px);
-        }
+    &__burger {
+      display: block;
+      margin: 2.5px 0 0 calc(100% - 40px - 15px);
+    }
 
-        .header__link-list {
-          display: none;
-          flex-direction: column;
-          height: 100%;
-          margin-top: 50px;
-          padding-top: 10px;
-          position: absolute;
-          width: 100%;
-          z-index: 999;
+    &__link-list {
+      display: none;
+      flex-direction: column;
+      height: 100%;
+      margin-top: 50px;
+      padding-top: 10px;
+      position: absolute;
+      width: 100%;
+      z-index: 999;
 
-          &._active {
-            display: flex;
-          }
-
-          .header__link:nth-child(1n) {
-            border-bottom: 1px solid silver;
-            height: 50px;
-            margin: 0 auto;
-            padding: 12px 0;
-            width: 90%;
-
-            .header__select-container {
-              .header__expandable {
-                .header__expandable-link {
-                  display: block;
-                  padding: 7px 14px;
-                }
-              }
-            }
-
-            .header__about-me,
-            .header__select-headed,
-            .header__job-opening,
-            .header__news,
-            .header__select-headed {
-              font-size: 20px;
-              padding: 0;
-
-              &:first-child {
-                margin-top: 5px;
-              }
-            }
-          }
-
-          .header__reg-login {
-            display: block;
-            margin: 0 auto;
-            order: -2;
-            width: 90%;
-
-            .header__login,
-            .header__registration {
-              border: none;
-              border-bottom: 1px solid;
-              border-radius: 0;
-              display: block;
-              font-size: 15px;
-              height: 42px;
-              line-height: inherit;
-              padding: 13px 0;
-              width: 100%;
-            }
-
-            .header__registration {
-              background: none;
-              color: #bc9cff;
-              margin: 0;
-            }
-          }
-        }
+      &._active {
+        display: flex;
       }
+
+    }
+
+    &__link {
+      &:nth-child(1n) {
+        border-bottom: 1px solid silver;
+        height: 50px;
+        margin: 0 auto;
+        padding: 12px 0;
+        width: 90%;
+      }
+    }
+
+    &__expandable-link {
+      display: block;
+      padding: 7px 14px;
+    }
+
+    &__about-me,
+    &__select-headed,
+    &__job-opening,
+    &__news,
+    &__select-headed {
+      font-size: 20px;
+      padding: 0;
+    }
+
+    &__about-me {
+      margin-top: 5px;
+    }
+
+    &__reg-login {
+      display: block;
+      margin: 0 auto;
+      order: -2;
+      width: 90%;
+    }
+
+    &__login,
+    &__registration {
+      border: none;
+      border-bottom: 1px solid;
+      border-radius: 0;
+      display: block;
+      font-size: 15px;
+      height: 42px;
+      line-height: inherit;
+      padding: 13px 0;
+      width: 100%;
+    }
+
+    &__registration {
+      background: none;
+      color: #bc9cff;
+      margin: 0;
     }
   }
 }
