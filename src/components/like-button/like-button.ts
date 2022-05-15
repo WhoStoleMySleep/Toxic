@@ -1,9 +1,7 @@
-import compareElementTypes from '../../js/helper-modules/compareElementTypes';
-
 const likeButton = document.querySelectorAll('.like-button');
 const likeButtonLiked = document.querySelectorAll('.like-button__liked');
 
-if (!compareElementTypes(null, likeButton, likeButtonLiked)) {
+if (likeButton && likeButtonLiked) {
   const onClickLikeButton = (index: number) => {
     const likes = likeButtonLiked[index];
     const likesVal = likes.innerHTML;
