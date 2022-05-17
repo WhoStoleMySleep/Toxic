@@ -1,41 +1,43 @@
 .checkbox-buttons {
-  label {
+  &__label {
     cursor: pointer;
     display: block;
     margin: 0 0 10px 0;
     position: relative;
     user-select: none;
 
-    input[type='checkbox'] {
-      display: block;
-      height: 0;
-      opacity: 0;
-      position: absolute;
-      width: 0;
-      z-index: -1;
+  }
 
-      &:checked + span:before {
-        background-image: url('../img/done.png');
-        background-position: center;
-        background-repeat: no-repeat;
-        border: 1px solid #bc9cff;
-        border-radius: 4px;
-        box-sizing: border-box;
-      }
+  &__input {
+    display: block;
+    height: 0;
+    opacity: 0;
+    position: absolute;
+    width: 0;
+    z-index: -1;
+
+    &:checked + .checkbox-buttons__text:before {
+      background-image: url('../img/done.png');
+      background-position: center;
+      background-repeat: no-repeat;
+      border: 1px solid #bc9cff;
+      border-radius: 4px;
+      box-sizing: border-box;
     }
+  }
 
-    span {
-      display: flex;
-      position: relative;
+  &__text {
+    display: flex;
+    position: relative;
 
-      &:before {
-        border: 1px solid rgba(31, 32, 65, 0.25);
-        border-radius: 4px;
-        content: "";
-        height: 20px;
-        margin: 0 10px 0 0;
-        width: 20px;
-      }
+    &:before {
+      content: "";
+      border: 1px solid rgba(31, 32, 65, 0.25);
+      border-radius: 4px;
+      height: 20px;
+      margin: 0 10px 0 0;
+      width: 20px;
+      flex-shrink: 0;
     }
   }
 }

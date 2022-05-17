@@ -1,8 +1,8 @@
 mixin checkbox-buttons(names = [])
 	.checkbox-buttons
 		each name in names
-			label
-				input.checkbox-button(type="checkbox")
-				span= name
+			label.checkbox-buttons__label
+				input.checkbox-buttons__input(type="checkbox")
+				span.checkbox-buttons__text= name
 		else
 			p Нет информации

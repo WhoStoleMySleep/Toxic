@@ -1,8 +1,13 @@
 .filter-date {
-  display: block;
-  width: 266px;
+  pointer-events: none;
 
-  .filter-date-dropdown {
+  &__label {
+    display: block;
+    width: 266px;
+    pointer-events: none;
+  }
+
+  &__input {
     border: 1px solid rgba(31, 32, 65, 0.25);
     border-radius: 4px;
     box-sizing: border-box;
@@ -13,9 +18,10 @@
     text-transform: uppercase;
     width: 266px;
     z-index: -1;
+    pointer-events: auto;
   }
 
-  p {
+  &__expand-icon {
     font-family: 'Material Icons';
     font-size: 24px;
     height: 44px;
@@ -25,4 +31,198 @@
     text-transform: none;
     width: 44px;
   }
+}
+
+.flatpickr-calendar {
+  width: 266px;
+
+  &:before {
+    display: none;
+  }
+
+  .flatpickr-current-month {
+    width: 266px;
+  }
+
+  .flatpickr-weekdays{
+    width: 266px;
+    padding: 0 16.6px;
+  }
+
+  .flatpickr-day {
+    width: 33.25px;
+    max-width: 33.25px;
+    min-width: 33.25px;
+    height: 33.25px;
+  }
+
+  .dayContainer {
+    width: 266px;
+    min-width: 266px;
+    max-width: 266px;
+    padding: 0 16.6px;
+  }
+  
+  .flatpickr-next-month {
+    svg {
+      width: 19.95px;
+      height: 19.95px;
+    }
+  }
+  
+  .flatpickr-monthDropdown-months,
+  .numInputWrapper {
+    &:hover {
+      background: none;
+      cursor: default;
+    }
+  }
+
+  .flatpickr-monthDropdown-months {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+
+    &::-ms-expand {
+      display: none;
+    }
+  }
+
+  .arrowUp,
+  .arrowDown {
+    display: none;
+  }
+
+  .flatpickr-prev-month,
+  .flatpickr-next-month {
+    font-family: 'Material Icons';
+    font-size: 24px;
+    color: #BC9CFF;
+    line-height: 24px;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    margin-top: 20px;
+  }
+
+  .flatpickr-prev-month {
+    margin-left: 20px;
+  }
+
+  .flatpickr-next-month {
+    margin-right: 20px;
+  }
+
+  .flatpickr-months {
+    padding: 20px 0 30px 0;
+    height: 54px;
+  }
+
+  .flatpickr-current-month,
+  .flatpickr-monthDropdown-months {
+    padding: 0;
+    width: auto;
+  }
+
+  .flatpickr-current-month {
+    width: 200px;
+  }
+
+  .numInput.cur-year {
+    width: 100%;
+    padding: 0;
+  }
+
+  .numInputWrapper {
+    width: 46px;
+    margin-left: 5px;
+  }
+
+  .flatpickr-weekdays,
+  .flatpickr-weekday {
+    height: 33.25px;
+  }
+
+  .flatpickr-weekday {
+    width: 33.25px;
+    line-height: 33.25px;
+    color: #BC9CFF;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .flatpickr-day {
+    font-size: 12px;
+    line-height: 33.25px;
+    color: rgba(31, 32, 65, 0.5);
+    font-weight: 400;
+    border-radius: 22px;
+    border: none;
+  }
+
+  .prevMonthDay {
+    color: rgba(31, 32, 65, 0.25);
+  }
+
+  .today {
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+    color: #FFFFFF;
+    font-weight: 700;
+  }
+
+  .flatpickr-day.selected.startRange, 
+  .flatpickr-day.startRange.startRange, 
+  .flatpickr-day.endRange.startRange,
+  .flatpickr-day.selected.endRange, 
+  .flatpickr-day.startRange.endRange, 
+  .flatpickr-day.endRange.endRange {
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    color: #FFFFFF;
+    font-weight: 700;
+    border-radius: 22px;
+  }
+
+  .flatpickr-day.selected.startRange + .endRange:not(:nth-child(7n+1)), 
+  .flatpickr-day.startRange.startRange + .endRange:not(:nth-child(7n+1)), 
+  .flatpickr-day.endRange.startRange + .endRange:not(:nth-child(7n+1)) {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .flatpickr-day.selected.startRange::before, 
+  .flatpickr-day.startRange.startRange::before, 
+  .flatpickr-day.selected.endRange::before, 
+  .flatpickr-day.startRange.endRange::before,
+  .flatpickr-day.endRange.endRange::before { 
+    content: '';
+    background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
+    width: 50%;
+    height: 100%;
+    display: block;
+    z-index: -1;
+    position: absolute;
+  }
+
+  .flatpickr-day.endRange.startRange::before {
+    display: none;
+  }
+
+  .flatpickr-day.selected.startRange::before, 
+  .flatpickr-day.startRange.startRange::before, 
+  .flatpickr-day.endRange.startRange::before {
+    margin-left: 50%;
+  }
+
+  .flatpickr-day.selected.endRange::before, 
+  .flatpickr-day.startRange.endRange::before, 
+  .flatpickr-day.endRange.endRange::before { 
+    margin-right: 50%;
+  }
+
+  .inRange {
+    background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none
+  }
+
 }
