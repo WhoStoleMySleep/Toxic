@@ -8,37 +8,42 @@
 }
 
 .rate-button:not(:checked) > label {
-  -webkit-background-clip: text;
   -webkit-text-stroke: 4px transparent;
   background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
   color: #fff;
   cursor: pointer;
   float: right;
   font-size: 14px;
   line-height: 20px;
   padding: 0;
-  padding: 0 5px 0 5px;
   text-align: center;
-  width: auto;
+  width: 24px;
+  height: 24px;
 }
 
 .rate-button:not(:checked) > label:before {
   content: 'star';
   font-family: 'Material Icons';
+  width: 24px;
+  height: 24px;
 }
 
 .rate-button > input:checked ~ label {
-  -webkit-background-clip: text;
   -webkit-text-stroke: 4px;
   background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
 }
 
 .rate-button:not(:checked) > label:hover,
 .rate-button:not(:checked) > label:hover ~ label {
-  -webkit-background-clip: text;
   -webkit-text-stroke: 4px;
   background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
 }
 

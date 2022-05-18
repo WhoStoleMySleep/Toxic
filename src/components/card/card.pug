@@ -1,24 +1,25 @@
 .card
-	.slider.card__slider
-		a(href='room-details.html')
-			img(data-lazy='./img/bgCardsOne.svg')
-		a(href='room-details.html')
-			img(data-lazy='./img/bgCardsTwo.svg')
-		a(href='room-details.html')
-			img(data-lazy='./img/bgCardsThree.svg')
-		a(href='room-details.html')
-			img(data-lazy='./img/bgCardsOne.svg')
-	.card__info
-		.card__info-headed
-			p №
-			h1 888
-			h3 Люкс
-			span
-				P 9 990₽
-				p в сутки
-		.card__info-line
-		.card__info-footer
-			include ../rate-button/rate-button.pug
-			span
-				P 145
-				p Отзывов
+  .card__slider.js-card__slider
+    a.card__slider-item(href="room-details.html")
+      img.card__img(data-lazy='./img/bg-cards-one.jpg')
+    a.card__slider-item(href="room-details.html")
+      img.card__img(data-lazy='./img/bg-cards-two.jpg')
+    a.card__slider-item(href="room-details.html")
+      img.card__img(data-lazy='./img/bg-cards-three.jpg')
+    a.card__slider-item(href="room-details.html")
+      img.card__img(data-lazy='./img/bg-cards-one.jpg')
+  .card__info
+    .card__headed
+      .card__headed-room 
+        div №
+        h1 888
+        h3 Люкс
+      .card__headed-cost
+        div 9 990₽
+        div в сутки
+    .card__line
+    .card__footer
+      include ../rate-button/rate-button.pug
+      div.card__reviews
+        div 145
+        div Отзывов

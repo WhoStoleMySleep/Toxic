@@ -1,9 +1,9 @@
 mixin rich-checkbox-buttons(info = [])
   .rich-checkbox-buttons
     each data in info
-      label.rich-checkbox-button__heading
-        input.rich-checkbox-button(type="checkbox")
-        span= data.heading
-        p.rich-checkbox-button__additionally= data.additionally
+      label.rich-checkbox-buttons__label
+        input.rich-checkbox-buttons__input(type="checkbox")
+        span.rich-checkbox-buttons__headed= data.heading
+        p.rich-checkbox-buttons__additionally= data.additionally
     else
       p Нет информации
