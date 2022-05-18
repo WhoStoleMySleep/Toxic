@@ -1,4 +1,5 @@
 import 'jquery-ui/ui/widgets/slider';
+import 'jquery-ui/themes/base/slider.css';
 
 const amount: HTMLInputElement | null = document.querySelector('.js-range-slider__amount');
 const sliderOptions = {

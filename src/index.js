@@ -22,7 +22,6 @@ if ($('.index').length) {
 async function searchRoom() {
 	await import('./ts/search-room.ts');
 	await import('./components/range-slider/range-slider.scss');
-	await import('jquery-ui/themes/base/slider.css');
 	await import('./scss/search-room.scss');
 }
 if($('.search-room').length){

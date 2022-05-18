@@ -2,7 +2,6 @@ import '../components/header/header';
 import '../components/filter-date-dropdown/filter-date-dropdown';
 import '../components/range-slider/range-slider';
 import '../components/dropdown/dropdown';
-import 'slick-carousel';
 import '../components/card/card';
 import 'paginationjs';
 
