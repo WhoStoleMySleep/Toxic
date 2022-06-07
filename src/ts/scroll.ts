@@ -1,20 +1,19 @@
-
-let timeoutArray: NodeJS.Timeout[] = []
+let timeoutArray: NodeJS.Timeout[] = [];
 
 const visibleScrollBar = (times: number) => {
   window.addEventListener('scroll', () => {
-    const body = document.querySelector('body')
-    const hereTime = times
+    const body = document.querySelector('body');
+    const hereTime = times;
 
-    body!.style.setProperty('--scrollbar-color', 'rgb(219, 219, 219)')
+    body!.style.setProperty('--scrollbar-color', 'rgb(219, 219, 219)');
 
-    clearTimeout(timeoutArray[0])
-    timeoutArray = []
+    clearTimeout(timeoutArray[0]);
+    timeoutArray = [];
 
     timeoutArray.push(setTimeout(() => {
-      body!.style.setProperty('--scrollbar-color', '#fff')
-    }, hereTime))
-  })
-}
+      body!.style.setProperty('--scrollbar-color', '#fff');
+    }, hereTime));
+  });
+};
 
-visibleScrollBar(6000)
+visibleScrollBar(6000);

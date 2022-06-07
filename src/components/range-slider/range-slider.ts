@@ -1,18 +1,24 @@
-import 'jquery-ui/ui/widgets/slider';
-import 'jquery-ui/themes/base/slider.css';
+import noUiSlider from 'nouislider';
+import 'nouislider/dist/nouislider.css';
+import { HTML } from '../../ts/types';
 
-const amount: HTMLInputElement | null = document.querySelector('.js-range-slider__amount');
-const sliderOptions = {
-  range: true,
-  min: 0,
-  max: 15500,
-  values: [5000, 10000],
-  slide: (_: any, ui: any) => {
-    amount!.value = `${ui.values[0]}₽ - ${ui.values[1]}₽`;
-  },
-};
+const rangeSlider: HTML['Element'] = document.querySelector('.js-range-slider__slider');
+const firstValue: HTML['Element'] = document.querySelector('.js-range-slider__amount-first');
+const lastValue: HTML['Element'] = document.querySelector('.js-range-slider__amount-last');
 
-$(document).ready(() => {
-  $('.js-range-slider__slider').slider(sliderOptions);
-  amount!.value = `${sliderOptions.values[0]}₽ - ${sliderOptions.values[1]}₽`;
-});
+if (rangeSlider) {
+  noUiSlider.create(rangeSlider, {
+    start: [5000, 10000],
+    connect: true,
+    step: 1,
+    range: {
+      min: 0,
+      max: 15500,
+    },
+  }).on('update', (values) => {
+    if (firstValue && lastValue) {
+      firstValue.innerHTML = `${Math.round(+values[0])}₽`;
+      lastValue.innerHTML = `${Math.round(+values[1])}₽`;
+    }
+  });
+}

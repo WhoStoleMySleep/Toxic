@@ -1,6 +1,6 @@
 .range-slider {
   height: 44px;
-  width: 266px;
+  max-width: 266px;
 
   &__amount {
     background-color: transparent;
@@ -10,6 +10,23 @@
     line-height: 15px;
     margin: 0 0 23px auto;
     text-align: right;
+    width: 105px;
+    display: flex;
+  }
+
+  &__amount-first,
+  &__amount-last {
+    max-width: 50px;
+    min-width: 40px;
+    flex-shrink: 0;
+  }
+
+  &__amount-last {
+    text-align: left;
+  }
+
+  &__amount-separator {
+    margin: 0 5px;
   }
 
   &__slider {
@@ -17,19 +34,32 @@
     border-radius: 3px;
     box-sizing: border-box;
     height: 6px;
-    width: 266px;
+    max-width: 266px;
 
-    .ui-slider-range {
-      background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+    .noUi-base {
+      z-index: 0;
     }
 
-    .ui-slider-handle {
+    .noUi-connect {
+      background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+      z-index: inherit;
+    }
+
+    .noUi-handle {
       background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
       border: 0;
       border-radius: 10px;
       height: 12px;
       outline: 2px solid #ffffff;
       width: 12px;
+      z-index: inherit;
+      right: -6px;
+      top: -4px;
+
+      &:before,
+      &:after {
+        display: none;
+      }
     }
   }
-}
+} 

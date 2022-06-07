@@ -14,69 +14,75 @@ html(lang="ru")
     meta(name='msapplication-TileColor' content='#00a300')
     meta(name='theme-color' content='#ffffff')
     title Toxic
-  body#search-room 
+  body.search-room
     include ./components/header/header.pug
-    main
-      aside
-        h3 Даты пребывания в отеле
-        include ./components/filter-date-dropdown/filter-date-dropdown.pug
-        .dropdown1
-        h3.search-main__count-range Диапазон цены
-        include ./components/range-slider/range-slider.pug
-        p.aside__count-on-day Стоимость за сутки прибывания в номере
-        h3 Правила дома
-        include ./components/checkbox-buttons/checkbox-buttons.pug
-        - 
-          let names = [
-            'Можно курить',
-            'Можно c питомцами',
-            'Можно пригласить гостей (до 10 человек)'
-          ]
-        +checkbox-buttons(names)
-        br
-        h3 Доступность
-        include ./components/rich-checkbox-buttons/rich-checkbox-buttons.pug
-        - 
-          let inform = [
-            {
-              heading: 'Широкий коридор',
-              additionally: 'Ширина коридоров в номере не менее 91 см.',
-            },
-            {
-              heading: 'Помощник для инвалидов',
-              additionally: 'На 1 этаже вас встретит специалист  и проводит до номера.',
-            },
-            {
-              heading: 'Помощник для инвалидов',
-              additionally: 'На 1 этаже вас встретит специалист  и проводит до номера.',
-            }
-          ]
-        +rich-checkbox-buttons(inform)
-        .dropdown2
-        include ./components/expandable-checkbox-list/expandable-checkbox-list.pug
-        - 
-          let list = [
-            'Завтрак',
-            'Письменный стол',
-            'Стул для кормления',
-            'Кроватка',
-            'Телевизор',
-            'Шампунь',
-            'Телевизор',
-            //- 'Шампунь',
-          ]
-        +expandable-checkbox-list('Чек бокс лист', list)
-      button(type='button').aside__open-menu arrow_forward_ios
-      .main__numbers
-        h1.main__numbers-title Номера, которые мы для вас подобрали
-        ul.main__numbers-cards
+    main.search-room__main
+      button(type='button').search-room__open-aside-menu Параметры поиска
+      aside.search-room__aside
+        .search-room__dates-of-stay
+          h3 Даты пребывания в отеле
+          include ./components/filter-date-dropdown/filter-date-dropdown.pug
+        .search-room__dropdown-guest-list
+          include ./components/dropdown/dropdown.pug
+          +dropdown('Гости', ['Взрослые', 'Дети', 'Младенцы'])
+        .search-room__count-range
+          h3 Диапазон цены
+          include ./components/range-slider/range-slider.pug
+          p.search-room__count-on-day Стоимость за сутки прибывания в номере
+        .search-room__house-rules
+          h3 Правила дома
+          include ./components/checkbox-buttons/checkbox-buttons.pug
+          - 
+            let names = [
+              'Можно курить',
+              'Можно c питомцами',
+              'Можно пригласить гостей (до 10 человек)'
+            ]
+          +checkbox-buttons(names)
+        .search-room__accessibility
+          h3 Доступность
+          include ./components/rich-checkbox-buttons/rich-checkbox-buttons.pug
+          - 
+            let inform = [
+              {
+                heading: 'Широкий коридор',
+                additionally: 'Ширина коридоров в номере не менее 91 см.',
+                width: '203px'
+              },
+              {
+                heading: 'Помощник для инвалидов',
+                additionally: 'На 1 этаже вас встретит специалист  и проводит до номера.',
+                width: '234px'
+              }
+            ]
+          +rich-checkbox-buttons(inform)
+        .search-room__list-of-amenities
+          +dropdown('Удобства номера', ['Спальни', 'Кровати', 'Ванные комнаты'])
+        .search-room__additional-facilities
+          include ./components/expandable-checkbox-list/expandable-checkbox-list.pug
+          - 
+            let list = [
+              'Завтрак',
+              'Письменный стол',
+              'Стул для кормления',
+              'Кроватка',
+              'Телевизор',
+              'Шампунь',
+              'Телевизор',
+              'Шампунь',
+            ]
+          +expandable-checkbox-list('дополнительные удобства', list)
+      .search-room__numbers
+        h1.search-room__numbers-title Номера, которые мы для вас подобрали
+        ul.search-room__numbers-cards
           - let colCards = 0;
           - let trash = 0
-          async 
-            while colCards < 12
-              li
-                include ./components/card/card.pug
-              - colCards += 1
-        .pagination
+          while colCards < 12
+            li
+              include ./components/card/card.pug
+              +card('room-details.html', ['./img/bg-cards-one.jpg', './img/bg-cards-two.jpg', './img/bg-cards-three.jpg', './img/bg-cards-one.jpg'])
+            - colCards += 1
+        include ./components/pagination/pagination.pug
+        +pagination()
     include ./components/footer/footer.pug
 

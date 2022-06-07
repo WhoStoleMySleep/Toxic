@@ -1,13 +1,19 @@
 mixin dropdown(headtext, elems = [])
-  h3.iqdropdown-header= headtext 
-  .iqdropdown.dropdown
-    p.iqdropdown-selection
-    .iqdropdown-menu
+  h3.dropdown-header= headtext 
+  .dropdown
+    p.dropdown__selection
+    .dropdown__menu
       - let index = 1
       each elem in elems
-        .iqdropdown-menu-option(data-id='item' + index++)
-          div
-            p.iqdropdown-item= elem
-      .iqdropdown-button-container
-        button(type='button').iqdropdown-button-clear очистить
-        button(type='button').iqdropdown-button-submit применить
+        .dropdown__option(data-id='item' + index++)
+          div.dropdown__content
+            p.dropdown__item= elem
+          .dropdown__controls
+            button.dropdown__decrement(type="button")
+              i.dropdown__decrement-icon
+            span.dropdown__counter 0
+            button.dropdown__increment(type="button")
+              i.dropdown__decrement-icon.dropdown__increment-icon
+      .dropdown__button-container
+        button(type='button').dropdown__button-clear очистить
+        button(type='button').dropdown__button-submit применить

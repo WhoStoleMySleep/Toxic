@@ -1,8 +1,5 @@
 .number-pick
-	h1.number-pick__text 
-		span Найдём номера под
-		br 
-		span ваши пожелания
+	h1.number-pick__text Найдём номера под ваши пожелания
 	form.number-pick__form
 		include ../date-dropdown/date-dropdown.pug
 
@@ -10,4 +7,4 @@
 		+dropdown('Гости', ['Взрослые', 'Дети', 'Младенцы'])
 
 		include ../big-button/big-button.pug
-		+big-button('Подобрать номер')
+		+big-button('Подобрать номер', './search-room.html')

@@ -1,166 +1,182 @@
-.iqdropdown-header {
-  margin-bottom: 5px;
+.dropdown-header { 
+  margin-bottom: 5px; 
 }
 
 .dropdown {
-  border: 1px solid rgba(31, 32, 65, 0.25);
-  border-radius: 4px;
   height: 44px;
-  padding: 0 0 0 15px;
+  position: relative;
+  user-select: none;
 
-  .iqdropdown-selection {
+  &__selection {
     color: rgba(31, 32, 65, 0.75);
     font-family: 'Montserrat';
     font-size: 14px;
     height: 44px;
     line-height: 44px;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    border-radius: 4px;
+    padding: 0 0 0 14px;
+    cursor: pointer;
 
     &::after {
       background: none;
-      bottom: 0;
       color: rgba(31, 32, 65, 0.5);
       content: 'expand_more';
       font-family: 'Material Icons';
       font-size: 24px;
       height: 44px;
-      left: 0;
-      margin-left: auto;
       right: 0;
       text-align: center;
       top: 0;
       width: 44px;
+      display: block;
+      position: absolute;
     }
   }
 
-  .iqdropdown-menu {
+  &__menu {
     border: 1px solid rgba(31, 32, 65, 0.5);
     border-radius: 0 0 4px 4px;
     box-shadow: none;
     margin-top: 43px;
     top: 0;
     z-index: 1;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    display: none;
+  }
 
-    .iqdropdown-menu-option {
-      height: 30px;
-      letter-spacing: 0.2px;
-      margin: 7px 0;
-      padding: 0 7px 0 14px;
+  &__option {
+    height: 30px;
+    letter-spacing: 0.2px;
+    margin: 7px 0;
+    padding: 0 7px 0 14px;
+    display: flex;
+    line-height: 30px;
 
-      .iqdropdown-content {
-        .iqdropdown-item {
-          color: #1f2041;
-          font-family: 'Montserrat';
-          font-size: 12px;
-          font-weight: bolder;
-          text-shadow: 0 0 0.1px #1f2041;
-          text-transform: uppercase;
-        }
-      }
-
-      .iqdropdown-item-controls {
-        height: 30px;
-
-        .button-decrement,
-        .button-increment {
-          border: 1px solid rgba(31, 32, 65, 0.25);
-          border-radius: 22px;
-          color: rgba(31, 32, 65, 0.5);
-          height: 30px;
-          padding: 0;
-          transition: none;
-          width: 30px;
-
-          &:hover {
-            background: none;
-          }
-
-          i {
-            height: 30px;
-            width: 30px;
-
-            &::before {
-              background: none;
-              display: none;
-            }
-
-            &::after {
-              background: none;
-              font-size: 18px;
-              font-style: normal;
-              font-weight: normal;
-              height: 30px;
-              line-height: 30px;
-              top: 0;
-              width: 30px;
-            }
-          }
-
-          .icon-decrement {
-            &::after {
-              content: '-';
-            }
-          }
-
-          .icon-increment {
-            &::after {
-              content: '+';
-            }
-          }
-
-          &._deactive {
-            opacity: 0.38;
-          }
-        }
-
-        .counter {
-          border: none;
-          font-family: 'Montserrat';
-          font-size: 12px;
-          font-weight: bolder;
-          line-height: 30px;
-          margin: 0 1px;
-          padding: 0;
-          text-align: center;
-          text-shadow: 0 0 0.1px #1f2041;
-          width: 30px;
-        }
-      }
-
-      &:first-child {
-        margin-top: 5.5px;
-      }
-
-      &:nth-child(3) {
-        margin-bottom: 20px;
-      }
+    &:first-child {
+      margin-top: 5.5px;
     }
 
-    .iqdropdown-button-container {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 13px;
-      padding: 0 7px 0 14px;
-
-      .iqdropdown-button-clear,
-      .iqdropdown-button-submit {
-        color: #bc9cff;
-        font-size: 12px;
-        font-weight: bold;
-        text-transform: uppercase;
-      }
+    &:nth-child(3) {
+      margin-bottom: 20px;
     }
   }
 
-  &.menu-open {
-    border: 1px solid rgba(31, 32, 65, 0.5);
-    border-bottom: none;
-    border-radius: 4px 4px 0 0;
+  &__item {
+    color: #1f2041;
+    font-family: 'Montserrat';
+    font-size: 12px;
+    font-weight: bolder;
+    text-shadow: 0 0 0.1px #1f2041;
+    text-transform: uppercase;
+  }
 
-    .iqdropdown-selection {
+  &__controls {
+    height: 30px;
+    margin-left: auto;
+    display: flex;
+  }
+
+  &__decrement,
+  &__increment {
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    border-radius: 22px;
+    color: rgba(31, 32, 65, 0.5);
+    height: 30px;
+    padding: 0;
+    transition: none;
+    width: 30px;
+    background: #fff;
+
+    &:hover {
+      background: none;
+    }
+
+    i {
+      height: 30px;
+      width: 30px;
+
+      &::before {
+        background: none;
+        display: none;
+      }
+
       &::after {
         background: none;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: normal;
+        height: 30px;
+        line-height: 30px;
+        top: 0;
+        width: 30px;
+      }
+    }
+
+    &._deactive {
+      opacity: 0.38;
+    }
+  }
+
+  &__counter {
+    border: none;
+    font-family: 'Montserrat';
+    font-size: 12px;
+    font-weight: bolder;
+    line-height: 30px;
+    margin: 0 1px;
+    padding: 0;
+    text-align: center;
+    text-shadow: 0 0 0.1px #1f2041;
+    width: 30px;
+  }
+
+  &__decrement-icon {
+    cursor: pointer;
+    &::after {
+      content: '-';
+    }
+  }
+
+  &__increment-icon {
+    cursor: pointer;
+    &::after {
+      content: '+';
+    }
+  }
+
+  &__button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 13px;
+    padding: 0 7px 0 14px;
+  }
+
+  &__button-clear,
+  &__button-submit {
+    color: #bc9cff;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: none;
+  }
+
+  &._open {
+    .dropdown__selection {
+      border: 1px solid rgba(31, 32, 65, 0.5);
+      border-bottom: none;
+      border-radius: 4px 4px 0 0;
+
+      &::after {
         color: rgba(31, 32, 65, 0.75);
       }
+    }
+
+    .dropdown__menu {
+      display: block;
     }
   }
 }

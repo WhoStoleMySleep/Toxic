@@ -9,19 +9,19 @@
     background-position: center -131px;
     background-repeat: no-repeat;
     background-size: 1534px 1022px;
-    height: 830px;
+    min-height: 830px;
     padding: 70px 0 0 140px;
     position: relative;
     width: 100%;
-  
   }
 
   &__subtitle {
-    height: 48px;
     line-height: 24px;
-    margin: 317px 135px 21px auto;
     text-align: right;
-    width: 297px;
+    max-width: 297px;
+    right: 135px;
+    position: absolute;
+    bottom: 21px;
   }
 }
 
@@ -32,11 +32,27 @@
     }
     
     &__subtitle {
-      margin: 317px auto 21px auto;
+      margin-left: calc(50% - 297px / 2);
+      text-align: center;
+      right: 0;
     }
   }
 
   .number-pick {
     margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 1532px){
+  .index {
+    &__main {
+      background-size: 100% auto;
+    }
+  }
+}
+
+@media all and (max-width: 322px) {
+  .dropdown {
+    width: 90vw;
   }
 }

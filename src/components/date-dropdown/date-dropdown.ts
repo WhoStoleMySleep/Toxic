@@ -1,187 +1,104 @@
-import compareElementTypes from '../../js/helper-modules/compareElementTypes';
-import 'jquery-ui/ui/widgets/datepicker';
+import flatpickr from 'flatpickr';
+import 'flatpickr/dist/flatpickr.min.css';
+import { Russian } from 'flatpickr/dist/l10n/ru';
+import ShortcutButtonsPlugin from 'shortcut-buttons-flatpickr/dist/shortcut-buttons-flatpickr.min';
+import adaptiveMonth from '../../ts/additional-components/adaptive-month';
+import { HTML } from '../../ts/types';
 
-const dateDropdown = document.querySelector('.js-date-dropdown__container');
-let datePicker = document.querySelector('.js-date-dropdown__datepicker');
+type Input = HTMLInputElement | null;
 
-if (!compareElementTypes(null, dateDropdown, datePicker)) {
-  dateDropdown!.addEventListener('click', (e) => {
-    const element = e.target as Element;
-    const tagName = element!.tagName.toLowerCase();
+const dateDropdownContainer: HTML['Element'] = document.querySelector('.js-date-dropdown__container');
+const startDateInput: Input = document.querySelector('.js-date-dropdown__start-date');
+const endDateInput: Input = document.querySelector('.js-date-dropdown__end-date');
 
-    if (compareElementTypes(tagName, 'input', 'label')) {
-      datePicker!.classList.toggle('_active');
-    }
+if (startDateInput && endDateInput && dateDropdownContainer) {
+  flatpickr.localize(Russian);
+
+  flatpickr(startDateInput, {
+    dateFormat: 'd.m.Y',
+    mode: 'range',
+    prevArrow: 'arrow_back',
+    nextArrow: 'arrow_forward',
+    locale: {
+      rangeSeparator: ' - ',
+    },
+    inline: true,
+    minDate: 'today',
+    appendTo: dateDropdownContainer,
+    onChange: () => {
+      const dates = startDateInput.value.split(' - ');
+      const calendar: HTMLElement | null = document.querySelector('.flatpickr-calendar.inline');
+
+      startDateInput.value = `${dates[0]}`;
+      endDateInput.value = `${dates[1] ? dates[1] : ''}`;
+
+      if (calendar && dates[1]) {
+        calendar.style.display = 'none';
+      }
+    },
+    plugins: [
+      ShortcutButtonsPlugin({
+        button: [
+          {
+            label: 'Очистить',
+          },
+          {
+            label: 'Применить',
+          },
+        ],
+        onClick: (index: number, fp) => {
+          const calendar = fp;
+          const days = document.querySelector('.js-to-book__number-days');
+          const daysSumm = document.querySelector('.js-to-book__summing-days-summ');
+          const totalSumm = document.querySelector('.js-to-book__total-summ');
+
+          switch (index) {
+            case 0:
+              calendar.clear();
+              calendar.calendarContainer.style.display = 'none';
+
+              if (days && daysSumm && totalSumm) {
+                days.innerHTML = '0 суток';
+                daysSumm.innerHTML = '0₽';
+                totalSumm.innerHTML = '0₽';
+              }
+
+              break;
+
+            case 1:
+              calendar.calendarContainer.style.display = 'none';
+              break;
+
+            default:
+              break;
+          }
+        },
+      }),
+    ],
+  });
+
+  [startDateInput, endDateInput].forEach((element) => {
+    const calendar: HTMLElement | null = document.querySelector('.flatpickr-calendar.inline');
+
+    element.addEventListener('click', () => {
+      if (calendar) {
+        calendar.style.display = 'block';
+      }
+    });
   });
 }
 
-const onDateDropdownReady = () => {
-  type INPUT = HTMLInputElement | null
-  const inputs: INPUT = document.querySelector('.js-date-dropdown__input');
+const yearInput: Input = document.querySelector('.numInput');
+const monthSelect: Input = document.querySelector('.flatpickr-monthDropdown-months');
 
-  inputs!.addEventListener('click', () => {
-    $('.js-date-dropdown__datepicker').datepicker({
-      showButtonPanel: true,
-      minDate: 0,
-      firstDay: 1,
-      monthNames: [
-        'Январь',
-        'Февраль',
-        'Март',
-        'Апрель',
-        'Май',
-        'Июнь',
-        'Июль',
-        'Август',
-        'Сентябрь',
-        'Октябрь',
-        'Ноябрь',
-        'Декабрь',
-      ],
-      dayNamesMin: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
-      dateFormat: 'dd.mm.yy',
-
-      beforeShowDay: (date: Date) => {
-        const date1 = $.datepicker.parseDate(
-          'dd.mm.yy',
-          <string>$('.js-date-dropdown__start-date').val(),
-        );
-        const date2 = $.datepicker.parseDate(
-          'dd.mm.yy',
-          <string>$('.js-date-dropdown__end-date').val(),
-        );
-
-        if (date1 && date && date1.getTime() === date.getTime()) {
-          return [true, 'ui-red-start', ''];
-        }
-        if (date2 && date && date2.getTime() === date.getTime()) {
-          return [true, 'ui-red-end', ''];
-        }
-
-        if (date >= date1 && date <= date2) {
-          return [true, 'ui-state-selected-range', ''];
-        }
-
-        return [true, '', ''];
-      },
-
-      onSelect: function onSelect(dateText) {
-        const date1 = $.datepicker.parseDate(
-          'dd.mm.yy',
-          <string>$('.js-date-dropdown__start-date').val(),
-        );
-        const date2 = $.datepicker.parseDate(
-          'dd.mm.yy',
-          <string>$('.js-date-dropdown__end-date').val(),
-        );
-
-        if (!date1 || date2) {
-          $('.js-date-dropdown__start-date').val(dateText);
-          $('.js-date-dropdown__end-date').val('');
-          $('.end-date-visible').text('');
-          $(this).datepicker('option', dateText);
-        } else {
-          const [day, month, year] = dateText.split('.');
-
-          if (new Date([month, day, year].join('.')) < date1) {
-            const sDate = <string>$('.js-date-dropdown__start-date').val();
-
-            $('.js-date-dropdown__start-date').val(dateText);
-            $(this).datepicker('option', null);
-            $('.js-date-dropdown__end-date').val(sDate);
-          } else {
-            $('.js-date-dropdown__end-date').val(dateText);
-            $(this).datepicker('option', null);
-          }
-        }
-      },
-    });
-  });
-
-  const buttons = () => {
-    const buttonpane = document.querySelector('.ui-datepicker-buttonpane');
-    datePicker = document.querySelector('.js-date-dropdown__datepicker');
-
-    if (datePicker && buttonpane) {
-      const clearBtn = document.querySelector('.ui-datepicker__btn-clear');
-      const submitBtn = document.querySelector('.ui-datepicker__btn-submit');
-
-      const addButton = (textButton: string, className: string, eventFunction: () => void) => {
-        const buttonCreate = document.createElement('button');
-
-        buttonCreate.className = `
-          ${className} 
-          ui-state-default 
-          ui-priority-secondary 
-          ui-corner-all
-        `;
-        buttonCreate.innerHTML = textButton;
-        buttonCreate.type = 'button';
-        buttonCreate.addEventListener('click', eventFunction);
-
-        buttonpane.append(buttonCreate);
-
-        return className;
-      };
-
-      const checkButton = (id: string) => {
-        setInterval(() => {
-          type HTML = HTMLElement | null;
-          const item: HTML = document.querySelector(`.${id}`);
-
-          if (item && inputs!.value) {
-            item!.style.opacity = '1';
-            item!.style.cursor = 'pointer';
-          }
-          if (item && !inputs!.value) {
-            item!.style.opacity = '0.35';
-            item!.style.cursor = 'default';
-          }
-        }, 100);
-      };
-
-      if (!clearBtn) {
-        checkButton(addButton('Очистить', 'ui-datepicker__btn-clear', () => {
-          const startDate: INPUT = document.querySelector(
-            '.js-date-dropdown__start-date',
-          );
-          const endDate: INPUT = document.querySelector(
-            '.js-date-dropdown__end-date',
-          );
-          const dateDropdownWrapper = document.querySelector(
-            '.js-date-dropdown',
-          );
-
-          if (!compareElementTypes(null, dateDropdownWrapper)) {
-            const numberDays = document.querySelector('.js-to-book__number-days');
-            const daysSumm = document.querySelector('.js-to-book__summing-days-summ');
-            const totalSumm = document.querySelector('.js-to-book__total-summ');
-
-            numberDays!.innerHTML = '0 суток';
-            daysSumm!.innerHTML = '0₽';
-            totalSumm!.innerHTML = '0₽';
-
-            startDate!.value = '';
-            endDate!.value = '';
-
-            datePicker!.remove();
-
-            const createDatePicker = document.createElement('div');
-
-            createDatePicker.className = 'date-dropdown__datepicker js-date-dropdown__datepicker';
-
-            dateDropdownWrapper!.append(createDatePicker);
-          }
-        }));
-      }
-      if (!submitBtn) {
-        checkButton(addButton('Применить', 'ui-datepicker__btn-submit', () => {
-          datePicker!.classList.toggle('_active');
-        }));
-      }
-    }
-  };
-  setInterval(buttons, 100);
+const disableInputs = (objects: HTMLInputElement[]) => {
+  for (let index = 0; index < objects.length; index += 1) {
+    objects[index].setAttribute('disabled', 'disabled');
+  }
 };
 
-onDateDropdownReady();
+if (yearInput && monthSelect) {
+  disableInputs([yearInput, monthSelect]);
+}
+
+setInterval(() => adaptiveMonth(), 50);

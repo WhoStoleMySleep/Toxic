@@ -1,25 +1,25 @@
-.card
-  .card__slider.js-card__slider
-    a.card__slider-item(href="room-details.html")
-      img.card__img(data-lazy='./img/bg-cards-one.jpg')
-    a.card__slider-item(href="room-details.html")
-      img.card__img(data-lazy='./img/bg-cards-two.jpg')
-    a.card__slider-item(href="room-details.html")
-      img.card__img(data-lazy='./img/bg-cards-three.jpg')
-    a.card__slider-item(href="room-details.html")
-      img.card__img(data-lazy='./img/bg-cards-one.jpg')
-  .card__info
-    .card__headed
-      .card__headed-room 
-        div №
-        h1 888
-        h3 Люкс
-      .card__headed-cost
-        div 9 990₽
-        div в сутки
-    .card__line
-    .card__footer
-      include ../rate-button/rate-button.pug
-      div.card__reviews
-        div 145
-        div Отзывов
+mixin card(href, imgLink = [])
+  .card
+    .swiper.card__slider.js-card__slider
+      .swiper-wrapper.card__slider-wrapper.js-card__slider-wrapper
+        each img in imgLink
+          a.swiper-slide(href=`${href}`)
+            img.card__img(src=`${img}`)
+      .swiper-pagination
+      .swiper-button-prev
+      .swiper-button-next
+    .card__info
+      .card__headed
+        .card__headed-room 
+          div №
+          h1 888
+          h3 Люкс
+        .card__headed-cost
+          div 9 990₽
+          div в сутки
+      .card__line
+      .card__footer
+        include ../rate-button/rate-button.pug
+        div.card__reviews
+          div 145
+          div Отзывов

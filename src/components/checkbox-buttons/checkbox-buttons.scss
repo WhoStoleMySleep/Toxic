@@ -5,7 +5,7 @@
     margin: 0 0 10px 0;
     position: relative;
     user-select: none;
-
+    max-width: 221px;
   }
 
   &__input {
@@ -29,6 +29,7 @@
   &__text {
     display: flex;
     position: relative;
+    line-height: 19px;
 
     &:before {
       content: "";

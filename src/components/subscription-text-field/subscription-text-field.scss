@@ -1,4 +1,4 @@
-.subscription-text-field-container {
+.subscription-text-field {
   border: 1px solid rgba(31, 32, 65, 0.25);
   border-radius: 4px;
   box-sizing: border-box;
@@ -7,7 +7,7 @@
   max-width: 267px;
   overflow: hidden;
 
-  .subscription-text-field {
+  &__input {
     height: 100%;
     padding: 0 0 0 15px;
     width: 100%;
@@ -53,7 +53,7 @@
     }
   }
 
-  .subscription-text-field__submit {
+  &__submit {
     background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
     -webkit-background-clip: text;
             background-clip: text;
@@ -64,6 +64,7 @@
     line-height: 44px;
     text-align: center;
     text-transform: none;
-    width: 47px;
+    width: 44px;
+    margin-left: auto;
   }
 }

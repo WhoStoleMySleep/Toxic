@@ -11,7 +11,8 @@
   position: relative;
   text-transform: uppercase;
   transition-duration: 150ms;
-  width: 320px;
+  max-width: 320px;
+  text-align: center;
 
   &:hover {
     opacity: 0.5;
@@ -24,7 +25,7 @@
     font-size: 24px;
     font-weight: normal;
     height: 44px;
-    margin-left: calc(320px - 44px);
+    margin-left: calc(100% - 44px);
     position: absolute;
     text-transform: lowercase;
     width: 44px;

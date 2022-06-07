@@ -1,5 +1,16 @@
+import buttonEvents from '../../ts/additional-components/button-events';
+import variables from '../../ts/additional-components/dropdown-variables';
 import '../date-dropdown/date-dropdown';
-import '../dropdown/dropdown';
+import Dropdown from '../dropdown/dropdown';
+
+Dropdown('.dropdown', {
+  setSelectionText: (
+    itemCount: any,
+    totalItems: number,
+  ) => variables.firstVariable(itemCount, totalItems),
+  customFunctionality: (selector: HTMLElement, itemCount: number[], totalItems: [number]) => buttonEvents(selector, itemCount, totalItems, 'Сколько гостей'),
+  initialSelectionText: 'Сколько гостей',
+});
 
 const lastMonthDay = (year: number, month: number) => {
   const date = new Date(year, month + 1, 0);
@@ -45,35 +56,33 @@ const priceElement = document.querySelector('.js-to-book__headed-cost > div:nth-
 const price = +priceElement!.innerHTML.replace(/[^0-9]/g, '');
 const startDateInput: HTMLInputElement | null = document.querySelector('.js-date-dropdown__start-date');
 const endDateInput: HTMLInputElement | null = document.querySelector('.js-date-dropdown__end-date');
-const dateDropdownDatepicker = document.querySelector('.js-date-dropdown__datepicker');
 
 const daysSumming = () => {
   const numberOfDays = document.querySelector('.js-to-book__number-days');
   const daysSumm = document.querySelector('.js-to-book__summing-days-summ');
+  const days = rangeDaysCounter(hereDate, startDateInput!.value, endDateInput!.value);
+  const summ = +days * +price;
 
-  if (dateDropdownDatepicker!.classList.contains('_active') && endDateInput!.value) {
-    const days = rangeDaysCounter(hereDate, startDateInput!.value, endDateInput!.value);
-    const summ = +days * +price;
-
-    numberOfDays!.innerHTML = `${days} суток`;
-    daysSumm!.innerHTML = `${numericDelimiter(`${summ}`)}₽`;
-  }
+  numberOfDays!.innerHTML = `${days} суток`;
+  daysSumm!.innerHTML = `${numericDelimiter(`${summ}`)}₽`;
 };
 
 const totalSumming = () => {
   const additionalServicesSumm = document.querySelector('.js-to-book__additional-services-summ')!.innerHTML.replace(/[^0-9]/g, '');
   const serviceChargeText = document.querySelector('.js-to-book__service-charge-text')!.innerHTML.replace(/[^0-9]/g, '');
   const totalSumm = document.querySelector('.js-to-book__total-summ');
+  const days = rangeDaysCounter(hereDate, startDateInput!.value, endDateInput!.value);
+  const summ = +days * +price - +serviceChargeText + +additionalServicesSumm;
 
-  if (dateDropdownDatepicker!.classList.contains('_active') && endDateInput!.value) {
-    const days = rangeDaysCounter(hereDate, startDateInput!.value, endDateInput!.value);
-    const summ = +days * +price - +serviceChargeText + +additionalServicesSumm;
-
-    totalSumm!.innerHTML = `${numericDelimiter(`${summ}`)}₽`;
-  }
+  totalSumm!.innerHTML = `${numericDelimiter(`${summ}`)}₽`;
 };
 
+let prevDate: string | null = null;
+
 setInterval(() => {
-  daysSumming();
-  totalSumming();
+  if (endDateInput!.value && prevDate !== endDateInput!.value) {
+    daysSumming();
+    totalSumming();
+    prevDate = endDateInput!.value;
+  }
 }, 250);

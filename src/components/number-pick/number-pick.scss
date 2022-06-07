@@ -13,21 +13,18 @@
   &__text {
     letter-spacing: 0.48px;
     line-height: 28.8px;
-    margin: 40px auto 22px auto;
-    width: 320px;
-
-    span:last-child {
-      letter-spacing: 0.62px;
-    }
+    margin: 40px 0 22px 30px;
+    max-width: 265px;
   }
 
   &__form {
     margin: 0 auto 30px auto;
-    width: 320px;
+    max-width: 340px;
+    padding: 0 10px;
   }
 }
 
-.iqdropdown-header {
+.dropdown-header {
   margin-top: 20.5px;
 }
 

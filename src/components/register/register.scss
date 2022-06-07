@@ -11,20 +11,20 @@
   border-radius: 4px;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
   box-sizing: border-box;
-  height: 646px;
+  min-height: 646px;
   max-width: 380px;
   width: 100%;
+  padding: 30px 14px;
 
   &__title {
     letter-spacing: 0.8px;
-    margin: 40px auto 20px auto;
-    width: 320px;
+    margin: 10px auto 20px auto;
+    max-width: 320px;
   }
 
   &__form {
     margin: 0 auto;
-    width: 320px;
-
+    max-width: 320px;
   }
   
   &__brithdate {
@@ -43,8 +43,7 @@
     height: 44px;
     justify-content: space-between;
     margin: 30px auto 0 auto;
-    width: 320px;
-
+    max-width: 320px;
   }
   
   &__login-text {

@@ -5,7 +5,7 @@ import adaptiveMonth from '../../ts/additional-components/adaptive-month';
 
 flatpickr.localize(Russian);
 
-flatpickr('.filter-date__input', {
+flatpickr('.js-filter-date__input', {
   dateFormat: 'd.m',
   mode: 'range',
   prevArrow: 'arrow_back',

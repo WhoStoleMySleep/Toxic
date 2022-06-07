@@ -1,2 +1,3 @@
-mixin transp-button(name = 'click me')
-	button.transp-button= name
+mixin transp-button(href, name = 'click me')
+	a.transp-button(href=`${href}`)= name
+	//- button.transp-button= name

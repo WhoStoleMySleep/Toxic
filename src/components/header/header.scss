@@ -22,7 +22,11 @@
     height: 40px;
     margin: auto 0;
     margin-left: 15px;
-    width: 105px;
+    width: 106px;
+  }
+
+  &__logo-img {
+    width: 106px;
   }
 
   &__burger {
@@ -176,7 +180,6 @@
       &._active {
         display: flex;
       }
-
     }
 
     &__link {

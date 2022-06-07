@@ -2,20 +2,24 @@ const likeButton = document.querySelectorAll('.like-button');
 const likeButtonLiked = document.querySelectorAll('.like-button__liked');
 
 if (likeButton && likeButtonLiked) {
-  const onClickLikeButton = (index: number) => {
-    const likes = likeButtonLiked[index];
-    const likesVal = likes.innerHTML;
+  const likeButtonFunc = (index: number, likes: HTMLElement, likesVal: string) => {
+    const onClickLikeButton = () => {
+      if (likeButton[index].classList.contains('_deactive')) {
+        likes.innerHTML = `${+likesVal + 1}`;
+      } else {
+        likes.innerHTML = likesVal;
+      }
 
-    if (likeButton[index].classList.contains('_deactive')) {
-      likes.innerHTML = (+likesVal + 1).toString();
-    } else {
-      likes.innerHTML = (+likesVal - 1).toString();
-    }
+      likeButton[index].classList.toggle('_deactive');
+    };
 
-    likeButton[index].classList.toggle('_deactive');
+    onClickLikeButton();
   };
 
   for (let index = 0; index < likeButton.length; index += 1) {
-    likeButton[index].addEventListener('click', () => onClickLikeButton(index));
+    const likes = likeButtonLiked[index] as HTMLElement;
+    const likesVal = likes.innerHTML;
+
+    likeButton[index].addEventListener('click', () => likeButtonFunc(index, likes, likesVal));
   }
 }

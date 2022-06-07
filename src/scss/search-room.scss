@@ -1,8 +1,6 @@
 // Файл глобалиных стилей //
 @import "global.scss";
 // Стили компонентов
-@import "../components/header/header.scss";
-@import "../components/footer/footer.scss";
 @import "../components/filter-date-dropdown/filter-date-dropdown.scss";
 @import "../components/dropdown/dropdown.scss";
 @import "../components/range-slider/range-slider.scss";
@@ -10,208 +8,178 @@
 @import "../components/rich-checkbox-buttons/rich-checkbox-buttons.scss";
 @import "../components/expandable-checkbox-list/expandable-checkbox-list.scss";
 @import "../components/card/card.scss";
+@import "../components/pagination/pagination.scss";
 //-------------------------------------------------------------------------------------------------------------//
-.header {
-  &._deactive {
-    display: none;
+.search-room {
+  &__main {
+    display: flex;
+    margin: 30px auto 0 auto;
+    max-width: 1170px;
+    width: 100%;
   }
-}
 
-main {
-  display: flex;
-  margin: 30px auto 0 auto;
-  max-width: 1170px;
-  width: 100%;
-
-  aside {
+  &__aside {
     background-color: #fff;
-    height: 950px;
-    margin-right: 60 - 12px;
+    margin-right: 59px;
     z-index: 1;
-
-    .filter-date {
-      margin: 0 0 20px 0;
-    }
-
-    .dropdown1,
-    .dropdown2 {
-      margin-bottom: 30px;
-
-      .dropdown__dropdown {
-        width: 266px;
-
-        .select__button {
-          display: none !important;
-        }
-
-        &._active {
-          height: 163px !important;
-        }
-      }
-    }
+    margin-left: 5px;
+    max-width: 266px;
+    margin-top: 1px;
+    min-height: 1000px;
 
     h3 {
       color: #1f2041;
+      letter-spacing: 0.1px;
 
       &:nth-child(1) {
         letter-spacing: .3px;
         margin: 0 0 5px 0;
       }
-
-      &.search-main__count-range {
-        letter-spacing: 0.3px;
-        position: absolute;
-      }
-    }
-
-    .aside__count-on-day {
-      color: rgba(31, 32, 65, 0.5);
-      font-size: 12px;
-      margin: 15px 0 30px 0;
-    }
-
-    .checkbox-buttons {
-      margin-bottom: 30px;
-      margin-top: 16px;
-    }
-
-    .rich-checkbox-buttons {
-      margin-top: 16px;
     }
 
     &._active {
-      display: block;
-    }
-  }
-
-  .aside__open-menu {
-    background-color: #fff;
-    border: 1px solid rgba(0, 0, 0, 0.15);
-    border-left: none;
-    border-radius: 0 20px 20px 0;
-    font-family: 'Material Icons';
-    height: 100px;
-    position: fixed;
-    top: 50%;
-    width: 25px;
-    z-index: 1;
-
-    &._active {
-      right: 0;
-      transform: rotate(180deg);
-    }
-  }
-
-  .main__numbers {
-    max-width: 100%;
-
-    .main__numbers-title {
-      letter-spacing: .65px;
-      margin: 0 0 0 11px;
-    }
-
-    .main__numbers-cards async {
-      display: flex;
-      flex-wrap: wrap;
-      // justify-content: center;
-      margin: 21px 0 20px 0;
-
-      li {
-        margin: 0 0 20.5px 12px;
-      }
-    }
-
-    .pagination {
       display: block;
       margin: 0 auto;
-      max-width: 360px;
-      position: relative;
-      text-align: center;
-
-      .paginationjs {
-        display: inline-block;
-
-        .paginationjs-pages {
-          margin-bottom: 10px;
-
-          ul {
-            display: flex;
-
-            li {
-              border-radius: 22px;
-              font-size: 12px;
-              height: 40px;
-              line-height: 40px;
-              text-align: center;
-              width: 40px;
-
-              &.active {
-                background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
-                color: #fff;
-                font-weight: bold;
-              }
-            }
-
-            .paginationjs-prev {
-              background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
-              font-family: 'Material Icons';
-              font-size: 24px;
-              transform: rotate(180deg);
-
-              a {
-                color: #fff;
-              }
-            }
-
-            .paginationjs-next {
-              background: linear-gradient(0deg, #6fcf97 0%, #66d2ea 100%);
-              font-family: 'Material Icons';
-              font-size: 24px;
-
-              a {
-                color: #fff;
-              }
-            }
-          }
-
-          .paginationjs-nav {
-            display: flex;
-            width: 100%;
-          }
-        }
-      }
+      padding: 0;
+      max-width: 266px;
     }
+  }
+
+  &__dates-of-stay {
+    pointer-events: none;
+  }
+
+  &__dropdown-guest-list {
+    margin-bottom: 30.5px;
+  }
+
+  &__count-range {
+    h3 {
+      letter-spacing: 0.3px;
+      position: absolute;
+    }
+  }
+
+  &__accessibility {
+    margin-bottom: 28px;
+  }
+
+  &__list-of-amenities {
+    margin-bottom: 16px;
+  }
+
+  &__count-on-day {
+    color: rgba(31, 32, 65, 0.5);
+    font-size: 12px;
+    margin: 15px 0 30px 0;
+  }
+
+  &__open-aside-menu {
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    height: 35px;
+    border-radius: 4px;
+    z-index: 1;
+    display: none;
+    width: 85%;
+    margin: 0 auto 20px auto;
+
+    &._active {
+      max-width: 266px;
+    }
+  }
+
+  &__numbers {
+    max-width: 100%;
 
     &._deactive {
       display: none;
     }
   }
-}
 
-@media screen and (min-width: 891px) {
-  .aside__open-menu {
-    display: none;
+  &__numbers-title {
+    letter-spacing: .65px;
   }
 
-  aside {
-    margin-left: 5px;
+  &__numbers-cards {
+    display: flex;
+    row-gap: 21px;
+    column-gap: 12px;
+    flex-wrap: wrap;
+    margin: 23px 0 40px 1px;
+  }
+}
+
+.filter-date {
+  margin: 0 0 20px 0;
+}
+
+.dropdown:first-child {
+  margin-bottom: 30px;
+
+  .dropdown__dropdown {
     width: 266px;
+
+    .select__button {
+      display: none !important;
+    }
+
+    &._active {
+      height: 163px !important;
+    }
+  }
+}
+
+.pagination {
+  margin: 0 auto 76px auto;
+}
+
+.footer {
+  &._deactive {
+    display: none;
+  }
+}
+
+.checkbox-buttons {
+  margin-bottom: 30px;
+  margin-top: 17px;
+}
+
+.rich-checkbox-buttons {
+  margin-top: 16px;
+}
+
+@media all and (max-width: 1166px) {
+  .search-room {
+    &__main {
+      max-width: 883px;
+    }
   }
 }
 
 @media screen and (max-width: 890px) {
-  main {
-    aside {
+  .search-room {
+    &__main {
+      flex-direction: column;
+    }
+
+    &__aside {
       display: none;
       overflow: hidden;
       padding-left: 5px;
       width: 100%;
     }
 
-    .main__numbers {
-      .main__numbers-cards async {
-        justify-content: center;
-      }
+    &__open-aside-menu {
+      display: block;
+    }
+
+    &__numbers-cards {
+      justify-content: center;
+    }
+    
+    &__numbers-title {
+      text-align: center;
     }
   }
 }
