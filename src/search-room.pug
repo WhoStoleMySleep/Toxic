@@ -4,9 +4,9 @@ html(lang="ru")
     meta(charset="UTF-8")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    link(rel='apple-touch-icon' sizes='76x76' href='/apple-touch-icon.png')
-    link(rel='icon' type='image/png' sizes='32x32' href='/favicon-32x32.png')
-    link(rel='icon' type='image/png' sizes='16x16' href='/favicon-16x16.png')
+    link(rel='apple-touch-icon' sizes='76x76' href='/apple-touch-icon.webp')
+    link(rel='icon' type='image/png' sizes='32x32' href='/favicon-32x32.webp')
+    link(rel='icon' type='image/png' sizes='16x16' href='/favicon-16x16.webp')
     link(rel='manifest' href='/site.webmanifest')
     link(rel='mask-icon' href='/safari-pinned-tab.svg' color='#5bbad5')
     meta(name='apple-mobile-web-app-title' content='Toxic')
@@ -80,7 +80,7 @@ html(lang="ru")
           while colCards < 12
             li
               include ./components/card/card.pug
-              +card('room-details.html', ['./img/bg-cards-one.jpg', './img/bg-cards-two.jpg', './img/bg-cards-three.jpg', './img/bg-cards-one.jpg'])
+              +card('room-details.html', ['./img/bg-cards-one.webp', './img/bg-cards-two.webp', './img/bg-cards-three.webp', './img/bg-cards-one.webp'])
             - colCards += 1
         include ./components/pagination/pagination.pug
         +pagination()

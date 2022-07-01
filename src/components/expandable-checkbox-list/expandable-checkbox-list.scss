@@ -52,7 +52,7 @@
     position: relative;
     user-select: none;
   }
-  
+
   &__input[type='checkbox'] {
     display: block;
     height: 0;
@@ -62,7 +62,7 @@
     z-index: -1;
 
     &:checked + span:before {
-      background-image: url('../img/done.png');
+      background-image: url('../img/done.webp');
       background-position: center;
       background-repeat: no-repeat;
       border: 1px solid #bc9cff;

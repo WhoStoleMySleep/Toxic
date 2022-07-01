@@ -1,10 +1,13 @@
 // Файл глобалиных стилей //
 @import "global.scss";
-// Стили компонентов
+// // Стили компонентов
 @import "../components/text-list/text-list.scss";
 @import "../components/comments/comments.scss";
 @import "../components/bullet-list/bullet-list.scss";
 @import "../components/to-book/to-book.scss";
+
+@import "chartist/dist/scss/chartist.scss";
+@import "chartist/dist/scss/settings/_chartist-settings.scss";
 //-------------------------------------------------------------------------------------------------------------//
 .room-details {
   &__container-images {
@@ -152,6 +155,35 @@
     width: 123px;
   }
 
+  &__bagel-canvas {
+    height: 123px;
+    width: 123px;
+
+    .ct-series-a {
+      .ct-slice-donut {
+        stroke: url(#satisfactorily-gradient);
+      }
+    }
+
+    .ct-series-b {
+      .ct-slice-donut {
+        stroke: url(#good-gradient);
+      }
+    }
+
+    .ct-series-c {
+      .ct-slice-donut {
+        stroke: url(#fabulous-gradient);
+      }
+    }
+
+    .ct-series-d {
+      .ct-slice-donut {
+        stroke: url(#disappointment-gradient);
+      }
+    }
+  }
+
   &__bagel-legend {
     margin-left: min(28px, 1.9vw);
     margin-top: 32px;
@@ -161,17 +193,44 @@
       margin-bottom: 10px;
       transition-duration: 250ms;
 
-      span {
+      &::before {
+        content: '•';
         border-radius: 10px;
         display: inline-block;
         height: 10px;
         margin-right: 5px;
         margin-top: 2px;
         width: 10px;
+        font-size: 40px;
+        line-height: 10px;
+        -webkit-text-stroke: transparent;
+        color: transparent;
+      }
+      
+      &:first-child {
+        &::before {
+          background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
+        }
+      }
+
+      &:nth-child(2) {
+        &::before {
+          background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+        }
+      }
+
+      &:nth-child(3) {
+        &::before {
+          background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+        }
       }
 
       &:last-child {
         margin: 0;
+
+        &::before {
+          background: linear-gradient(180deg, #919191 0%, #3D4975 100%);
+        }
       }
     }
   }

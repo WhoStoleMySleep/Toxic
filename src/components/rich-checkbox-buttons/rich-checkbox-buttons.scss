@@ -7,7 +7,6 @@
     user-select: none;
   }
 
-  
   &__input[type='checkbox'] {
     display: block;
     height: 0;
@@ -15,9 +14,9 @@
     position: absolute;
     width: 0;
     z-index: -1;
-    
+
     &:checked + .rich-checkbox-buttons__headed:before {
-      background-image: url('../img/done.png');
+      background-image: url('../img/done.webp');
       background-position: center;
       background-repeat: no-repeat;
       border: 1px solid #bc9cff;
@@ -32,17 +31,17 @@
     text-shadow: 0.1px 0 1px rgba(31, 32, 65, 0.5);
     letter-spacing: 0.3px;
     line-height: 21px;
-    
+
     &:before {
       border: 1px solid rgba(31, 32, 65, 0.25);
       border-radius: 4px;
-      content: "";
+      content: '';
       height: 20px;
       margin: 0 10px 0 0;
       width: 20px;
     }
   }
-  
+
   &__label {
     font-weight: bold;
   }

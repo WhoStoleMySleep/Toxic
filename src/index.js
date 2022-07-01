@@ -1,59 +1,42 @@
 // import images
-import './img/bg1.jpg';
-import './img/logo.png';
-import './img/burger.png';
-import './img/bg-cards-one.jpg';
-import './img/bg-cards-two.jpg';
-import './img/bg-cards-three.jpg';
-import './img/dot.png';
-import './img/reg-sign-bg.jpg';
+import './img/logo.svg';
+import './img/burger.webp';
 
 import './ts/scroll';
 
-import('./components/header/header.ts');
+import './components/header/header.ts';
 
-async function index() {
-  await import('./ts/index.ts');
-  await import('./scss/index.scss');
-}
-if ($('.index').length) {
-  index();
+if (document.querySelector('.index')) {
+  import('./ts/index.ts');
+  import('./scss/index.scss');
+  import('./img/bg1.webp');
 }
 
-async function searchRoom() {
-  await import('./ts/search-room.ts');
-  await import('./scss/search-room.scss');
-  await import('./img/done.png');
-}
-if ($('.search-room').length) {
-  searchRoom();
-}
-
-async function roomDetails() {
-  await import('./ts/room-details.ts');
-  await import('./scss/room-details.scss');
-  await import('./img/face.png');
-  await import('./img/face2.png');
-}
-if ($('.room-details').length) {
-  roomDetails();
+if (document.querySelector('.search-room')) {
+  import('./ts/search-room.ts');
+  import('./scss/search-room.scss');
+  import('./img/done.webp');
+  import('./img/bg-cards-one.webp');
+  import('./img/bg-cards-two.webp');
+  import('./img/bg-cards-three.webp');
 }
 
-async function registration() {
-  await import('./scss/registration.scss');
-}
-if ($('.registration').length) {
-  registration();
-}
-
-async function signIn() {
-  await import('./scss/sign-in.scss');
-}
-if ($('.sign-in').length) {
-  signIn();
+if (document.querySelector('.room-details')) {
+  import('./ts/room-details.ts');
+  import('./scss/room-details.scss');
+  import('./img/face.webp');
+  import('./img/face2.webp');
+  import('./img/bg-cards-one.webp');
+  import('./img/bg-cards-two.webp');
+  import('./img/bg-cards-three.webp');
 }
 
-function component() {
-  return;
+if (document.querySelector('.registration')) {
+  import('./scss/registration.scss');
+  import('./img/reg-sign-bg.webp');
 }
-document.body.appendChild(component());
+
+if (document.querySelector('.sign-in')) {
+  import('./scss/sign-in.scss');
+  import('./img/reg-sign-bg.webp');
+}

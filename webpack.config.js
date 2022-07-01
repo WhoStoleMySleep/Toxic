@@ -9,14 +9,7 @@ const devServer = {
 };
 
 // plugins
-const plugins = [
-  new webpack.ProvidePlugin({
-    $: 'jquery',
-    jQuery: 'jquery',
-    'window.jQuery': 'jquery',
-    'window.$': 'jquery',
-  }),
-];
+const plugins = [];
 
 const pugArray = [
   'index',
@@ -98,7 +91,7 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
-        test: /\.(jpg|png)$/i,
+        test: /\.(jpg|png|svg|webp)$/i,
         dependency: { not: ['url'] },
         use: [
           {

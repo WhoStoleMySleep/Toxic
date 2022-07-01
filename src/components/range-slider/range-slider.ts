@@ -1,5 +1,4 @@
 import noUiSlider from 'nouislider';
-import 'nouislider/dist/nouislider.css';
 import { HTML } from '../../ts/types';
 
 const rangeSlider: HTML['Element'] = document.querySelector('.js-range-slider__slider');

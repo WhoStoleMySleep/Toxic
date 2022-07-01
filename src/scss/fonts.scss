@@ -3,16 +3,21 @@
   font-family: 'Material Icons';
   font-style: normal;
   font-weight: normal;
-  src: local('☺'), url('../fonts/MaterialIcons/MaterialIcons-Regular.woff') format('woff'), url('../fonts/MaterialIcons/MaterialIcons-Regular.ttf') format('truetype'), url('../fonts/MaterialIcons/MaterialIcons-Regular.svg') format('svg');
+  src: url('../fonts/MaterialIcons/MaterialIcons-Regular.woff2') format('woff2');
 }
+
 
 @font-face {
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: normal;
-  src: local('☺'), url('../fonts/Montserrat/Montserrat-Regular.woff') format('woff'), url('../fonts/Montserrat/Montserrat-Regular.ttf') format('truetype'), url('../fonts/Montserrat/Montserrat-Regular.svg') format('svg');
+  src: url('../fonts/Montserrat/Montserrat-Regular.woff2') format('woff2');
 }
 
-$fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
-@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
-@import "~@fortawesome/fontawesome-free/scss/brands.scss";
+@font-face {
+  font-family: 'Font Awesome 5 Brands';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("../fonts/Font-Awesome/font-awesome.woff2") format("woff2");
+}

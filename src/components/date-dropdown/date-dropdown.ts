@@ -1,7 +1,6 @@
 import flatpickr from 'flatpickr';
-import 'flatpickr/dist/flatpickr.min.css';
 import { Russian } from 'flatpickr/dist/l10n/ru';
-import ShortcutButtonsPlugin from 'shortcut-buttons-flatpickr/dist/shortcut-buttons-flatpickr.min';
+import ShortcutButtonsPlugin from '../../ts/shortcut-buttons-flatpickr/shortcut-buttons-flatpickr';
 import adaptiveMonth from '../../ts/additional-components/adaptive-month';
 import { HTML } from '../../ts/types';
 
@@ -48,6 +47,7 @@ if (startDateInput && endDateInput && dateDropdownContainer) {
         ],
         onClick: (index: number, fp) => {
           const calendar = fp;
+
           const days = document.querySelector('.js-to-book__number-days');
           const daysSumm = document.querySelector('.js-to-book__summing-days-summ');
           const totalSumm = document.querySelector('.js-to-book__total-summ');

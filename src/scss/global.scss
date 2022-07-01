@@ -53,3 +53,27 @@ h3 {
   line-height: 15px;
   text-transform: uppercase;
 }
+
+.fab {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  font-family: 'Font Awesome 5 Brands';
+  font-weight: 400;
+  line-height: 1; 
+}
+
+.fa-facebook-square:before {
+  content: "\f082"; 
+}
+
+.fa-instagram:before {
+  content: "\f16d"; 
+}
+
+.fa-twitter:before {
+  content: "\f099"; 
+}

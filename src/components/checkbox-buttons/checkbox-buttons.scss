@@ -17,7 +17,7 @@
     z-index: -1;
 
     &:checked + .checkbox-buttons__text:before {
-      background-image: url('../img/done.png');
+      background-image: url('../img/done.webp');
       background-position: center;
       background-repeat: no-repeat;
       border: 1px solid #bc9cff;
@@ -32,7 +32,7 @@
     line-height: 19px;
 
     &:before {
-      content: "";
+      content: '';
       border: 1px solid rgba(31, 32, 65, 0.25);
       border-radius: 4px;
       height: 20px;
