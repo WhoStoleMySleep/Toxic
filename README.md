@@ -46,7 +46,10 @@ The plugin was used to implement a ring chart in "room-details" to display the n
 <br>
 
 ### Flatpickr.js
-- <p><span style='font-style: italic'>'flatpickr is a lightweight and powerful datetime picker'.</span><br><br>The plugin was used to implement a drop-down calendar, to select a date range.</p> 
+- 'flatpickr is a lightweight and powerful datetime picker'.
+<br>
+<br>
+The plugin was used to implement a drop-down calendar, to select a date range.
 
 
 <br>
@@ -60,4 +63,6 @@ The plugin was used to select a price range in the "search-room".
 <br>
 
 ### Swiper.js
-- </p><span style='font-style: italic'>'Swiper is the most modern free mobile touch slider with hardware accelerated transitions and amazing native behavior'.</span><br><br>The plugin was used in the product cards.<p>
+- 'Swiper is the most modern free mobile touch slider with hardware accelerated transitions and amazing native behavior'.
+<br><br>
+The plugin was used in the product cards.
