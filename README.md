@@ -59,3 +59,41 @@ The plugin was used to select a price range in the "search-room".
 ### Swiper.js
 - 'Swiper is the most modern free mobile touch slider with hardware accelerated transitions and amazing native behavior'.
 The plugin was used in the product cards.
+
+## Установка
+
+### 1) Клонирование репозитория
+
+<br>
+
+```
+git clone https://github.com/WhoStoleMySleep/Toxic.git
+```
+
+<br>
+
+### 2) установка необходимых модулей
+
+<br>
+
+```
+npm i
+```
+
+<br>
+
+### запуск
+
+<br>
+
+```
+npm run start
+```
+
+### сборка
+
+<br>
+
+```
+npm run build
+```
