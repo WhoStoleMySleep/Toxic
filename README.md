@@ -5,7 +5,7 @@
 
 </h2>
 
-## Desctiption
+## Desctiption :
 
 <br>
 <p align="center">
@@ -16,7 +16,7 @@ It was implemented in Pug, SCSS and Typescript.
 
 <br>
 
-## About the project
+## About the project :
 
 <br>
 
@@ -33,7 +33,7 @@ It was implemented in Pug, SCSS and Typescript.
 
 <br>
 
-## Plugins
+## Plugins :
 
 <br>
 
@@ -60,9 +60,9 @@ The plugin was used to select a price range in the "search-room".
 - 'Swiper is the most modern free mobile touch slider with hardware accelerated transitions and amazing native behavior'.
 The plugin was used in the product cards.
 
-## Установка
+## Installing :
 
-### 1) Клонирование репозитория
+### 1) Cloning a repository
 
 <br>
 
@@ -72,7 +72,7 @@ git clone https://github.com/WhoStoleMySleep/Toxic.git
 
 <br>
 
-### 2) установка необходимых модулей
+### 2) Installing the necessary modules
 
 <br>
 
@@ -82,7 +82,7 @@ npm i
 
 <br>
 
-### запуск
+### 3) Launch
 
 <br>
 
@@ -90,7 +90,7 @@ npm i
 npm run start
 ```
 
-### сборка
+### 4) Build
 
 <br>
 
