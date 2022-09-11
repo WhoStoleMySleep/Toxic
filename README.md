@@ -33,33 +33,6 @@ It was implemented in Pug, SCSS and Typescript.
 
 <br>
 
-## Plugins :
-
-<br>
-
-### Chartist.js
-- A plugin for simple adaptive charts.
-The plugin was used to implement a ring chart in "room-details" to display the number of votes.
-
-<br>
-
-### Flatpickr.js
-- 'flatpickr is a lightweight and powerful datetime picker'.
-The plugin was used to implement a drop-down calendar, to select a date range.
-
-
-<br>
-
-### Nouislider.js
-- Lightweight slider for range selection.
-The plugin was used to select a price range in the "search-room".
-
-<br>
-
-### Swiper.js
-- 'Swiper is the most modern free mobile touch slider with hardware accelerated transitions and amazing native behavior'.
-The plugin was used in the product cards.
-
 ## Installing :
 
 ### 1) Cloning a repository
