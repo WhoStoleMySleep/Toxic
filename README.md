@@ -50,7 +50,7 @@ git clone https://github.com/WhoStoleMySleep/Toxic.git
 <br>
 
 ```
-npm i
+npm install
 ```
 
 <br>
